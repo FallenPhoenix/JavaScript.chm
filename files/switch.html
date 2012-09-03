@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>switch</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/switch">http://javascript.ru/switch</a></div><h2>switch</h2><p>Сравнивает значение выражения по различными вариантами и при совпадении выполняет соответствующий код</p>
+
+<div class="field field-type-text field-field-syntax-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e2b18308" >  	<div class="source-controls-small">  		<span id="select-4a368e2b18308" onclick="return sourceEditor.select('4a368e2b18308')">Выделить все</span>   	</div>  	<div class="code-container" id="cc-4a368e2b18308"> 		<pre class="source" id="src-4a368e2b18308"><span class="kw1">switch</span> <span class="br0">&#40;</span>expression<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+   <span class="kw1">case</span> label1:
+      statements1
+      <span class="br0">&#91;</span><span class="kw1">break</span><span class="br0">&#93;</span>
+   <span class="kw1">case</span> label2:
+      statements2
+      <span class="br0">&#91;</span><span class="kw1">break</span><span class="br0">&#93;</span>
+   ...
+   <span class="kw1">case</span> labelN:
+      statementsN
+      <span class="br0">&#91;</span><span class="kw1">break</span><span class="br0">&#93;</span>
+   <span class="kw2">default</span>:
+      statements_def
+      <span class="br0">&#91;</span><span class="kw1">break</span><span class="br0">&#93;</span>
+<span class="br0">&#125;</span></pre> 		<div class="src-edit-container" id="src-edit-4a368e2b18308"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2b18308')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-syntax-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt>expression</dt>
+<dd>Выражение для сравнения</dd>
+<dt>labelN</dt>
+<dd>Значение, с которым сравнивать</dd>
+<dt>statementsN</dt>
+<dd>Ветка кода, на которую перейдет управление при совпадении <code>expression</code> с <code>labelN</code></dd>
+<dt>statements_def</dt>
+<dd>Ветка кода, которая будет выполнена, если <code>expression</code> не совпадет ни с одним значением <code>labelN</code><br />
+<dd>
+</dd></dd></dl>
+</div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-syntax-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Конструкция <code>switch</code> служит для сравнения значения на равенство с различными вариантами. </p>
+<p>При этом равенство подразумевается в смысле оператора "==", сравнивать с регулярным выражением или как-то еще <code>switch</code> не умеет.</p>
+<p>Если совпадение найдено, то соответствующий код исполняется до оператора <a href="break.html" >break</a>, который прекращает выполнение <code>switch</code> и передает управление дальше.</p>
+<div class="example">
+<div class="example-title">Пример: обычное применение switch</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2b00bff" >
+<div class="source-controls-small">  		<span id="select-4a368e2b00bff" onclick="return sourceEditor.select('4a368e2b00bff')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e2b00bff">
+<pre class="source" id="src-4a368e2b00bff"><span class="kw2">var</span> a = <span class="nu0">2</span><span class="nu0">+2</span>
+<span class="kw1">switch</span> <span class="br0">&#40;</span>a<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+  <span class="kw1">case</span> <span class="nu0">3</span>:
+    <span class="kw3">alert</span><span class="br0">&#40;</span><span class="st0">'Маловато'</span><span class="br0">&#41;</span>
+    <span class="kw1">break</span>
+  <span class="kw1">case</span> <span class="nu0">4</span>:
+    <span class="kw3">alert</span><span class="br0">&#40;</span><span class="st0">'В точку!'</span><span class="br0">&#41;</span>
+    <span class="kw1">break</span>
+  <span class="kw1">case</span> <span class="nu0">5</span>:
+    <span class="kw3">alert</span><span class="br0">&#40;</span><span class="st0">'Перебор'</span><span class="br0">&#41;</span>
+    <span class="kw1">break</span>
+  <span class="kw2">default</span>:
+    <span class="kw3">alert</span><span class="br0">&#40;</span><span class="st0">'Я таких значений не знаю'</span><span class="br0">&#41;</span>
+<span class="br0">&#125;</span></pre><div class="src-edit-container" id="src-edit-4a368e2b00bff"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2b00bff')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>Если оператор <code>break</code> отсутствует, то выполнение продолжается дальше.</p>
+<p>Например, предыдущий пример без <code>break</code>:</p>
+<div class="example">
+<div class="example-title">Пример: switch без break</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2b02798" >
+<div class="source-controls-small">  		<span id="select-4a368e2b02798" onclick="return sourceEditor.select('4a368e2b02798')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e2b02798">
+<pre class="source" id="src-4a368e2b02798"><span class="kw2">var</span> a = <span class="nu0">2</span><span class="nu0">+2</span>
+<span class="kw1">switch</span> <span class="br0">&#40;</span>a<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+  <span class="kw1">case</span> <span class="nu0">3</span>:
+    <span class="kw3">alert</span><span class="br0">&#40;</span><span class="st0">'Маловато'</span><span class="br0">&#41;</span>
+  <span class="kw1">case</span> <span class="nu0">4</span>:
+    <span class="kw3">alert</span><span class="br0">&#40;</span><span class="st0">'В точку!'</span><span class="br0">&#41;</span>
+  <span class="kw1">case</span> <span class="nu0">5</span>:
+    <span class="kw3">alert</span><span class="br0">&#40;</span><span class="st0">'Перебор'</span><span class="br0">&#41;</span>
+  <span class="kw2">default</span>:
+    <span class="kw3">alert</span><span class="br0">&#40;</span><span class="st0">'Я таких значений не знаю'</span><span class="br0">&#41;</span>
+<span class="br0">&#125;</span></pre><div class="src-edit-container" id="src-edit-4a368e2b02798"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2b02798')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>При a=4 последовательно будут выполнены операторы:</p>
+<div class="source-container" id="sc-4a368e2b06aa2" >
+<div class="source-controls-small">  		<span id="select-4a368e2b06aa2" onclick="return sourceEditor.select('4a368e2b06aa2')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e2b06aa2">
+<pre class="source" id="src-4a368e2b06aa2"><span class="kw3">alert</span><span class="br0">&#40;</span><span class="st0">'В точку!'</span><span class="br0">&#41;</span>
+&nbsp;
+<span class="kw3">alert</span><span class="br0">&#40;</span><span class="st0">'Перебор'</span><span class="br0">&#41;</span>
+&nbsp;
+<span class="kw3">alert</span><span class="br0">&#40;</span><span class="st0">'Я таких значений не знаю'</span><span class="br0">&#41;</span></pre><div class="src-edit-container" id="src-edit-4a368e2b06aa2"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2b06aa2')" />			 		</div>
+</div>
+</div>
+<p>Несколько значений <code>case</code> можно группировать.</p>
+<div class="example">
+<div class="example-title">Пример: группировка case</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2b0435a" >
+<div class="source-controls-small">  		<span id="select-4a368e2b0435a" onclick="return sourceEditor.select('4a368e2b0435a')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e2b0435a">
+<pre class="source" id="src-4a368e2b0435a"><span class="kw2">var</span> a = <span class="nu0">2</span><span class="nu0">+2</span>
+<span class="kw1">switch</span> <span class="br0">&#40;</span>a<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+  <span class="kw1">case</span> <span class="nu0">4</span>:
+    <span class="kw3">alert</span><span class="br0">&#40;</span><span class="st0">'Верно!'</span><span class="br0">&#41;</span>
+    <span class="kw1">break</span>
+  <span class="kw1">case</span> <span class="nu0">3</span>:
+  <span class="kw1">case</span> <span class="nu0">5</span>:
+    <span class="kw3">alert</span><span class="br0">&#40;</span><span class="st0">'Неверно!'</span><span class="br0">&#41;</span>
+    <span class="kw1">break</span>
+  <span class="kw2">default</span>:
+    <span class="kw3">alert</span><span class="br0">&#40;</span><span class="st0">'Я таких значений не знаю'</span><span class="br0">&#41;</span>
+<span class="br0">&#125;</span></pre><div class="src-edit-container" id="src-edit-4a368e2b0435a"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2b0435a')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>Boolean</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/Boolean">http://javascript.ru/Boolean</a></div><h2>Boolean</h2><h3 class="field-label">Создание</h3>
+
+<div class="field field-type-text field-object-syntax">
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e2270f57" >  	<div class="code-container" id="cc-4a368e2270f57"> 		<pre class="source" id="src-4a368e2270f57">b = <span class="kw2">new</span> Boolean<span class="br0">&#40;</span>value<span class="br0">&#41;</span></pre> 		<div class="src-edit-container" id="src-edit-4a368e2270f57"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2270f57')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-object-arguments">  
+<h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt>value</dt>
+<dd>исходное значение для булевого объекта</dd>
+</dl>
+</div>
+  </div>
+</div>
+
+<div class="field field-type-text field-object-intro">
+  <div class="field-items">
+      <div class="field-item"><p>В яваскрипт есть как <code>Boolean</code>-объекты, так и примитивные <code>Boolean</code> значения.</p>
+<p>Не смешивайте их. Объект - это объект. В частности, яваскрипт любой объект считает "true", например при неявном приведении типа в операторе <code>if</code>:</p>
+<div class="example">
+<div class="example-title">Пример: new Boolean(false) считается true</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e22654d7" >
+<div class="code-container" id="cc-4a368e22654d7">
+<pre class="source" id="src-4a368e22654d7">x = <span class="kw2">new</span> Boolean<span class="br0">&#40;</span><span class="kw2">false</span><span class="br0">&#41;</span>;
+<span class="kw1">if</span> <span class="br0">&#40;</span>x<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+  <span class="co1">// . . . этот код будет выполнен</span>
+<span class="br0">&#125;</span></pre><div class="src-edit-container" id="src-edit-4a368e22654d7"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e22654d7')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>Оператор <code>if</code> приводит аргумент к примитивному значению, поэтому <code>new Boolean(false)</code> был приведен к <code>true</code>, т.к является объектом.</p>
+<p>Не используйте объект <code>Boolean</code> для преобразования к булевому значению. Вместо этого, используйте <code>Boolean</code> как функцию.</p>
+<div class="source-container" id="sc-4a368e2265cda" >
+<div class="code-container" id="cc-4a368e2265cda">
+<pre class="source" id="src-4a368e2265cda">x = Boolean<span class="br0">&#40;</span>expression<span class="br0">&#41;</span>;     <span class="co1">// предпочтительно</span>
+x = <span class="kw2">new</span> Boolean<span class="br0">&#40;</span>expression<span class="br0">&#41;</span>; <span class="co1">// не используйте</span></pre><div class="src-edit-container" id="src-edit-4a368e2265cda"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2265cda')" />			 		</div>
+</div>
+</div>
+<p>Или можно проще, с использованием двойного отрицания:</p>
+<div class="source-container" id="sc-4a368e226656f" >
+<div class="code-container" id="cc-4a368e226656f">
+<pre class="source" id="src-4a368e226656f">x = !!expression</pre><div class="src-edit-container" id="src-edit-4a368e226656f"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e226656f')" />			 		</div>
+</div>
+</div>
+<p>В современном яваскрипт-программировании <code>new Boolean</code> не используется.</p>
+</div>
+  </div>
+</div>
+
+
+<hr/>
+<div class="field field-type-text field-object-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Значение, переданное в качестве параметра, при необходимости, приводится к булевому виду. Если аргумент не указан или равен:</p>
+<ul>
+<li>0,</li>
+<li>-0,</li>
+<li>null,</li>
+<li>false,</li>
+<li>NaN,</li>
+<li>undefined,</li>
+<li>или пустая строка <code>("")</code>,</li>
+</ul>
+<p>то объект инициализуется как <code>false</code>. Все остальные значения, включая объекты и строку "false" создают объект с начальным значением <code>true</code>.</p>
+</div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<div class="field field-type-nodereference field-field-see-also">
+  <h3 class="field-label">См. также</h3>
+  <ul class="field-items">
+          <li class="field-item"><a class="liexternal" href="http://javascript.ru/tutorial/basic/types">Базовые типы: Строки, Числа, Boolean</a> /Статья/</li>
+      </ul>
+</div>
+
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

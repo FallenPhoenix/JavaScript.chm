@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>for..in</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/for..in">http://javascript.ru/for..in</a></div><h2>for..in</h2><p>Перебрать свойства объекта, для каждого свойства выполнить заданный код</p>
+
+<div class="field field-type-text field-field-syntax-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e2ab6e32" >  	<div class="code-container" id="cc-4a368e2ab6e32"> 		<pre class="source" id="src-4a368e2ab6e32"><span class="kw1">for</span> <span class="br0">&#40;</span>property <span class="kw1">in</span> object<span class="br0">&#41;</span>
+  statement</pre> 		<div class="src-edit-container" id="src-edit-4a368e2ab6e32"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2ab6e32')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-syntax-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt>property</dt>
+<dd>Переменная, которой последовательно присваиваются названия свойств объекта. Может быть объявлена при помощи <code>var</code>, но не будет при этом локальной для цикла</dd>
+<dt>object</dt>
+<dd>Объект, свойства которого перебираются</dd>
+<dt>statement</dt>
+<dd>Блок или javascript-вызов для вызова на каждой итерации</dd>
+</dl>
+</div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-syntax-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Конструкция <code>for..in</code> - единственный в javascript способ перебрать все свойства объекта.</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2a9e19d" >
+<div class="source-controls-small">  		<span id="select-4a368e2a9e19d" onclick="return sourceEditor.select('4a368e2a9e19d')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e2a9e19d">
+<pre class="source" id="src-4a368e2a9e19d"><span class="kw2">var</span> a = <span class="br0">&#123;</span>
+  p1: <span class="nu0">1</span>,
+  p2: <span class="nu0">2</span>
+<span class="br0">&#125;</span>
+<span class="kw1">for</span><span class="br0">&#40;</span><span class="kw2">var</span> p <span class="kw1">in</span> a<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+  <span class="kw3">alert</span><span class="br0">&#40;</span>p<span class="br0">&#41;</span> <span class="co1">// p1, затем p2</span>
+&nbsp;
+  <span class="co1">// к значению каждого свойства прибавить 1</span>
+  a<span class="br0">&#91;</span>p<span class="br0">&#93;</span> = a<span class="br0">&#91;</span>p<span class="br0">&#93;</span> + <span class="nu0">1</span>
+<span class="br0">&#125;</span></pre><div class="src-edit-container" id="src-edit-4a368e2a9e19d"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2a9e19d')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>При этом большинство свойств встроенных объектов javascript перебираться не будут, так как помечены специальным внутренним флагом <code>DontEnum</code>. Этот флаг нельзя получить или поменять.</p>
+<div class="example">
+<div class="example-title">Пример: встроенное свойство toString</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2aa1413" >
+<div class="source-controls-small">  		<span id="select-4a368e2aa1413" onclick="return sourceEditor.select('4a368e2aa1413')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e2aa1413">
+<pre class="source" id="src-4a368e2aa1413"><span class="co1">// объявим объект</span>
+<span class="kw2">var</span> a = <span class="br0">&#123;</span>
+  p1: <span class="nu0">1</span>
+<span class="br0">&#125;</span>
+&nbsp;
+<span class="co1">// у него есть свойство toString</span>
+<span class="kw3">alert</span><span class="br0">&#40;</span>a.<span class="me1">toString</span><span class="br0">&#41;</span> 
+&nbsp;
+<span class="co1">// унаследованное от Object.prototype</span>
+<span class="kw3">alert</span><span class="br0">&#40;</span>a.<span class="me1">toString</span> === Object.<span class="me1">prototype</span>.<span class="me1">toString</span><span class="br0">&#41;</span> <span class="co1">// true</span>
+&nbsp;
+<span class="kw1">for</span><span class="br0">&#40;</span>p <span class="kw1">in</span> a<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+  <span class="co1">// в этом цикле свойства toString не будет</span>
+<span class="br0">&#125;</span></pre><div class="src-edit-container" id="src-edit-4a368e2aa1413"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2aa1413')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>Порядок перечисления свойств не определен. </p>
+<p>Поэтому, если во время итерации добавить свойство к объекту - цикл может по нему пройти позже или не пройти никогда, в зависимости от того, куда это новое свойство встанет во внутренней хэш-таблице интерпретатора javascript.</p>
+<p>При удалении свойства во время итерации - если цикл по нему еще не прошел, то он не пройдет в дальнейшем.</p>
+<h3>Перебор свойств, кроме унаследованных</h3>
+<p>Для перебора всех свойств объекта, кроме унаследованных, используется конструкция <code>for..in</code> с дополнительной проверкой.</p>
+<div class="source-container" id="sc-4a368e2aa3f04" >
+<div class="source-controls-small">  		<span id="select-4a368e2aa3f04" onclick="return sourceEditor.select('4a368e2aa3f04')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e2aa3f04">
+<pre class="source" id="src-4a368e2aa3f04"><span class="kw1">for</span><span class="br0">&#40;</span><span class="kw2">var</span> prop <span class="kw1">in</span> object<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+  <span class="co1">// если свойство унаследовано - continue</span>
+  <span class="kw1">if</span> <span class="br0">&#40;</span>!object.<span class="me1">hasOwnProperty</span><span class="br0">&#40;</span>p<span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="kw1">continue</span>
+&nbsp;
+  <span class="co1">// работа с prop</span>
+  ...
+<span class="br0">&#125;</span></pre><div class="src-edit-container" id="src-edit-4a368e2aa3f04"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2aa3f04')" />			 		</div>
+</div>
+</div>
+<p>В следующем примере свойство <code>print</code> участвовало бы в цикле, если бы там не было проверки.</p>
+<div class="example">
+<div class="example-title">Пример: пербор без унаследованных свойств</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2aa2c1d" >
+<div class="source-controls-small">  		<span id="select-4a368e2aa2c1d" onclick="return sourceEditor.select('4a368e2aa2c1d')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e2aa2c1d">
+<pre class="source" id="src-4a368e2aa2c1d">Object.<span class="me1">prototype</span>.<span class="kw3">print</span> = <span class="kw2">function</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> 
+  document.<span class="kw1">write</span><span class="br0">&#40;</span><span class="kw1">this</span><span class="br0">&#41;</span> 
+<span class="br0">&#125;</span>
+<span class="kw2">var</span> a = <span class="br0">&#123;</span>
+  p1: <span class="nu0">1</span>,
+  p2: <span class="nu0">2</span>
+<span class="br0">&#125;</span>
+<span class="kw1">for</span><span class="br0">&#40;</span><span class="kw2">var</span> p <span class="kw1">in</span> a<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+  <span class="kw1">if</span> <span class="br0">&#40;</span>!a.<span class="me1">hasOwnProperty</span><span class="br0">&#40;</span>p<span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="kw1">continue</span>
+  <span class="kw3">alert</span><span class="br0">&#40;</span>p<span class="br0">&#41;</span>
+<span class="br0">&#125;</span></pre><div class="src-edit-container" id="src-edit-4a368e2aa2c1d"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2aa2c1d')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+
+<div class="field field-type-nodereference field-field-see-also">
+  <h3 class="field-label">См. также</h3>
+  <ul class="field-items">
+          <li class="field-item"><a class="liexternal" href="http://javascript.ru/ecma/part11">Выражения</a> /Стандарт языка/</li>
+      </ul>
+</div>
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

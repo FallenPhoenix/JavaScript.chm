@@ -1,0 +1,320 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>Date </title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/Date">http://javascript.ru/Date</a></div><h2>Date </h2><h3 class="field-label">Создание</h3>
+
+<div class="field field-type-text field-object-syntax">
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e228add8" >  	<div class="code-container" id="cc-4a368e228add8"> 		<pre class="source" id="src-4a368e228add8">dateObj = <span class="kw2">new</span> Date<span class="br0">&#40;</span><span class="br0">&#41;</span>
+dateObj = <span class="kw2">new</span> Date<span class="br0">&#40;</span>dateVal<span class="br0">&#41;</span>
+dateObj = <span class="kw2">new</span> Date<span class="br0">&#40;</span>year, month, date<span class="br0">&#91;</span>, hours, minutes, seconds, ms<span class="br0">&#93;</span> <span class="br0">&#41;</span></pre> 		<div class="src-edit-container" id="src-edit-4a368e228add8"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e228add8')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-object-arguments">  
+<h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt>dateVal</dt>
+<dd>
+<ul>
+<li>Если параметр является числовым, то он интерпретируется как количество миллисекунд от 1-Янв-1970 00:00.</li>
+<li>Если строкой, то она разбирается и интерпретируется как дата по стандартным правилам <a href="Date.parse.html" >Date.parse</a>.</li>
+</ul>
+</dd>
+<dt>year</dt>
+<dd>Год в формате YYYY.</dd>
+<dt>month</dt>
+<dd>Месяц от 0 (Янв) до 11 (Дек).</dd>
+<dt>date</dt>
+<dd>День месяца от 1 до 31.</dd>
+<dt>hours</dt>
+<dd>Параметр должен быть указан, если указан параметр <code>minutes</code>. Устанавливает кол-во часов от 0 до 23.</dd>
+<dt>minutes</dt>
+<dd>Параметр должен быть указан, если указан параметр <code>seconds</code>. Устанавливает количество минут: от 0 до 59.</dd>
+<dt>seconds</dt>
+<dd>Параметр должен быть указан, если указан параметр <code>ms</code>. Устанавливает количество секунд: от 0 до 59.</dd>
+<dt>ms</dt>
+<dd>Количество миллисекунд: от 0 до 999.</dd>
+</dl>
+</div>
+  </div>
+</div>
+
+<div class="field field-type-text field-object-intro">
+  <div class="field-items">
+      <div class="field-item"><p>Дата измеряется в миллисекундах, начиная от полуночи 01 января 1970 года GMT+0. День содержит 86,400,000 миллисекунд.</p>
+<p>Объект <code>Date</code> ведет себя одинаково на всех платформах.</p>
+<p><code>Date</code> поддерживает как методы для работы в зоне UTC (GMT+0), так и методы для работы с местным временем.<br />
+Местное время - это то, которое установлено на компьютере, на котором выполняется яваскрипт.</p>
+</div>
+  </div>
+</div>
+
+
+<hr/>
+<div class="field field-type-text field-object-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Если конструктор запущен без аргументов, то возвращается текущая дата.</p>
+<div class="example">
+<div class="example-title">Пример: получить текущую дату</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e227bec4" >
+<div class="code-container" id="cc-4a368e227bec4">
+<pre class="source" id="src-4a368e227bec4"><span class="kw2">var</span> today = <span class="kw2">new</span> Date<span class="br0">&#40;</span><span class="br0">&#41;</span></pre><div class="src-edit-container" id="src-edit-4a368e227bec4"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e227bec4')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>При вызове с одним аргументов - строкой, строка разбирается и интерпретируется как дата, так же, как и в методе <a href="Date.parse.html" >Date.parse</a>.</p>
+<div class="example">
+<div class="example-title">Пример: создать дату из строки</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e227c70c" >
+<div class="code-container" id="cc-4a368e227c70c">
+<pre class="source" id="src-4a368e227c70c"><span class="kw2">var</span> date = <span class="kw2">new</span> Date<span class="br0">&#40;</span><span class="st0">&quot;21 May 1958 10:12&quot;</span><span class="br0">&#41;</span> <span class="co1">// используется редко</span></pre><div class="src-edit-container" id="src-edit-4a368e227c70c"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e227c70c')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>При объявлении с несколькими аргументами, отсутствующие аргументы автоматически считаются равными 0.</p>
+<div class="example">
+<div class="example-title">Пример: объявление даты с несколькими аргументами</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e227dbdd" >
+<div class="source-controls-small">  		<span id="select-4a368e227dbdd" onclick="return sourceEditor.select('4a368e227dbdd')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e227dbdd">
+<pre class="source" id="src-4a368e227dbdd"><span class="kw2">new</span> Date<span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span>
+<span class="co1">// Thu Jan 01 1970 03:00:00 GMT+0300 (Russian Standard Time)</span>
+<span class="kw2">new</span> Date<span class="br0">&#40;</span><span class="nu0">1</span>,<span class="nu0">2</span><span class="br0">&#41;</span>
+<span class="co1">// Fri Mar 01 1901 00:00:00 GMT+0300 (Russian Standard Time)</span>
+<span class="kw2">new</span> Date<span class="br0">&#40;</span><span class="nu0">1</span>,<span class="nu0">2</span>,<span class="nu0">3</span><span class="br0">&#41;</span>
+<span class="co1">// Sun Mar 03 1901 00:00:00 GMT+0300 (Russian Standard Time)</span>
+<span class="kw2">new</span> Date<span class="br0">&#40;</span><span class="nu0">1</span>,<span class="nu0">2</span>,<span class="nu0">3</span>,<span class="nu0">4</span><span class="br0">&#41;</span>
+<span class="co1">// Sun Mar 03 1901 04:00:00 GMT+0300 (Russian Standard Time)</span>
+<span class="kw2">new</span> Date<span class="br0">&#40;</span><span class="nu0">1</span>,<span class="nu0">2</span>,<span class="nu0">3</span>,<span class="nu0">4</span>,<span class="nu0">5</span><span class="br0">&#41;</span>
+<span class="co1">//Sun Mar 03 1901 04:05:00 GMT+0300 (Russian Standard Time)</span>
+<span class="kw2">new</span> Date<span class="br0">&#40;</span><span class="nu0">1</span>,<span class="nu0">2</span>,<span class="nu0">3</span>,<span class="nu0">4</span>,<span class="nu0">5</span>,<span class="nu0">6</span><span class="br0">&#41;</span>
+<span class="co1">//Sun Mar 03 1901 04:05:06 GMT+0300 (Russian Standard Time)</span></pre><div class="src-edit-container" id="src-edit-4a368e227dbdd"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e227dbdd')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+
+
+<hr/>
+  <h3 class="field-label">Методы</h3>
+<dl>
+
+<dt><a href="Date.UTC.html">Date.UTC</a></dt>
+<dd>Вычисляет количество миллисекунд, истекших с полуночи 1 января 1970 года до указанной даты, используя время  в диапазоне формата UTC.</dd>
+
+
+<dt><a href="Date.parse.html">Date.parse</a></dt>
+<dd>Анализирует строку, содержащую дату, и возвращает количество миллисекунд, прошедших с полуночи 1 января 1970 г. UTC до указанной даты.</dd>
+
+
+<dt><a href="Date-toLocaleString.html">toLocaleString</a></dt>
+<dd>Возвращает дату, преобразованную в строковую величину в соответствии с текущими локальными установками.</dd>
+
+
+<dt><a href="Date-getDate.html">getDate</a></dt>
+<dd>Возвращает день месяца для указанной даты (согласно местному времени)</dd>
+
+
+<dt><a href="Date-getDay.html">getDay</a></dt>
+<dd>Возвращает день недели для указанной даты (согласно местному времени)</dd>
+
+
+<dt><a href="Date-getFullYear.html">getFullYear</a></dt>
+<dd>Возвращает год для указанной даты (согласно местному времени)</dd>
+
+
+<dt><a href="Date-getMilliseconds.html">getMilliseconds</a></dt>
+<dd>Возвращает количество миллисекунд для указанной даты (согласно местному времени)</dd>
+
+
+<dt><a href="Date-getMinutes.html">getMinutes</a></dt>
+<dd>Возвращает значение минут для указанной даты (согласно местному времени)</dd>
+
+
+<dt><a href="Date-getMonth.html">getMonth</a></dt>
+<dd>Возвращает месяц для указанной даты (согласно местному времени)</dd>
+
+
+<dt><a href="Date-getSeconds.html">getSeconds</a></dt>
+<dd>Возвращает значение секунд для указанной даты (согласно местному времени)</dd>
+
+
+<dt><a href="Date-getTime.html">getTime</a></dt>
+<dd>Возвращает численное значение для указанной даты (согласно универсальному времени)</dd>
+
+
+<dt><a href="Date-getTimezoneOffset.html">getTimezoneOffset</a></dt>
+<dd>Возвращает смещение универсального времени относительно местного в минутах</dd>
+
+
+<dt><a href="Date-getUTCDate.html">getUTCDate</a></dt>
+<dd>Возвращает день месяца для указанной даты (согласно универсальному времени)</dd>
+
+
+<dt><a href="Date-getUTCDay.html">getUTCDay</a></dt>
+<dd>Возвращает день недели для указанной даты (согласно универсальному времени)</dd>
+
+
+<dt><a href="Date-getUTCHours.html">getUTCHours</a></dt>
+<dd>Возвращает час для указанной даты (согласно универсальному времени)</dd>
+
+
+<dt><a href="Date-getHours.html">getHours</a></dt>
+<dd>Возвращает час для указанной даты (согласно местному времени)</dd>
+
+
+<dt><a href="Date-getUTCMilliseconds.html">getUTCMilliseconds</a></dt>
+<dd>Возвращает количество миллисекунд для указанной даты (согласно универсальному времени)</dd>
+
+
+<dt><a href="Date-getUTCMonth.html">getUTCMonth</a></dt>
+<dd>Возвращает месяц для указанной даты (согласно универсальному времени)</dd>
+
+
+<dt><a href="Date-getUTCMinutes.html">getUTCMinutes</a></dt>
+<dd>Возвращает значение минут для указанной даты (согласно универсальному времени)</dd>
+
+
+<dt><a href="Date-getUTCSeconds.html">getUTCSeconds</a></dt>
+<dd>Возвращает значение секунд для указанной даты (согласно универсальному времени)</dd>
+
+
+<dt><a href="Date-getYear.html">getYear</a></dt>
+<dd>Возвращает сокращённое значение года для указанной даты (согласно местному времени)</dd>
+
+
+<dt><a href="Date-setSeconds.html">setSeconds</a></dt>
+<dd>Устанавливает для указанной даты значение секунд равным указанному (согласно местному времени)</dd>
+
+
+<dt><a href="Date-setFullYear.html">setFullYear</a></dt>
+<dd>Устанавливает для указанной даты год равным указанному значению (согласно местному времени)</dd>
+
+
+<dt><a href="Date-setMilliseconds.html">setMilliseconds</a></dt>
+<dd>Устанавливает для указанной даты значение миллисекунд равным указанному (согласно местному времени)</dd>
+
+
+<dt><a href="Date-setTime.html">setTime</a></dt>
+<dd>Устанавливает численное значение для указанной даты в миллисекундах, прошедших после полночи 1 января 1970 года (по универсальному времени)</dd>
+
+
+<dt><a href="Date-setYear.html">setYear</a></dt>
+<dd>Устанавливает для указанной даты год равным указанному значению (согласно местному времени)</dd>
+
+
+<dt><a href="Date-setDate.html">setDate</a></dt>
+<dd>Устанавливает день месяца равным указанному значению (согласно местному времени)</dd>
+
+
+<dt><a href="Date-setUTCDate.html">setUTCDate</a></dt>
+<dd>Устанавливает день месяца равным указанному значению (согласно местному времени)</dd>
+
+
+<dt><a href="Date-setUTCHours.html">setUTCHours</a></dt>
+<dd>Устанавливает для указанной даты час равным указанному значению (согласно универсальному времени)</dd>
+
+
+<dt><a href="Date-setHours.html">setHours</a></dt>
+<dd>Устанавливает для указанной даты час равным указанному значению (согласно местному времени)</dd>
+
+
+<dt><a href="Date-setUTCMilliseconds.html">setUTCMilliseconds</a></dt>
+<dd>Устанавливает для указанной даты значение миллисекунд равным указанному (согласно местному времени)</dd>
+
+
+<dt><a href="Date-setUTCMinutes.html">setUTCMinutes</a></dt>
+<dd>Устанавливает для указанной даты значение минут равным указанному (согласно универсальному времени)</dd>
+
+
+<dt><a href="Date-setMinutes.html">setMinutes</a></dt>
+<dd>Устанавливает для указанной даты значение минут равным указанному (согласно местному времени)</dd>
+
+
+<dt><a href="Date-setMonth.html">setMonth</a></dt>
+<dd>Устанавливает для указанной даты месяц равным указанному значению (согласно местному времени)</dd>
+
+
+<dt><a href="Date-setUTCSeconds.html">setUTCSeconds</a></dt>
+<dd>Устанавливает для указанной даты значение секунд равным указанному (согласно местному времени)</dd>
+
+
+<dt><a href="Date-setUTCFullYear.html">setUTCFullYear</a></dt>
+<dd>Устанавливает для указанной даты год равным указанному значению (согласно универсальному времени)</dd>
+
+
+<dt><a href="Date-setUTCMonth.html">setUTCMonth</a></dt>
+<dd>Устанавливает для указанной даты месяц равным указанному значению (согласно местному времени)</dd>
+
+
+<dt><a href="Date-toGMTString.html">toGMTString</a></dt>
+<dd>Преобразовывает дату в строку (согласно времени по Гринвичу)</dd>
+
+
+<dt><a href="Date-toLocaleFormat.html">toLocaleFormat</a></dt>
+<dd>Преобразовывает дату в строку согласно текущим языковым настройкам и указанному формату</dd>
+
+
+<dt><a href="Date-toLocaleTimeString.html">toLocaleTimeString</a></dt>
+<dd>Возвращает информацию о дате в виде текстовой строки согласно языковым настройкам системы</dd>
+
+
+<dt><a href="Date-toLocaleDateString.html">toLocaleDateString</a></dt>
+<dd>Возвращает информацию о дате в виде текстовой строки согласно языковым настройкам системы</dd>
+
+
+<dt><a href="Date-toString.html">toString</a></dt>
+<dd>Возвращает строку, представляющую текущий объект Date.</dd>
+
+
+<dt><a href="Date-toTimeString.html">toTimeString</a></dt>
+<dd>Возвращает информацию о дате в виде текстовой строки в американском формате записи даты</dd>
+
+
+<dt><a href="Date-toDateString.html">toDateString</a></dt>
+<dd>Возвращает информацию о дате в виде текстовой строки в американском формате записи даты</dd>
+
+
+<dt><a href="Date-toUTCString.html">toUTCString</a></dt>
+<dd>Преобразовывает дату в строку (согласно универсальному времени)</dd>
+
+
+<dt><a href="Date-valueOf.html">valueOf</a></dt>
+<dd>Возвращает примитивное значение объекта Date</dd>
+
+
+<dt><a href="Date-getUTCFullYear.html">getUTCFullYear</a></dt>
+<dd>Возвращает год для указанной даты (согласно универсальному времени)</dd>
+
+</dl>
+
+
+
+
+<div class="field field-type-nodereference field-field-see-also">
+  <h3 class="field-label">См. также</h3>
+  <ul class="field-items">
+          <li class="field-item"><a class="liexternal" href="http://javascript.ru/ecma/part15">Встроенные объекты ECMAScript</a> /Стандарт языка/</li>
+      </ul>
+</div>
+
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>parseInt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/parseInt">http://javascript.ru/parseInt</a></div><h2>parseInt</h2><div class="field field-type-text field-field-method-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e29cf9b9" >  	<div class="code-container" id="cc-4a368e29cf9b9"> 		<pre class="source" id="src-4a368e29cf9b9"><span class="kw2">var</span> intValue = parseInt<span class="br0">&#40;</span>string<span class="br0">&#91;</span>, radix<span class="br0">&#93;</span><span class="br0">&#41;</span></pre> 		<div class="src-edit-container" id="src-edit-4a368e29cf9b9"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e29cf9b9')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-method-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt>string</dt>
+<dd>строковое представление числа<br />
+<dd>
+<dt>radix</dt>
+<dd>основание системы счисления<br />
+<dd>
+</dd></dd></dd></dd></dl>
+</div>
+  </div>
+</div>
+
+
+<div class="field field-type-text field-field-method-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Функция <code>parseInt</code> преобразует первый аргумент в число по указанному основанию, а если это невозможно - возвращает <code>NaN</code>.</p>
+<p>Например, <code>radix=10</code> даст десятичное число, 16 - шестнадцатиричное и т.п. Для <code>radix&gt;10</code> цифры после девяти представлены буквами латинского алфавита.</p>
+<p>Если в процессе преобразования <code>parseInt</code> обнаруживает цифру, которая не является цифрой в системе счисления с основанием <code>radix</code>, например G вв 16-ричной системе или А в десятичной, то процесс преобразования тут же завершается и возвращается значение, полученное из строки на данный момент.</p>
+<p><code>parseInt</code> округляет дробные числа, т.к останавливается на десятичной точке.</p>
+<p>Если <code>radix</code> не указан или равен 0, то javascript предполагает следующее:</p>
+<ul>
+<li>Если входная строка начинается с "0х", то <code>radix = 16</code></li>
+<li>Если входная строка начинается с "0", то <code>radix = 8</code>. Этот пункт зависит от реализации и в некоторых браузерах (Google Chrome) отсутствует. </li>
+<li>В любом другом случае <code>radix=10</code></li>
+</ul>
+<p>Если преобразовать в число не удается, <code>parseInt</code> возвращает<br />
+<a href="NaN.html" >NaN</a></p>
+<p>Чтобыпредставить число в виде строки нужной системы счисления, используйте <code>intValue.toString(основание)</code>.</p>
+<div class="example">
+<div class="example-title">Пример: все вызовы вернут 15</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e29a4f17" >
+<div class="source-controls-small">  		<span id="select-4a368e29a4f17" onclick="return sourceEditor.select('4a368e29a4f17')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e29a4f17">
+<pre class="source" id="src-4a368e29a4f17">parseInt<span class="br0">&#40;</span><span class="st0">&quot; 0xF&quot;</span>, <span class="nu0">16</span><span class="br0">&#41;</span>
+parseInt<span class="br0">&#40;</span><span class="st0">&quot; F&quot;</span>, <span class="nu0">16</span><span class="br0">&#41;</span>
+parseInt<span class="br0">&#40;</span><span class="st0">&quot;17&quot;</span>, <span class="nu0">8</span><span class="br0">&#41;</span>
+parseInt<span class="br0">&#40;</span><span class="nu0">021</span>, <span class="nu0">8</span><span class="br0">&#41;</span>
+parseInt<span class="br0">&#40;</span><span class="st0">&quot;015&quot;</span>, <span class="nu0">10</span><span class="br0">&#41;</span>
+parseInt<span class="br0">&#40;</span><span class="nu0">15.99</span>, <span class="nu0">10</span><span class="br0">&#41;</span>
+parseInt<span class="br0">&#40;</span><span class="st0">&quot;FXX123&quot;</span>, <span class="nu0">16</span><span class="br0">&#41;</span>
+parseInt<span class="br0">&#40;</span><span class="st0">&quot;1111&quot;</span>, <span class="nu0">2</span><span class="br0">&#41;</span>
+parseInt<span class="br0">&#40;</span><span class="st0">&quot;15*3&quot;</span>, <span class="nu0">10</span><span class="br0">&#41;</span>
+parseInt<span class="br0">&#40;</span><span class="st0">&quot;15e2&quot;</span>, <span class="nu0">10</span><span class="br0">&#41;</span>
+parseInt<span class="br0">&#40;</span><span class="st0">&quot;15px&quot;</span>, <span class="nu0">10</span><span class="br0">&#41;</span>
+parseInt<span class="br0">&#40;</span><span class="st0">&quot;12&quot;</span>, <span class="nu0">13</span><span class="br0">&#41;</span></pre><div class="src-edit-container" id="src-edit-4a368e29a4f17"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e29a4f17')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<div class="example">
+<div class="example-title">Пример: все вызовы вернут NaN</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e29a6e60" >
+<div class="code-container" id="cc-4a368e29a6e60">
+<pre class="source" id="src-4a368e29a6e60">parseInt<span class="br0">&#40;</span><span class="st0">&quot;Hello&quot;</span>, <span class="nu0">8</span><span class="br0">&#41;</span>; <span class="co1">// вообще не число</span>
+parseInt<span class="br0">&#40;</span><span class="st0">&quot;546&quot;</span>, <span class="nu0">2</span><span class="br0">&#41;</span>;   <span class="co1">// цифры не входят в 2-чную систему</span></pre><div class="src-edit-container" id="src-edit-4a368e29a6e60"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e29a6e60')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<div class="example">
+<div class="example-title">Пример: все вызовы вернут -15</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e29a794d" >
+<div class="source-controls-small">  		<span id="select-4a368e29a794d" onclick="return sourceEditor.select('4a368e29a794d')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e29a794d">
+<pre class="source" id="src-4a368e29a794d">parseInt<span class="br0">&#40;</span><span class="st0">&quot;-F&quot;</span>, <span class="nu0">16</span><span class="br0">&#41;</span>
+parseInt<span class="br0">&#40;</span><span class="st0">&quot;-0F&quot;</span>, <span class="nu0">16</span><span class="br0">&#41;</span>
+parseInt<span class="br0">&#40;</span><span class="st0">&quot;-0XF&quot;</span>, <span class="nu0">16</span><span class="br0">&#41;</span>
+parseInt<span class="br0">&#40;</span><span class="nu0">-10</span>, <span class="nu0">16</span><span class="br0">&#41;</span>
+parseInt<span class="br0">&#40;</span><span class="nu0">-15.1</span>, <span class="nu0">10</span>
+parseInt<span class="br0">&#40;</span><span class="st0">&quot; -17&quot;</span>, <span class="nu0">8</span><span class="br0">&#41;</span>
+parseInt<span class="br0">&#40;</span><span class="st0">&quot; -15&quot;</span>, <span class="nu0">10</span><span class="br0">&#41;</span>
+parseInt<span class="br0">&#40;</span><span class="st0">&quot;-1111&quot;</span>, <span class="nu0">2</span><span class="br0">&#41;</span>
+parseInt<span class="br0">&#40;</span><span class="st0">&quot;-15e1&quot;</span>, <span class="nu0">10</span><span class="br0">&#41;</span>
+parseInt<span class="br0">&#40;</span><span class="st0">&quot;-12&quot;</span>, <span class="nu0">13</span><span class="br0">&#41;</span></pre><div class="src-edit-container" id="src-edit-4a368e29a794d"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e29a794d')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>Большинство реализаций интерпретируют строки, начинающиеся с 0 как восьмиричные. Поэтому следующие вызовы вернут восьмиричный результат:</p>
+<div class="source-container" id="sc-4a368e29a9431" >
+<div class="code-container" id="cc-4a368e29a9431">
+<pre class="source" id="src-4a368e29a9431">parseInt<span class="br0">&#40;</span><span class="st0">&quot;0e0&quot;</span><span class="br0">&#41;</span>; <span class="co1">// 0</span>
+parseInt<span class="br0">&#40;</span><span class="st0">&quot;08&quot;</span><span class="br0">&#41;</span>; <span class="co1">// 0, т.к. '8' - не цифра в 8-ричной системе</span></pre><div class="src-edit-container" id="src-edit-4a368e29a9431"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e29a9431')" />			 		</div>
+</div>
+</div>
+<p>При обработке данных, веденных пользователем, указывайте основание в вызове. Это даст более предсказуемые результаты.</p>
+<div class="source-container" id="sc-4a368e29a9d0f" >
+<div class="code-container" id="cc-4a368e29a9d0f">
+<pre class="source" id="src-4a368e29a9d0f">parseInt<span class="br0">&#40;</span><span class="st0">&quot;08&quot;</span>, <span class="nu0">10</span><span class="br0">&#41;</span> <span class="co1">// 10</span></pre><div class="src-edit-container" id="src-edit-4a368e29a9d0f"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e29a9d0f')" />			 		</div>
+</div>
+</div>
+<p>Чтобы преобразовать строку, в точности являющуюся числом, используйте оператор "+":</p>
+<div class="source-container" id="sc-4a368e29aa3f4" >
+<div class="code-container" id="cc-4a368e29aa3f4">
+<pre class="source" id="src-4a368e29aa3f4"><span class="kw2">var</span> str = <span class="st0">&quot;123.6&quot;</span>
++str <span class="co1">// 123.6 - не округляет</span></pre><div class="src-edit-container" id="src-edit-4a368e29aa3f4"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e29aa3f4')" />			 		</div>
+</div>
+</div>
+<p>При любых ошибках преобразования оператор "+" возвращает <a href="NaN.html" >NaN</a>.</p>
+<div class="source-container" id="sc-4a368e29aabaf" >
+<div class="code-container" id="cc-4a368e29aabaf">
+<pre class="source" id="src-4a368e29aabaf"><span class="kw2">var</span> str = <span class="st0">&quot;123bc&quot;</span>
++str <span class="co1">// NaN</span>
+parseInt<span class="br0">&#40;</span>str,<span class="nu0">10</span><span class="br0">&#41;</span> <span class="co1">// 123</span></pre><div class="src-edit-container" id="src-edit-4a368e29aabaf"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e29aabaf')" />			 		</div>
+</div>
+</div>
+<p>See also</p>
+<p>isNaN, parseFloat, Object.valueOf, Number.toString</p>
+</div>
+  </div>
+</div>
+
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

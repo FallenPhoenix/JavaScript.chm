@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>Error</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/Error">http://javascript.ru/Error</a></div><h2>Error</h2><h3 class="field-label">Создание</h3>
+
+<div class="field field-type-text field-object-syntax">
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e24ab0dd" >  	<div class="code-container" id="cc-4a368e24ab0dd"> 		<pre class="source" id="src-4a368e24ab0dd"><span class="kw2">new</span> Error<span class="br0">&#40;</span>message<span class="br0">&#41;</span></pre> 		<div class="src-edit-container" id="src-edit-4a368e24ab0dd"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e24ab0dd')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-object-arguments">  
+<h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt>message</dt>
+<dd>сообщение об ошибке</dd>
+</dl>
+</div>
+  </div>
+</div>
+
+<div class="field field-type-text field-object-intro">
+  <div class="field-items">
+      <div class="field-item"><p>Ошибки выполнения яваскрипта приводят к генерации исключений в виде объектов <code>Error</code>.</p>
+<p>Существуют следующие базовые подклассы <code>Error</code>:</p>
+<dl>
+<dt><a href="EvalError.html" >EvalError</a></dt>
+<dd>Ошибка при выполнении <a href="eval.html" >eval</a>()</dd>
+<dt><a href="RangeError.html" >RangeError</a></dt>
+<dd>Эта ошибка происходит, когда переданный параметр лежит за границами допустимого диапазона</dd>
+<dt><a href="ReferenceError.html" >ReferenceError</a></dt>
+<dd>Ошибка при разыменовании неверной ссылки</dd>
+<dt><a href="SyntaxError.html" >SyntaxError</a></dt>
+<dd>Синтаксическая ошибка, которая произошла при разборе кода, переданного <a href="eval.html" >eval</a>()</dd>
+<dt><a href="TypeError.html" >TypeError</a></dt>
+<dd>Переменная или параметр неправильного типа</dd>
+<dt><a href="URIError.html" >URIError</a></dt>
+<dd>Ошибка происходит, когда <a href="encodeURI.html" >encodeURI</a>() или <a href="decodeURI.html" >decodeURI</a>() вызваны с неправильными параметрами</dd>
+</dl>
+<div class="example">
+<div class="example-title">Пример: Ошибка при выполнении</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e24998da" >
+<div class="source-controls-small">  		<span id="select-4a368e24998da" onclick="return sourceEditor.select('4a368e24998da')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e24998da">
+<pre class="source" id="src-4a368e24998da"><span class="kw1">try</span> <span class="br0">&#123;</span>
+    <span class="kw1">eval</span><span class="br0">&#40;</span>someThing<span class="br0">&#41;</span>
+<span class="br0">&#125;</span> <span class="kw1">catch</span> <span class="br0">&#40;</span>e<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>e <span class="kw1">instanceof</span> EvalError<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        <span class="kw3">alert</span><span class="br0">&#40;</span><span class="st0">&quot;Ошибка при выполнении: &quot;</span> + e.<span class="me1">message</span><span class="br0">&#41;</span>;
+    <span class="br0">&#125;</span> <span class="kw1">else</span> <span class="br0">&#123;</span>
+        <span class="kw1">throw</span><span class="br0">&#40;</span>e<span class="br0">&#41;</span>
+    <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre><div class="src-edit-container" id="src-edit-4a368e24998da"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e24998da')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+
+<hr/>
+<div class="field field-type-text field-object-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="example">
+<div class="example-title">Пример: Пользовательское исключение</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e24a5931" >
+<div class="source-controls-small">  		<span id="select-4a368e24a5931" onclick="return sourceEditor.select('4a368e24a5931')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e24a5931">
+<pre class="source" id="src-4a368e24a5931"><span class="kw1">try</span> <span class="br0">&#123;</span>
+    <span class="kw1">throw</span> <span class="kw2">new</span> Error<span class="br0">&#40;</span><span class="st0">&quot;Whoops!&quot;</span><span class="br0">&#41;</span>;
+<span class="br0">&#125;</span> <span class="kw1">catch</span> <span class="br0">&#40;</span>e<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <span class="kw3">alert</span><span class="br0">&#40;</span>e.<span class="kw3">name</span> + <span class="st0">&quot;: &quot;</span> + e.<span class="me1">message</span><span class="br0">&#41;</span>;
+<span class="br0">&#125;</span></pre><div class="src-edit-container" id="src-edit-4a368e24a5931"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e24a5931')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+
+
+
+
+<hr/>
+  <h3 class="field-label">Свойства</h3>
+<dl>
+
+<dt><a href="Error-message.html">message</a></dt>
+<dd>Читаемое описание ошибки</dd>
+
+
+<dt><a href="Error-name.html">name</a></dt>
+<dd>название типа ошибки</dd>
+
+</dl>
+
+
+<div class="field field-type-nodereference field-field-see-also">
+  <h3 class="field-label">См. также</h3>
+  <ul class="field-items">
+          <li class="field-item"><a class="liexternal" href="http://javascript.ru/tutorial/basic/syntax-switch">Конструкции языка. Обработка ошибок.</a> /Статья/</li>
+          <li class="field-item"><a href="throw.html">throw</a> /Синтаксическая конструкция/</li>
+          <li class="field-item"><a href="try..catch.html">try..catch</a> /Синтаксическая конструкция/</li>
+      </ul>
+</div>
+
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

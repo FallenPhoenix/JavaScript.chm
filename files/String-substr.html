@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>substr</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/String/substr">http://javascript.ru/String/substr</a></div><h2>substr</h2><div class="field field-type-text field-field-method-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e27a8cb6" >  	<div class="code-container" id="cc-4a368e27a8cb6"> 		<pre class="source" id="src-4a368e27a8cb6"><span class="kw2">var</span> sub = string.<span class="me1">substr</span><span class="br0">&#40;</span>start<span class="br0">&#91;</span>, length<span class="br0">&#93;</span><span class="br0">&#41;</span></pre> 		<div class="src-edit-container" id="src-edit-4a368e27a8cb6"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e27a8cb6')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-method-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt>start</dt>
+<dd>начальная позиция, начиная от 0<br />
+<dd>
+<dt>length</dt>
+<dd>сколько символов брать с позиции <code>start</code><br />
+<dd>
+</dd></dd></dd></dd></dl>
+</div>
+  </div>
+</div>
+
+
+<div class="field field-type-text field-field-method-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Этот метод описан только в ненормативной части стандарта ECMA, но реализован в большинстве браузеров.</p>
+<p>Метод <code>substr</code> начинает собирать строку с позиции <code>start</code> и заканчивает, когда соберет <code>length</code> или дойдет до конца строки. </p>
+<p>Если <code>start</code> больше или равен длине строки, то <code>substr</code> возвращает пустую строку.</p>
+<p>Если <code>start &lt; 0</code>, позиция определяется с конца строки. При этом если полученная позиция - до начала строки, то в качестве <code>start</code> берется 0. Это поведение не поддерживается Internet Explorer.</p>
+<p>Если параметр <code>length</code> не указан - подстрока берется до конца строки. </p>
+<p>Если <code>length &lt;= 0</code> - возвращается пустая строка.</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e27966ce" >
+<div class="source-controls-small">  		<span id="select-4a368e27966ce" onclick="return sourceEditor.select('4a368e27966ce')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e27966ce">
+<pre class="source" id="src-4a368e27966ce"><span class="kw2">var</span> str = <span class="st0">&quot;abcdefghij&quot;</span>;
+<span class="kw3">alert</span><span class="br0">&#40;</span><span class="st0">&quot;(1,2): &quot;</span>    + str.<span class="me1">substr</span><span class="br0">&#40;</span><span class="nu0">1</span>,<span class="nu0">2</span><span class="br0">&#41;</span><span class="br0">&#41;</span>;
+<span class="kw3">alert</span><span class="br0">&#40;</span><span class="st0">&quot;(-3,2): &quot;</span>   + str.<span class="me1">substr</span><span class="br0">&#40;</span><span class="nu0">-3</span>,<span class="nu0">2</span><span class="br0">&#41;</span><span class="br0">&#41;</span>;
+<span class="kw3">alert</span><span class="br0">&#40;</span><span class="st0">&quot;(-3): &quot;</span>     + str.<span class="me1">substr</span><span class="br0">&#40;</span><span class="nu0">-3</span><span class="br0">&#41;</span><span class="br0">&#41;</span>;
+<span class="kw3">alert</span><span class="br0">&#40;</span><span class="st0">&quot;(1): &quot;</span>      + str.<span class="me1">substr</span><span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="br0">&#41;</span>;
+<span class="kw3">alert</span><span class="br0">&#40;</span><span class="st0">&quot;(-20, 2): &quot;</span> + str.<span class="me1">substr</span><span class="br0">&#40;</span><span class="nu0">-20</span>,<span class="nu0">2</span><span class="br0">&#41;</span><span class="br0">&#41;</span>;
+<span class="kw3">alert</span><span class="br0">&#40;</span><span class="st0">&quot;(20, 2): &quot;</span>  + str.<span class="me1">substr</span><span class="br0">&#40;</span><span class="nu0">20</span>,<span class="nu0">2</span><span class="br0">&#41;</span><span class="br0">&#41;</span>;</pre><div class="src-edit-container" id="src-edit-4a368e27966ce"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e27966ce')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>Последовательно выведет:</p>
+<div class="source-container" id="sc-4a368e27986f4" >
+<div class="source-controls-small">  		<span id="select-4a368e27986f4" onclick="return sourceEditor.select('4a368e27986f4')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e27986f4">
+<pre class="source" id="src-4a368e27986f4">(1,2): bc
+(-3,2): hi
+(-3): hij
+(1): bcdefghij
+(-20, 2): ab
+(20, 2):</pre><div class="src-edit-container" id="src-edit-4a368e27986f4"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e27986f4')" />			 		</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+<div class="field field-type-nodereference field-field-see-also">
+  <h3 class="field-label">См. также</h3>
+  <ul class="field-items">
+          <li class="field-item"><a href="String-substring.html">substring</a> /Метод/</li>
+      </ul>
+</div>
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

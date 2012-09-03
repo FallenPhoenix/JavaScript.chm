@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>Аксессоры</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/accessors">http://javascript.ru/accessors</a></div><h2>Аксессоры</h2>
+
+<div class="field field-type-text field-field-operator-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Операторы-аксессоры предоставляют доступ к свойствам объекта.</p>
+<p>Объект представляет собой обычный ассоциативный массив (словарь, хэш). Ключами этого массива являются имена свойств и методов (свойств, являющихся ссылкой на функцию).</p>
+<p>Есть два способа доступа к свойствам: запись с точкой или с квадратными скобками.</p>
+<h2>Запись с точкой</h2>
+<div class="example">
+<div class="example-title">Пример: запись с точкой</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2bdb99f" >
+<div class="code-container" id="cc-4a368e2bdb99f">
+<pre class="source" id="src-4a368e2bdb99f">get = object.<span class="me1">property</span> <span class="co1">// получить свойство property</span>
+object.<span class="me1">property</span> = set  <span class="co1">// записать свойство property</span></pre><div class="src-edit-container" id="src-edit-4a368e2bdb99f"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2bdb99f')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>Для записи с точкой название свойства должно быть правильным javascript-идентификатором, то есть последовательностью английских букв и цифр, включая подчеркивание "_" и знак доллара "$", которая не начинается с числа.<br />
+Например, <code>object.$1</code> - корректный идентификатор, а <code>object.1</code> - нет.</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2bdc27e" >
+<div class="code-container" id="cc-4a368e2bdc27e">
+<pre class="source" id="src-4a368e2bdc27e">document.<span class="me1">createElement</span><span class="br0">&#40;</span><span class="st0">'pre'</span><span class="br0">&#41;</span></pre><div class="src-edit-container" id="src-edit-4a368e2bdc27e"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2bdc27e')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>В этом примере из объекта <code>document</code> получено свойство <code>createElement</code>, которое  является ссылкой на функцию. Эта функция вызвана с аргументом <code>'pre'</code> в контексте объекта <code>document</code>.</p>
+<h2>Запись с квадратными скобками</h2>
+<div class="example">
+<div class="example-title">Пример: квадратные скобки</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2bdc8ee" >
+<div class="code-container" id="cc-4a368e2bdc8ee">
+<pre class="source" id="src-4a368e2bdc8ee">get = object<span class="br0">&#91;</span>property_name<span class="br0">&#93;</span> <span class="co1">// получить</span>
+object<span class="br0">&#91;</span>property_name<span class="br0">&#93;</span> = set  <span class="co1">// записать</span></pre><div class="src-edit-container" id="src-edit-4a368e2bdc8ee"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2bdc8ee')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>Здесь <code>property_name</code> - строка. Она не обязательна является правильным идентификатором. Может быть любое значене, включая цифры и даже " " (пробел).</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2bdd204" >
+<div class="code-container" id="cc-4a368e2bdd204">
+<pre class="source" id="src-4a368e2bdd204">document<span class="br0">&#91;</span><span class="st0">'createElement'</span><span class="br0">&#93;</span><span class="br0">&#40;</span><span class="st0">'pre'</span><span class="br0">&#41;</span></pre><div class="src-edit-container" id="src-edit-4a368e2bdd204"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2bdd204')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>Этот пример делает в точности то же самое, что и аналогичный предыдущий.</p>
+<h2>Использование <code>eval </code></h2>
+<p>В старых javascript-скриптах иногда используется доступ к свойствам объекта через <a href="eval.html" >eval</a>, в то время как гораздо быстрее и правильнее использовать запись с квадратными скобками.</p>
+<p>Например, часто попадается такая запись:</p>
+<div class="example">
+<div class="example-title">Пример: устаревшая запись</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2bdd9bb" >
+<div class="code-container" id="cc-4a368e2bdd9bb">
+<pre class="source" id="src-4a368e2bdd9bb">x = <span class="kw1">eval</span><span class="br0">&#40;</span><span class="st0">'document.form_name.'</span> + strFormControl + <span class="st0">'.value'</span><span class="br0">&#41;</span></pre><div class="src-edit-container" id="src-edit-4a368e2bdd9bb"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2bdd9bb')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>Следует максимально избегать вызова <a href="eval.html" >eval</a>. Лучше использовать скобочную запись:</p>
+<div class="example">
+<div class="example-title">Пример: скобочная запись</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2bde3e3" >
+<div class="code-container" id="cc-4a368e2bde3e3">
+<pre class="source" id="src-4a368e2bde3e3">x = document.<span class="me1">form_name</span><span class="br0">&#91;</span>strFormControl<span class="br0">&#93;</span>.<span class="me1">value</span></pre><div class="src-edit-container" id="src-edit-4a368e2bde3e3"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2bde3e3')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+
+<div class="field field-type-nodereference field-field-see-also">
+  <h3 class="field-label">См. также</h3>
+  <ul class="field-items">
+          <li class="field-item"><a class="liexternal" href="http://javascript.ru/ecma/part11">Выражения</a> /Стандарт языка/</li>
+      </ul>
+</div>
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

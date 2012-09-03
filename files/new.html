@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>new</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/new">http://javascript.ru/new</a></div><h2>new</h2><div class="field field-type-text field-field-operator-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e2bb6cb5" >  	<div class="code-container" id="cc-4a368e2bb6cb5"> 		<pre class="source" id="src-4a368e2bb6cb5">objectName = <span class="kw2">new</span> objectType<span class="br0">&#40;</span>param1 <span class="br0">&#91;</span>,param2<span class="br0">&#93;</span> ...<span class="br0">&#91;</span>,paramN<span class="br0">&#93;</span><span class="br0">&#41;</span></pre> 		<div class="src-edit-container" id="src-edit-4a368e2bb6cb5"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2bb6cb5')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+</div>
+
+<div class="field field-type-text field-field-operator-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><p>objectName<br />
+    Name of the new object instance. </p>
+<dl>
+<dt>objectType</dt>
+<dd>Тип объекта. Должен быть функцией, которая станет конструктором</dd>
+<dt>param1...paramN</dt>
+<dd>Аргументы для функции-конструктора </dd>
+</dl>
+</div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-operator-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Оператор <code>new</code> создает новый объект, используя функцию-конструктор, которая может быть как встроенной в javascript (<code>Date</code>, <code>String</code>), так и определенной пользователем. </p>
+<p>Создание пользовательского объекта требует двух шагов:</p>
+<ol>
+<li>Объявить функцию-конструктор</li>
+<li>Инстанциировать (сделать экземпляр объекта) вызовом <code>new</code></li>
+</ol>
+<p>После создания вы можете добавить к объекту любые свойства и удалить - почти любые, кроме ряда свойств встроенных javascript-объектов.</p>
+<p>Оператор <code>new</code> также задает прототип объекта равным свойству <code>prototype</code> функции-конструктора. Подробнее - читайте про <a class="liexternal" href="http://javascript.ru/tutorial/object/inheritance" >наследование в javascript</a>.</p>
+</div>
+  </div>
+</div>
+
+
+<div class="field field-type-nodereference field-field-see-also">
+  <h3 class="field-label">См. также</h3>
+  <ul class="field-items">
+          <li class="field-item"><a class="liexternal" href="http://javascript.ru/tutorial/object">Объекты, ООП</a> /Статья/</li>
+          <li class="field-item"><a class="liexternal" href="http://javascript.ru/ecma/part11">Выражения</a> /Стандарт языка/</li>
+          <li class="field-item"><a class="liexternal" href="http://javascript.ru/ecma/part13">Определение функции</a> /Стандарт языка/</li>
+      </ul>
+</div>
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

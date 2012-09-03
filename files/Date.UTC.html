@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>Date.UTC</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/Date.UTC">http://javascript.ru/Date.UTC</a></div><h2>Date.UTC</h2><div class="field field-type-text field-field-method-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e2328981" >  	<div class="code-container" id="cc-4a368e2328981"> 		<pre class="source" id="src-4a368e2328981">Date.<span class="me1">UTC</span><span class="br0">&#40;</span>year, month, day<span class="br0">&#91;</span>, hours<span class="br0">&#91;</span>, minutes<span class="br0">&#91;</span>, seconds<span class="br0">&#91;</span>,ms<span class="br0">&#93;</span><span class="br0">&#93;</span><span class="br0">&#93;</span><span class="br0">&#93;</span><span class="br0">&#41;</span></pre> 		<div class="src-edit-container" id="src-edit-4a368e2328981"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2328981')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-method-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt>year</dt>
+<dd>Целое число, задающее год. Если оно меньше 100, то к нему прибавляется 1900.</dd>
+<dt>month</dt>
+<dd> Целое число, задающее номер месяца в диапазоне от 0 до 11 (0 = январь, 1 = февраль, ... , 11 = декабрь).</dd>
+<dt>date</dt>
+<dd> Целое число, задающее день месяца в диапазоне от 1 до 31.</dd>
+<dt>hours</dt>
+<dd> Целое число, в диапазоне от 0 до 23 (от полуночи до 23:00), представляющее час. Применяется, если указывается аргумент minutes.</dd>
+<dt>minutes</dt>
+<dd> Целое число, в диапазоне от 0 до 59, представляющее минуты. Применяется, если указывается аргумент seconds.<br />
+<dd>
+<dt>seconds</dt>
+<dd> Целое число в диапазоне от 0 до 59, представляющее секунды. Применяется, если указывается аргумент milliseconds. </dd>
+<dt>ms</dt>
+<dd>Целое число в диапазоне от 0 до 999, представляющее миллисекунды.</dd>
+</dd></dd></dl>
+</div>
+  </div>
+</div>
+
+
+<div class="field field-type-text field-field-method-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Метод <code>UTC</code> возвращает количество миллисекунд, истекших с полуночи 1 января 1970 года и указанной датой, используя время в формате UTC. </p>
+<p>Возвращаемое значение может использоваться методом <a href="Date-setTime.html" >setTime</a> и конструктором объекта <a href="Date.html" >Date</a>. </p>
+<p>Если значение аргумента превышает верхнюю границу его диапазона или является отрицательным числом, остальные хранящиеся значения изменяются соответственно. Например, если задать 150 секунд, яваскрипт переопределит это число как две минуты и 30 секунд.</p>
+<p>Метод <a href="Date.UTC.html" >Date.UTC</a> полностью аналогичен конструктору <a href="Date.html" >Date</a> с единственным отличием:  полученное значение вычисляется по времени UTC, а не по локальному времени.</p>
+<p>Это статический метод, который можно вызывать без создания объекта даты, поэтому для доступа к нему используется форма <code>Date.UTC</code>, а не объект <code>.UTC.</code></p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e231cc89" >
+<div class="source-controls-small">  		<span id="select-4a368e231cc89" onclick="return sourceEditor.select('4a368e231cc89')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e231cc89">
+<pre class="source" id="src-4a368e231cc89"><span class="kw2">var</span> x = Date.<span class="me1">UTC</span><span class="br0">&#40;</span><span class="nu0">2000</span>, <span class="nu0">1</span>, <span class="nu0">2</span>, <span class="nu0">12</span>, <span class="nu0">35</span>, <span class="nu0">40</span><span class="br0">&#41;</span>;
+<span class="kw2">var</span> d = <span class="kw2">new</span> Date<span class="br0">&#40;</span>x<span class="br0">&#41;</span>;
+document.<span class="kw1">write</span><span class="br0">&#40;</span>d.<span class="me1">toUTCString</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>;
+&nbsp;
+<span class="co1">// Выводится следующий результат:</span>
+Wed, <span class="nu0">2</span> Feb <span class="nu0">2000</span> <span class="nu0">12</span>:<span class="nu0">35</span>:<span class="nu0">40</span> UTC.</pre><div class="src-edit-container" id="src-edit-4a368e231cc89"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e231cc89')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<div class="example">
+<div class="example-title">Пример: Создание Date для даты в зоне GMT</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e231dc6f" >
+<div class="code-container" id="cc-4a368e231dc6f">
+<pre class="source" id="src-4a368e231dc6f">gmtDate = <span class="kw2">new</span> Date<span class="br0">&#40;</span>Date.<span class="me1">UTC</span><span class="br0">&#40;</span><span class="nu0">96</span>, <span class="nu0">11</span>, <span class="nu0">1</span>, <span class="nu0">0</span>, <span class="nu0">0</span>, <span class="nu0">0</span><span class="br0">&#41;</span><span class="br0">&#41;</span>;
+<span class="co1">// Sun Dec 01 1996 03:00:00 GMT+0300 (Russian Standard Time)</span></pre><div class="src-edit-container" id="src-edit-4a368e231dc6f"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e231dc6f')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>call</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/Function/call">http://javascript.ru/Function/call</a></div><h2>call</h2><div class="field field-type-text field-field-method-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e2510da4" >  	<div class="code-container" id="cc-4a368e2510da4"> 		<pre class="source" id="src-4a368e2510da4"><span class="kw2">var</span> result = fun.<span class="me1">call</span><span class="br0">&#40;</span>thisArg<span class="br0">&#91;</span>, arg1<span class="br0">&#91;</span>, arg2<span class="br0">&#91;</span>, ...<span class="br0">&#93;</span><span class="br0">&#93;</span><span class="br0">&#93;</span><span class="br0">&#41;</span></pre> 		<div class="src-edit-container" id="src-edit-4a368e2510da4"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2510da4')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-method-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt>thisArg</dt>
+<dd>Задает значение <code>this</code> внутри функции. Если <code>thisArg</code> - <code>null</code> или <code>undefined</code>, то это будет глобальный объект. В ином случае, <code>this</code> будет равно <code>Object(thisArg)</code> (то есть <code>thisArg</code>, если  <code>thisArg</code> уже объект, или <code>String</code>, <code>Boolean</code> или <code>Number</code>, если <code>thisArg</code> - примитивное значение соответствующего типа). Таким образом, при выполнении функции всегда соблюдается условие <code>typeof this == 'object'</code>.</dd>
+<dt>arg1, arg2 ..</dt>
+<dd>Аргументов, с которыми будет вызвана функция.</dd>
+</dl>
+</div>
+  </div>
+</div>
+
+
+<div class="field field-type-text field-field-method-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Метод <code>call</code> может применяться для вызова функции в контексте нужного объекта:</p>
+<div class="example">
+<div class="example-title">Пример: Вызов sayName в контексте разных объектов</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e24ed249" >
+<div class="source-controls-small">  		<span id="select-4a368e24ed249" onclick="return sourceEditor.select('4a368e24ed249')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e24ed249">
+<pre class="source" id="src-4a368e24ed249"><span class="kw2">var</span> Animal1 = <span class="br0">&#123;</span><span class="kw3">name</span>: <span class="st0">'Cat'</span><span class="br0">&#125;</span>
+<span class="kw2">var</span> Animal2 = <span class="br0">&#123;</span><span class="kw3">name</span>: <span class="st0">'Dog'</span><span class="br0">&#125;</span>
+&nbsp;
+<span class="kw2">function</span> sayName<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <span class="co1">// this — ссылка на объект, в контексте которого вызвана функция</span>
+    <span class="kw3">alert</span><span class="br0">&#40;</span><span class="kw1">this</span>.<span class="kw3">name</span><span class="br0">&#41;</span>;
+<span class="br0">&#125;</span>
+&nbsp;
+sayName.<span class="me1">call</span><span class="br0">&#40;</span>Animal1<span class="br0">&#41;</span> <span class="co1">// выдаст сообщение &quot;Cat&quot;</span>
+sayName.<span class="me1">call</span><span class="br0">&#40;</span>Animal2<span class="br0">&#41;</span> <span class="co1">// выдаст сообщение &quot;Dog&quot;</span></pre><div class="src-edit-container" id="src-edit-4a368e24ed249"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e24ed249')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>При этом совершенно не важно, какому объекту принадлежит функция. В качестве текущего(<a href="this.html" >this</a>) объекта будет взят первый аргумент.</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e24ee8b1" >
+<div class="source-controls-small">  		<span id="select-4a368e24ee8b1" onclick="return sourceEditor.select('4a368e24ee8b1')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e24ee8b1">
+<pre class="source" id="src-4a368e24ee8b1"><span class="kw2">var</span> Animal1 = <span class="br0">&#123;</span>
+    <span class="kw3">name</span>: <span class="st0">'Cat'</span>,
+    sayName: <span class="kw2">function</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        <span class="kw3">alert</span><span class="br0">&#40;</span><span class="kw1">this</span>.<span class="kw3">name</span><span class="br0">&#41;</span>;
+    <span class="br0">&#125;</span>
+<span class="br0">&#125;</span>;
+&nbsp;
+<span class="kw2">var</span> Animal2 = <span class="br0">&#123;</span><span class="kw3">name</span>: <span class="st0">'Dog'</span><span class="br0">&#125;</span>;
+&nbsp;
+Animal1.<span class="me1">sayName</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="co1">// выдаст сообщение &quot;Cat&quot;</span>
+Animal1.<span class="me1">sayName</span>.<span class="me1">call</span><span class="br0">&#40;</span>Animal2<span class="br0">&#41;</span> <span class="co1">// выдаст сообщение &quot;Dog&quot;</span></pre><div class="src-edit-container" id="src-edit-4a368e24ee8b1"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e24ee8b1')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>Помимо смены контекста вызова, метод call может передавать в функцию аргументы:</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e24efdb7" >
+<div class="source-controls-small">  		<span id="select-4a368e24efdb7" onclick="return sourceEditor.select('4a368e24efdb7')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e24efdb7">
+<pre class="source" id="src-4a368e24efdb7"><span class="kw2">var</span> obj = <span class="br0">&#123;</span>attr: <span class="nu0">10</span><span class="br0">&#125;</span>;
+&nbsp;
+<span class="kw2">function</span> sum<span class="br0">&#40;</span>a, b<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <span class="kw3">alert</span><span class="br0">&#40;</span><span class="kw1">this</span>.<span class="me1">attr</span> + a + b<span class="br0">&#41;</span>;
+<span class="br0">&#125;</span>
+&nbsp;
+sum.<span class="me1">call</span><span class="br0">&#40;</span>obj, <span class="nu0">5</span>, <span class="nu0">2</span><span class="br0">&#41;</span> <span class="co1">// выдаст сообщение с результатом &quot;17&quot;</span></pre><div class="src-edit-container" id="src-edit-4a368e24efdb7"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e24efdb7')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>Если контекст вызова не указан, то функция будет выполнятся в контексте объекта window:</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e24f09f6" >
+<div class="source-controls-small">  		<span id="select-4a368e24f09f6" onclick="return sourceEditor.select('4a368e24f09f6')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e24f09f6">
+<pre class="source" id="src-4a368e24f09f6">window.<span class="me1">a</span> = <span class="nu0">5</span>
+<span class="kw2">function</span> sayThis<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>     
+     <span class="kw3">alert</span><span class="br0">&#40;</span><span class="kw1">this</span>.<span class="me1">a</span><span class="br0">&#41;</span>;
+<span class="br0">&#125;</span>
+&nbsp;
+sayThis.<span class="me1">call</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="co1">// выдаст 5</span></pre><div class="src-edit-container" id="src-edit-4a368e24f09f6"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e24f09f6')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e24f14ad" >
+<div class="source-controls-small">  		<span id="select-4a368e24f14ad" onclick="return sourceEditor.select('4a368e24f14ad')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e24f14ad">
+<pre class="source" id="src-4a368e24f14ad">window.<span class="me1">a</span> = <span class="nu0">5</span>
+<span class="kw2">function</span> sayThis<span class="br0">&#40;</span>b<span class="br0">&#41;</span> <span class="br0">&#123;</span>     
+     <span class="kw3">alert</span><span class="br0">&#40;</span><span class="kw1">this</span>.<span class="me1">a</span> + b<span class="br0">&#41;</span>;
+<span class="br0">&#125;</span>
+&nbsp;
+sayThis.<span class="me1">call</span><span class="br0">&#40;</span><span class="kw2">null</span>, <span class="nu0">3</span><span class="br0">&#41;</span> <span class="co1">// выдаст 8</span></pre><div class="src-edit-container" id="src-edit-4a368e24f14ad"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e24f14ad')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+<div class="field field-type-nodereference field-field-see-also">
+  <h3 class="field-label">См. также</h3>
+  <ul class="field-items">
+          <li class="field-item"><a href="Function-apply.html">apply</a> /Метод/</li>
+      </ul>
+</div>
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

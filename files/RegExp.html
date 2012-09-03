@@ -1,0 +1,320 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>RegExp</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/RegExp">http://javascript.ru/RegExp</a></div><h2>RegExp</h2><h3 class="field-label">Создание</h3>
+
+<div class="field field-type-text field-object-syntax">
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e26d16fd" >  	<div class="source-controls-small">  		<span id="select-4a368e26d16fd" onclick="return sourceEditor.select('4a368e26d16fd')">Выделить все</span>   	</div>  	<div class="code-container" id="cc-4a368e26d16fd"> 		<pre class="source" id="src-4a368e26d16fd"><span class="co1">// полная форма записи</span>
+<span class="kw2">var</span> expr = <span class="kw2">new</span> RegExp<span class="br0">&#40;</span>pattern <span class="br0">&#91;</span>, flags<span class="br0">&#93;</span><span class="br0">&#41;</span>;
+&nbsp;
+<span class="co1">// сокращенная форма записи (литеральный формат)</span>
+<span class="kw2">var</span> expr = /pattern/flags;</pre> 		<div class="src-edit-container" id="src-edit-4a368e26d16fd"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e26d16fd')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-object-arguments">  
+<h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt>pattern</dt>
+<dd>Шаблон поиска (текст регулярного выражения).</dd>
+<dt>flags</dt>
+<dd>
+		Способы поиска по шаблону:</p>
+<ul>
+<li><strong>g</strong> — глобальный поиск (обрабатываются все совпадения с шаблоном поиска);</li>
+<li><strong>i</strong> — не различать строчные и заглавные буквы;</li>
+<li><strong>m</strong> — многострочный поиск.</li>
+</ul>
+<p>		Порядок указания флагов не имеет значения.<br />
+	</dd>
+</dl>
+</div>
+  </div>
+</div>
+
+<div class="field field-type-text field-object-intro">
+  <div class="field-items">
+      <div class="field-item"><link rel="stylesheet" type="text/css" media="all" href="css-jsman.css" />
+<script type="text/javascript">
+function showHideRegTable() {
+var t = document.getElementById('regtable')
+if (t.style.display=='none') {
+   t.style.display='' } else {
+   t.style.display = 'none'
+}
+}
+</script></div>
+  </div>
+</div>
+
+
+<hr/>
+<div class="field field-type-text field-object-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Когда регулярное выражение создается при помощи конструктора <code>new RegExp(…)</code>, необходимо помнить, что обратные слеши (\) должны экранироваться, например:</p>
+<div class="source-container" id="sc-4a368e26b718b" >
+<div class="code-container" id="cc-4a368e26b718b">
+<pre class="source" id="src-4a368e26b718b"><span class="kw2">var</span> expr = <span class="kw2">new</span> RegExp<span class="br0">&#40;</span><span class="st0">'<span class="es0">\\</span>w'</span>, <span class="st0">'ig'</span><span class="br0">&#41;</span>;</pre><div class="src-edit-container" id="src-edit-4a368e26b718b"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e26b718b')"/>			 		</div>
+</div>
+</div>
+<p>При использовании литерального формата, этого делать не нужно:</p>
+<div class="source-container" id="sc-4a368e26b78d8" >
+<div class="code-container" id="cc-4a368e26b78d8">
+<pre class="source" id="src-4a368e26b78d8"><span class="kw2">var</span> expr = /\w/gi;</pre><div class="src-edit-container" id="src-edit-4a368e26b78d8"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e26b78d8')"/>			 		</div>
+</div>
+</div>
+<p>Обе записи эквивалентны. Первый вариант может понадобится, если вам придется генерировать регулярное динамически.</p>
+<h3>Виды символов</h3>
+<p>В регулярных выражениях различают следующие виды символов:</p>
+<h4>Обычные символы</h4>
+<ul>
+<li>A..z — английские буквы от A до z, строчные и заглавные;</li>
+<li>0..9 — цифры;</li>
+<li>{ } — фигурные скобки, кроме случаев, когда они составляют группу вида {n,m} (где n и m — числа) и её вариации;</li>
+<li>= — равно;</li>
+<li>&lt; — меньше;</li>
+<li>&gt; — больше;</li>
+<li>- — минус;</li>
+<li>, — запятая;</li>
+<li>и др.</li>
+</ul>
+<h5>Специальные символы</h5>
+<ul>
+<li>( ) — круглые скобки;</li>
+<li>[ ] — квадратные скобки;</li>
+<li>\ — обраный слеш;</li>
+<li>. — точка;</li>
+<li>^ — степень;</li>
+<li>$ — знак доллара;</li>
+<li>| — вертикальная черта;</li>
+<li>? — вопросительный знак;</li>
+<li>+ — плюс.</li>
+</ul>
+<h3>Формирование регулярного выражения</h3>
+<p>При формировании шаблона поиска используется близкий к классическому PCRE синтаксис.</p>
+<h2>Спецсимволы в регулярном выражении</h2>
+<p><a href="#" onclick="showHideRegTable();return false">Свернуть/Развернуть таблицу</a></p>
+<table id="regtable" class="fullwidth-table">
+<tr>
+<td class="header">Символ</td>
+<td class="header">Значение</td>
+</tr>
+<tr>
+<td><code>\</code></td>
+<td>Для обычных символов - делает их специальными. Например, выражение <code>/s/</code> ищет просто символ 's'. А если поставить \ перед s, то <code>/\s/</code> уже обозначает пробельный символ.И наоборот, если символ специальный, например *, то \ сделает его просто обычным символом "звездочка". Например,  <code>/a*/</code> ищет 0 или больше подряд идущих символов 'a'. Чтобы найти а со звездочкой 'a*' - поставим \ перед спец. символом: <code>/a\*/</code>.</td>
+</tr>
+<tr>
+<td><code>^</code></td>
+<td>Обозначает начало входных данных. Если установлен флаг многострочного поиска <code>("m")</code>, то также сработает при начале новой строки.Например, <code>/^A/</code> не найдет 'A' в "an A", но найдет первое 'A' в "An A."</td>
+</tr>
+<tr>
+<td><code>$</code></td>
+<td>Обозначает конец входных данных. Если установлен флаг многострочного поиска, то также сработает в конце строки.Например, <code>/t$/</code> не найдет 't' в "eater", но найдет - в "eat".</td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td>Обозначает повторение 0 или более раз. Например, <code>/bo*/</code> найдет 'boooo' в "A ghost booooed" и 'b' в "A bird warbled", но ничего не найдет в "A goat grunted".</td>
+</tr>
+<tr>
+<td><code>+</code></td>
+<td>Обозначает повторение 1 или более раз. Эквивалентно <code>{1,}</code>. Например, <code>/a+/</code> найдет 'a' в "candy" и все 'a' в "caaaaaaandy".</td>
+</tr>
+<tr>
+<td><code>?</code></td>
+<td>Обозначает, что элемент может как присутствовать, так и отсутствовать. Например, <code>/e?le?/</code> найдет 'el' в "angel" и 'le' в "angle."Если используется сразу после одного из <code>квантификаторов *</code>, <code>+</code>, <code>?</code>, или <code>{}</code>, то задает "нежадный" поиск (повторение минимально возможное количество раз, до ближайшего следующего элемента паттерна), в противоположность "жадному" режиму по умолчанию, при котором количество повторений максимально, даже если следующий элемент паттерна тоже подходит.Кроме того, ? используется в предпросмотре, который описан в таблице под <code>(?=)</code>, <code>(?!)</code>, и <code>(?: )</code>.</td>
+</tr>
+<tr>
+<td><code>.</code></td>
+<td>(Десятичная точка) обозначает любой символ, кроме перевода строки: \n \r \u2028 or \u2029. (<code>можно использовать [\s\S] для поиска любого символа, включая переводы строк). Например, </code><code>/.n/</code> найдет 'an' и 'on' в "nay, an apple is on the tree", но не 'nay'.</td>
+</tr>
+<tr>
+<td><code>(<code>x</code>)</code></td>
+<td>Находит <code><code>x</code></code> и запоминает. Это называется "запоминающие скобки". Например, <code>/(foo)/</code> найдет и запомнит 'foo' в "foo bar." Найденная подстрока хранится в массиве-результате поиска или в предопределенных свойствах объекта RegExp:<code></code><code></code> <code>$1, ..., $9</code>.Кроме того, скобки объединяют то, что в них находится, в единый элемент паттерна. Например, (abc)* - повторение abc 0 и более раз.</td>
+</tr>
+<tr>
+<td><code>(?:<code>x</code>)</code></td>
+<td>Находит <code><code>x</code></code>, но не запоминает найденное. Это называется "незапоминающие скобки". Найденная подстрока не сохраняется в массиве результатов и свойствах RegExp.Как и все скобки, объединяют  находящееся в них в единый подпаттерн.</td>
+</tr>
+<tr>
+<td><code><code>x</code>(?=<code>y</code>)</code></td>
+<td>Находит <code><code>x</code></code>, только если за <code><code>x</code></code> следует <code><code>y</code></code>. Например, <code>/Jack(?=Sprat)/</code> найдет 'Jack', только если за ним следует 'Sprat'. <code>/Jack(?=Sprat|Frost)/</code> найдет 'Jack', только если за ним следует 'Sprat' или 'Frost'. Однако, ни 'Sprat' nor 'Frost' не войдут в результат поиска.</td>
+</tr>
+<tr>
+<td><code><code>x</code>(?!<code>y</code>)</code></td>
+<td>Находит <code><code>x</code></code>, только если за <code><code>x</code></code> не следует <code><code>y</code></code>. Например, <code>/\d+(?!\.)/</code> найдет число, только если за ним не следует десятичная точка. <code>/\d+(?!\.)/.exec("3.141")</code> найдет 141, но не 3.141.</td>
+</tr>
+<tr>
+<td><code><code>x</code>|<code>y</code></code></td>
+<td>Находит <code><code>x</code></code> или <code><code>y</code></code>. Например, <code>/green|red/</code> найдет 'green' в "green apple" и 'red' в "red apple."</td>
+</tr>
+<tr>
+<td><code>{<code>n</code>}</code></td>
+<td>Где n - положительное целое число. Находит ровно n повторений предшествующего элемента. Например, <code>/a{2}/</code> не найдет 'a' в "candy," но найдет оба a в "caandy," и первые два a в "caaandy."</td>
+</tr>
+<tr>
+<td><code>{<code>n</code>,}</code></td>
+<td>Где n - положительное целое число. Находит n и более повторений элемента. Например, <code>/a{2,}</code> не найдет 'a' в "candy", но найдет все 'a' в "caandy" и в "caaaaaaandy."</td>
+</tr>
+<tr>
+<td><code>{<code>n</code>,<code>m</code>}</code></td>
+<td>Где n и m - положительные целые числа. Находят от n до m повторений элемента.</td>
+</tr>
+<tr>
+<td><code>[<code>xyz</code>]</code></td>
+<td>Набор символов. Находит любой из перечисленных символов. Вы можете указать промежуток, используя тире. Например, <code>[abcd]</code> - то же самое, что <code>[a-d]</code>. Найдет 'b' в "brisket" и 'c' в "ache".</td>
+</tr>
+<tr>
+<td><code>[^<code>xyz</code>]</code></td>
+<td>Любой символ, кроме указанных в наборе. Вы также можете указать промежуток. Например, <code>[^abc]</code> - то же самое, что <code>[^a-c]</code>. Найдет 'r' в "brisket" и 'h' в "chop."</td>
+</tr>
+<tr>
+<td><code>[\b]</code></td>
+<td>Находит символ backspace. (Не путать с <code>\b</code>.)</td>
+</tr>
+<tr>
+<td><code>\b</code></td>
+<td>Находит границу слов (латинских), например пробел. (Не путать с <code>[\b]</code>). Например, <code>/\bn\w/</code> найдет 'no' в "noonday"; <code>/\wy\b/</code> найдет 'ly' в "possibly yesterday."</td>
+</tr>
+<tr>
+<td><code>\B</code></td>
+<td>Обозначает не границу слов. Например,  <code>/\w\Bn/</code> найдет 'on' в "noonday", а <code>/y\B\w/</code> найдет 'ye' в "possibly yesterday."</td>
+</tr>
+<tr>
+<td><code>\c<code>X</code></code></td>
+<td><code><code>Где </code></code><code><code>X</code></code> - буква от A до Z. Обозначает контрольный символ в строке. Например, <code>/\cM/</code> обозначает символ Ctrl-M.</td>
+</tr>
+<tr>
+<td><code>\d</code></td>
+<td>находит цифру из любого алфавита (у нас же юникод). Испльзуйте <code>[0-9], чтобы найти только обычные цифры. Например, </code><code>/\d/</code> или <code>/[0-9]/</code> найдет '2' в "B2 is the suite number."</td>
+</tr>
+<tr>
+<td><code>\D</code></td>
+<td>Найдет нецифровой символ (все алфавиты). <code>[^0-9]</code> - эквивалент для обычных цифр. Например, <code>/\D/</code> или <code>/[^0-9]/</code> найдет 'B' в "B2 is the suite number."</td>
+</tr>
+<tr>
+<td><code>\f,\r,\n</code></td>
+<td>Соответствующие спецсимволы form-feed, line-feed, перевод строки.</td>
+</tr>
+<tr>
+<td><code>\s</code></td>
+<td>Найдет любой пробельный символ, включая пробел, табуляцию, переводы строки и другие юникодные пробельные символы. Например, <code>/\s\w*/</code> найдет ' bar' в "foo bar."</td>
+</tr>
+<tr>
+<td><code>\S</code></td>
+<td>Найдет любой символ, кроме пробельного. Например, <code>/\S\w*/</code> найдет 'foo' в "foo bar."</td>
+</tr>
+<tr>
+<td><code>\t</code></td>
+<td>Символ табуляции.</td>
+</tr>
+<tr>
+<td><code>\v</code></td>
+<td>Символ вертикальной табуляции.</td>
+</tr>
+<tr>
+<td><code>\w</code></td>
+<td>Найдет любой словесный (латинский алфавит) символ, включая буквы, цифры и знак подчеркивания. Эквивалентно <code>[A-Za-z0-9_]</code>. Например, <code>/\w/</code> найдет 'a' в "apple," '5' в "$5.28," и '3' в "3D."</td>
+</tr>
+<tr>
+<td><code>\W</code></td>
+<td>Найдет любой не-(лат.)словесный символ. Эквивалентно <code>[^A-Za-z0-9_]</code>. Например, <code>/\W/</code> и <code>/[^$A-Za-z0-9_]/</code> одинаково найдут '%' в "50%."</td>
+</tr>
+<tr>
+<td><code>\<code>n</code></code></td>
+<td>где <code><code>n</code></code> - целое число. Обратная ссылка на n-ю запомненную скобками подстроку. Например,  <code>/apple(,)\sorange\1/</code> найдет 'apple, orange,' в "apple, orange, cherry, peach.". За таблицей есть более полный пример.</td>
+</tr>
+<tr>
+<td><code>\0</code></td>
+<td>Найдет символ NUL. Не добавляйте в конец другие цифры.</td>
+</tr>
+<tr>
+<td><code>\x<code>hh</code></code></td>
+<td>Найдет символ с кодом <code><code>hh</code></code> (2 шестнадцатиричных цифры)</td>
+</tr>
+<tr>
+<td><code>\u<code>hhhh</code></code></td>
+<td>Найдет символ с кодом <code><code>hhhh</code></code> (4 шестнадцатиричных цифры).</td>
+</tr>
+</table>
+<div class="example">
+<div class="example-title">Пример: изменение формата строки</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e26b62b7" >
+<div class="code-container" id="cc-4a368e26b62b7">
+<pre class="source" id="src-4a368e26b62b7"><span class="kw2">var</span> re = /<span class="br0">&#40;</span>\w+<span class="br0">&#41;</span>\s<span class="br0">&#40;</span>\w+<span class="br0">&#41;</span>/;
+<span class="kw2">var</span> str = <span class="st0">&quot;John Smith&quot;</span>;
+<span class="kw2">var</span> newstr = str.<span class="me1">replace</span><span class="br0">&#40;</span>re, <span class="st0">&quot;$2, $1&quot;</span><span class="br0">&#41;</span>;
+<span class="kw3">alert</span><span class="br0">&#40;</span>newstr<span class="br0">&#41;</span>; <span class="co1">// &quot;Smith, John&quot;</span></pre><div class="src-edit-container" id="src-edit-4a368e26b62b7"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e26b62b7')"/>			 		</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+
+
+<hr/>
+  <h3 class="field-label">Методы</h3>
+<dl>
+
+<dt><a href="RegExp-toString.html">toString</a></dt>
+<dd>Возвращает строковое представление регулярного выражения</dd>
+
+
+<dt><a href="RegExp-test.html">test</a></dt>
+<dd>Выполняет поиск совпадений регулярного выражения со строкой. Возвращает <code>true</code> или <code>false</code></dd>
+
+
+<dt><a href="RegExp-exec.html">exec</a></dt>
+<dd>Выполняет поиск совпадений в указанной строке. Возвращает массив результатов или <code>null</code></dd>
+
+</dl>
+
+
+<hr/>
+  <h3 class="field-label">Свойства</h3>
+<dl>
+
+<dt><a href="RegExp-global.html">global</a></dt>
+<dd>Был ли использован в регулярном выражении флаг "g" </dd>
+
+
+<dt><a href="RegExp-ignoreCase.html">ignoreCase</a></dt>
+<dd>Был ли использован в регулярном выражении флаг "i"</dd>
+
+
+<dt><a href="RegExp-multiline.html">multiline</a></dt>
+<dd>Следует ли использовать поиск по всем строкам. </dd>
+
+
+<dt><a href="RegExp-lastIndex.html">lastIndex</a></dt>
+<dd>Доступное на запись целочисленное свойство, которое указывает индекс, с которого начинать следующий поиск <code>match</code>.</dd>
+
+
+<dt><a href="RegExp-source.html">source</a></dt>
+<dd>Неизменяемое свойство, которое содержит текст поискового выражения, исключая слэши</dd>
+
+</dl>
+
+
+<div class="field field-type-nodereference field-field-see-also">
+  <h3 class="field-label">См. также</h3>
+  <ul class="field-items">
+          <li class="field-item"><a class="liexternal" href="http://javascript.ru/tutorial/basic/regular-expression">Регулярные выражения </a> /Статья/</li>
+          <li class="field-item"><a class="liexternal" href="http://javascript.ru/ecma/part15">Встроенные объекты ECMAScript</a> /Стандарт языка/</li>
+      </ul>
+</div>
+
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

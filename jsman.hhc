@@ -1,0 +1,498 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<!-- Sitemap 1.0 -->
+</head>
+<body> <object type="text/site properties">
+	<param name="ImageType" value="Folder"></object>
+<ul>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Об этом справочнике">
+<param name="Local" value="files/about.html"></OBJECT></LI>
+<LI> <object type="text/sitemap"><param name="Name" value="* Справочник Javascript *">
+<param name="Local" value="files/manual.html"></OBJECT><UL>
+<LI> <object type="text/sitemap"><param name="Name" value="Объекты">
+<param name="Local" value="files/manual-object.html"></OBJECT><UL>
+<LI> <object type="text/sitemap"><param name="Name" value="Стандартные объекты"></OBJECT><UL>
+<LI> <object type="text/sitemap"><param name="Name" value="Array">
+<param name="Local" value="files/Array.html"></OBJECT><UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="pop">
+<param name="Local" value="files/Array-pop.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="push">
+<param name="Local" value="files/Array-push.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="shift">
+<param name="Local" value="files/Array-shift.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="unshift">
+<param name="Local" value="files/Array-unshift.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="sort">
+<param name="Local" value="files/Array-sort.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="slice">
+<param name="Local" value="files/Array-slice.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="reverse">
+<param name="Local" value="files/Array-reverse.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="join">
+<param name="Local" value="files/Array-join.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="concat">
+<param name="Local" value="files/Array-concat.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="splice">
+<param name="Local" value="files/Array-splice.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="index">
+<param name="Local" value="files/Array-index.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="input">
+<param name="Local" value="files/Array-input.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="length">
+<param name="Local" value="files/Array-length.html"></OBJECT></LI>
+</UL>
+</LI>
+<LI> <object type="text/sitemap"><param name="Name" value="Boolean">
+<param name="Local" value="files/Boolean.html"></OBJECT><UL><LI><OBJECT type="text/sitemap"><param name="Name" value="-----">
+<param name="Local" value="files/empty.html"></OBJECT></LI></UL>
+</LI>
+<LI> <object type="text/sitemap"><param name="Name" value="Date">
+<param name="Local" value="files/Date.html"></OBJECT><UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Date.UTC">
+<param name="Local" value="files/Date.UTC.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Date.parse">
+<param name="Local" value="files/Date.parse.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="toLocaleString">
+<param name="Local" value="files/Date-toLocaleString.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="getDate">
+<param name="Local" value="files/Date-getDate.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="getDay">
+<param name="Local" value="files/Date-getDay.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="getFullYear">
+<param name="Local" value="files/Date-getFullYear.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="getMilliseconds">
+<param name="Local" value="files/Date-getMilliseconds.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="getMinutes">
+<param name="Local" value="files/Date-getMinutes.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="getMonth">
+<param name="Local" value="files/Date-getMonth.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="getSeconds">
+<param name="Local" value="files/Date-getSeconds.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="getTime">
+<param name="Local" value="files/Date-getTime.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="getTimezoneOffset">
+<param name="Local" value="files/Date-getTimezoneOffset.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="getUTCDate">
+<param name="Local" value="files/Date-getUTCDate.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="getUTCDay">
+<param name="Local" value="files/Date-getUTCDay.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="getUTCHours">
+<param name="Local" value="files/Date-getUTCHours.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="getHours">
+<param name="Local" value="files/Date-getHours.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="getUTCMilliseconds">
+<param name="Local" value="files/Date-getUTCMilliseconds.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="getUTCMonth">
+<param name="Local" value="files/Date-getUTCMonth.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="getUTCMinutes">
+<param name="Local" value="files/Date-getUTCMinutes.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="getUTCSeconds">
+<param name="Local" value="files/Date-getUTCSeconds.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="getYear">
+<param name="Local" value="files/Date-getYear.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="setSeconds">
+<param name="Local" value="files/Date-setSeconds.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="setFullYear">
+<param name="Local" value="files/Date-setFullYear.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="setMilliseconds">
+<param name="Local" value="files/Date-setMilliseconds.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="setTime">
+<param name="Local" value="files/Date-setTime.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="setYear">
+<param name="Local" value="files/Date-setYear.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="setDate">
+<param name="Local" value="files/Date-setDate.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="setUTCDate">
+<param name="Local" value="files/Date-setUTCDate.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="setUTCHours">
+<param name="Local" value="files/Date-setUTCHours.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="setHours">
+<param name="Local" value="files/Date-setHours.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="setUTCMilliseconds">
+<param name="Local" value="files/Date-setUTCMilliseconds.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="setUTCMinutes">
+<param name="Local" value="files/Date-setUTCMinutes.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="setMinutes">
+<param name="Local" value="files/Date-setMinutes.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="setMonth">
+<param name="Local" value="files/Date-setMonth.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="setUTCSeconds">
+<param name="Local" value="files/Date-setUTCSeconds.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="setUTCFullYear">
+<param name="Local" value="files/Date-setUTCFullYear.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="setUTCMonth">
+<param name="Local" value="files/Date-setUTCMonth.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="toGMTString">
+<param name="Local" value="files/Date-toGMTString.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="toLocaleFormat">
+<param name="Local" value="files/Date-toLocaleFormat.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="toLocaleTimeString">
+<param name="Local" value="files/Date-toLocaleTimeString.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="toLocaleDateString">
+<param name="Local" value="files/Date-toLocaleDateString.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="toString">
+<param name="Local" value="files/Date-toString.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="toTimeString">
+<param name="Local" value="files/Date-toTimeString.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="toDateString">
+<param name="Local" value="files/Date-toDateString.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="toUTCString">
+<param name="Local" value="files/Date-toUTCString.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="valueOf">
+<param name="Local" value="files/Date-valueOf.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="getUTCFullYear">
+<param name="Local" value="files/Date-getUTCFullYear.html"></OBJECT></LI>
+</UL>
+</LI>
+<LI> <object type="text/sitemap"><param name="Name" value="Error">
+<param name="Local" value="files/Error.html"></OBJECT><UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="message">
+<param name="Local" value="files/Error-message.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="name">
+<param name="Local" value="files/Error-name.html"></OBJECT></LI>
+</UL>
+</LI>
+<LI> <object type="text/sitemap"><param name="Name" value="EvalError">
+<param name="Local" value="files/EvalError.html"></OBJECT><UL><LI><OBJECT type="text/sitemap"><param name="Name" value="-----">
+<param name="Local" value="files/empty.html"></OBJECT></LI></UL>
+</LI>
+<LI> <object type="text/sitemap"><param name="Name" value="Function">
+<param name="Local" value="files/Function.html"></OBJECT><UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="call">
+<param name="Local" value="files/Function-call.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="apply">
+<param name="Local" value="files/Function-apply.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="length">
+<param name="Local" value="files/Function-length.html"></OBJECT></LI>
+</UL>
+</LI>
+<LI> <object type="text/sitemap"><param name="Name" value="Math">
+<param name="Local" value="files/Math.html"></OBJECT><UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Math.abs">
+<param name="Local" value="files/Math.abs.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Math.acos">
+<param name="Local" value="files/Math.acos.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Math.asin">
+<param name="Local" value="files/Math.asin.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Math.atan">
+<param name="Local" value="files/Math.atan.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Math.atan2">
+<param name="Local" value="files/Math.atan2.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Math.ceil">
+<param name="Local" value="files/Math.ceil.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Math.floor">
+<param name="Local" value="files/Math.floor.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Math.cos">
+<param name="Local" value="files/Math.cos.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Math.sin">
+<param name="Local" value="files/Math.sin.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Math.exp">
+<param name="Local" value="files/Math.exp.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Math.log">
+<param name="Local" value="files/Math.log.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Math.pow">
+<param name="Local" value="files/Math.pow.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Math.max">
+<param name="Local" value="files/Math.max.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Math.min">
+<param name="Local" value="files/Math.min.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Math.random">
+<param name="Local" value="files/Math.random.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Math.round">
+<param name="Local" value="files/Math.round.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Math.sqrt">
+<param name="Local" value="files/Math.sqrt.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Math.tan">
+<param name="Local" value="files/Math.tan.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Math.E">
+<param name="Local" value="files/Math.E.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Math.LN2">
+<param name="Local" value="files/Math.LN2.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Math.LOG2E">
+<param name="Local" value="files/Math.LOG2E.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Math.LOG10E">
+<param name="Local" value="files/Math.LOG10E.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Math.PI">
+<param name="Local" value="files/Math.PI.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Math.SQRT12">
+<param name="Local" value="files/Math.SQRT12.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Math.SQRT2">
+<param name="Local" value="files/Math.SQRT2.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Math.LN10">
+<param name="Local" value="files/Math.LN10.html"></OBJECT></LI>
+</UL>
+</LI>
+<LI> <object type="text/sitemap"><param name="Name" value="Number">
+<param name="Local" value="files/Number.html"></OBJECT><UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="toFixed">
+<param name="Local" value="files/Number-toFixed.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="toPrecision">
+<param name="Local" value="files/Number-toPrecision.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="toExponential">
+<param name="Local" value="files/Number-toExponential.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="toString">
+<param name="Local" value="files/Number-toString.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Number.MAX_VALUE">
+<param name="Local" value="files/Number.MAX_VALUE.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Number.MIN_VALUE">
+<param name="Local" value="files/Number.MIN_VALUE.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Number.NaN">
+<param name="Local" value="files/Number.NaN.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Number.NEGATIVE_INFINITY">
+<param name="Local" value="files/Number.NEGATIVE_INFINITY.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Number.POSITIVE_INFINITY">
+<param name="Local" value="files/Number.POSITIVE_INFINITY.html"></OBJECT></LI>
+</UL>
+</LI>
+<LI> <object type="text/sitemap"><param name="Name" value="Object">
+<param name="Local" value="files/Object.html"></OBJECT><UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="toString">
+<param name="Local" value="files/Object-toString.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="prototype">
+<param name="Local" value="files/Object-prototype.html"></OBJECT></LI>
+</UL>
+</LI>
+<LI> <object type="text/sitemap"><param name="Name" value="RangeError">
+<param name="Local" value="files/RangeError.html"></OBJECT><UL><LI><OBJECT type="text/sitemap"><param name="Name" value="-----">
+<param name="Local" value="files/empty.html"></OBJECT></LI></UL>
+</LI>
+<LI> <object type="text/sitemap"><param name="Name" value="ReferenceError">
+<param name="Local" value="files/ReferenceError.html"></OBJECT><UL><LI><OBJECT type="text/sitemap"><param name="Name" value="-----">
+<param name="Local" value="files/empty.html"></OBJECT></LI></UL>
+</LI>
+<LI> <object type="text/sitemap"><param name="Name" value="RegExp">
+<param name="Local" value="files/RegExp.html"></OBJECT><UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="toString">
+<param name="Local" value="files/RegExp-toString.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="test">
+<param name="Local" value="files/RegExp-test.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="exec">
+<param name="Local" value="files/RegExp-exec.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="global">
+<param name="Local" value="files/RegExp-global.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="ignoreCase">
+<param name="Local" value="files/RegExp-ignoreCase.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="multiline">
+<param name="Local" value="files/RegExp-multiline.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="lastIndex">
+<param name="Local" value="files/RegExp-lastIndex.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="source">
+<param name="Local" value="files/RegExp-source.html"></OBJECT></LI>
+</UL>
+</LI>
+<LI> <object type="text/sitemap"><param name="Name" value="String">
+<param name="Local" value="files/String.html"></OBJECT><UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="split">
+<param name="Local" value="files/String-split.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="substr">
+<param name="Local" value="files/String-substr.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="charCodeAt">
+<param name="Local" value="files/String-charCodeAt.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="String.fromCharCode">
+<param name="Local" value="files/String.fromCharCode.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="charAt">
+<param name="Local" value="files/String-charAt.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="concat">
+<param name="Local" value="files/String-concat.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="indexOf">
+<param name="Local" value="files/String--indexOf.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="lastIndexOf">
+<param name="Local" value="files/String-lastIndexOf.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="search">
+<param name="Local" value="files/String-search.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="match">
+<param name="Local" value="files/String-match.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="replace">
+<param name="Local" value="files/String-replace.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="slice">
+<param name="Local" value="files/String-slice.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="substring">
+<param name="Local" value="files/String-substring.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="toLowerCase">
+<param name="Local" value="files/String-toLowerCase.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="toUpperCase">
+<param name="Local" value="files/String-toUpperCase.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="toLocaleLowerCase">
+<param name="Local" value="files/String-toLocaleLowerCase.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="toLocaleUpperCase">
+<param name="Local" value="files/String-toLocaleUpperCase.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="toString">
+<param name="Local" value="files/String-toString.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="valueOf">
+<param name="Local" value="files/String-valueOf.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="length">
+<param name="Local" value="files/String-length.html"></OBJECT></LI>
+</UL>
+</LI>
+<LI> <object type="text/sitemap"><param name="Name" value="SyntaxError">
+<param name="Local" value="files/SyntaxError.html"></OBJECT><UL><LI><OBJECT type="text/sitemap"><param name="Name" value="-----">
+<param name="Local" value="files/empty.html"></OBJECT></LI></UL>
+</LI>
+<LI> <object type="text/sitemap"><param name="Name" value="TypeError">
+<param name="Local" value="files/TypeError.html"></OBJECT><UL><LI><OBJECT type="text/sitemap"><param name="Name" value="-----">
+<param name="Local" value="files/empty.html"></OBJECT></LI></UL>
+</LI>
+<LI> <object type="text/sitemap"><param name="Name" value="URIError">
+<param name="Local" value="files/URIError.html"></OBJECT><UL><LI><OBJECT type="text/sitemap"><param name="Name" value="-----">
+<param name="Local" value="files/empty.html"></OBJECT></LI></UL>
+</LI>
+</UL>
+</LI>
+<LI> <object type="text/sitemap"><param name="Name" value="Объекты браузера"></OBJECT><UL><LI> <object type="text/sitemap"><param name="Name" value="window">
+<param name="Local" value="files/window.html"></OBJECT><UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="window.close">
+<param name="Local" value="files/window.close.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="window.open">
+<param name="Local" value="files/window.open.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="window.focus">
+<param name="Local" value="files/window.focus.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="window.location">
+<param name="Local" value="files/window.location.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="window.parent">
+<param name="Local" value="files/window.parent.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="window.top">
+<param name="Local" value="files/window.top.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="window.name">
+<param name="Local" value="files/window.name.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="window.frames">
+<param name="Local" value="files/window.frames.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="window.opener">
+<param name="Local" value="files/window.opener.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="window.closed">
+<param name="Local" value="files/window.closed.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="window.status">
+<param name="Local" value="files/window.status.html"></OBJECT></LI>
+</UL>
+</LI></UL>
+</LI>
+</UL>
+</LI>
+<LI> <object type="text/sitemap"><param name="Name" value="Глобальные методы">
+<param name="Local" value="files/manual-method.html"></OBJECT><UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="alert">
+<param name="Local" value="files/alert.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="clearInterval">
+<param name="Local" value="files/clearInterval.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="clearTimeout">
+<param name="Local" value="files/clearTimeout.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="confirm">
+<param name="Local" value="files/confirm.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="decodeURI">
+<param name="Local" value="files/decodeURI.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="decodeURIComponent">
+<param name="Local" value="files/decodeURIComponent.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="encodeURI">
+<param name="Local" value="files/encodeURI.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="encodeURIComponent">
+<param name="Local" value="files/encodeURIComponent.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="eval">
+<param name="Local" value="files/eval.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="isFinite">
+<param name="Local" value="files/isFinite.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="isNaN">
+<param name="Local" value="files/isNaN.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="parseFloat">
+<param name="Local" value="files/parseFloat.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="parseInt">
+<param name="Local" value="files/parseInt.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="prompt">
+<param name="Local" value="files/prompt.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="setInterval">
+<param name="Local" value="files/setInterval.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="setTimeout">
+<param name="Local" value="files/setTimeout.html"></OBJECT></LI>
+</UL>
+</LI>
+<LI> <object type="text/sitemap"><param name="Name" value="Свойства">
+<param name="Local" value="files/manual-property.html"></OBJECT><UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="arguments">
+<param name="Local" value="files/arguments.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Infinity">
+<param name="Local" value="files/Infinity.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="NaN">
+<param name="Local" value="files/NaN.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="undefined">
+<param name="Local" value="files/undefined.html"></OBJECT></LI>
+</UL>
+</LI>
+<LI> <object type="text/sitemap"><param name="Name" value="Синтаксические конструкции">
+<param name="Local" value="files/manual-syntax.html"></OBJECT><UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="break">
+<param name="Local" value="files/break.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="continue">
+<param name="Local" value="files/continue.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="do..while">
+<param name="Local" value="files/do..while.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="for">
+<param name="Local" value="files/for.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="for..in">
+<param name="Local" value="files/for..in.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="function">
+<param name="Local" value="files/function-syntax.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="if">
+<param name="Local" value="files/if.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="label">
+<param name="Local" value="files/label.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="return">
+<param name="Local" value="files/return.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="switch">
+<param name="Local" value="files/switch.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="throw">
+<param name="Local" value="files/throw.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="try..catch">
+<param name="Local" value="files/try..catch.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="var">
+<param name="Local" value="files/var.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="while">
+<param name="Local" value="files/while.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="with">
+<param name="Local" value="files/with.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Блок">
+<param name="Local" value="files/Blok.html"></OBJECT></LI>
+</UL>
+</LI>
+<LI> <object type="text/sitemap"><param name="Name" value="Операторы">
+<param name="Local" value="files/manual-operator.html"></OBJECT><UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="delete">
+<param name="Local" value="files/delete.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="function">
+<param name="Local" value="files/function-operator.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="in">
+<param name="Local" value="files/in.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="instanceof">
+<param name="Local" value="files/instanceof.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="new">
+<param name="Local" value="files/new.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="this">
+<param name="Local" value="files/this.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="typeof">
+<param name="Local" value="files/typeof.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="void">
+<param name="Local" value="files/void.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Аксессоры">
+<param name="Local" value="files/accessors.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Арифметические операторы">
+<param name="Local" value="files/arithmetic.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Запятая">
+<param name="Local" value="files/comma.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Логические операторы">
+<param name="Local" value="files/boolean-operators.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Операторы присваивания">
+<param name="Local" value="files/assignment-operators.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Операторы сравнения">
+<param name="Local" value="files/comparison-operators.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Побитовые операторы">
+<param name="Local" value="files/bitwise-operators.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Строковые операторы">
+<param name="Local" value="files/string-operators.html"></OBJECT></LI>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Условный оператор">
+<param name="Local" value="files/cond.html"></OBJECT></LI>
+</UL>
+</LI>
+</UL>
+</LI>
+</ul>
+</body>
+</html>

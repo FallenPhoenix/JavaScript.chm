@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>toExponential</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/Number/toExponential">http://javascript.ru/Number/toExponential</a></div><h2>toExponential</h2><div class="field field-type-text field-field-method-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e2650761" >  	<div class="code-container" id="cc-4a368e2650761"> 		<pre class="source" id="src-4a368e2650761">number.<span class="me1">toExponential</span><span class="br0">&#40;</span> <span class="br0">&#91;</span>fractionDigits<span class="br0">&#93;</span> <span class="br0">&#41;</span></pre> 		<div class="src-edit-container" id="src-edit-4a368e2650761"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2650761')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-method-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt>fractionDigits</dt>
+<dd>Количество цифр после запятой. По умолчанию - без округлений<br />
+<dd>
+</dd></dd></dl>
+</div>
+  </div>
+</div>
+
+
+<div class="field field-type-text field-field-method-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Число в экспоненциальной записи возвращается в виде строки с одной цифрой до десятичной точки и округляется до <code>fractionDigits</code> цифр после десятичной точки.</p>
+<p>Если аргумент <code>fractionDigits</code> не указан, то берется столько цифр после десятичной точки, сколько необходимо.</p>
+<p>Если число содержит больше цифр, чем указавно в параметре <code>fractionDigits</code>, число округляется до ближайшего, состоящего из <code>fractionDigits</code> цифр, аналогично методу <a href="Number-toFixed.html" >toFixed</a>.</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e264978f" >
+<div class="source-controls-small">  		<span id="select-4a368e264978f" onclick="return sourceEditor.select('4a368e264978f')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e264978f">
+<pre class="source" id="src-4a368e264978f"><span class="kw2">var</span> num=<span class="nu0">77.1234</span>;
+&nbsp;
+<span class="kw3">alert</span><span class="br0">&#40;</span>num.<span class="me1">toExponential</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="co1">// 7.71234e+1</span>
+<span class="kw3">alert</span><span class="br0">&#40;</span>num.<span class="me1">toExponential</span><span class="br0">&#40;</span><span class="nu0">4</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="co1">// 7.7123e+1</span>
+<span class="kw3">alert</span><span class="br0">&#40;</span>num.<span class="me1">toExponential</span><span class="br0">&#40;</span><span class="nu0">2</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="co1">// 7.71e+1</span></pre><div class="src-edit-container" id="src-edit-4a368e264978f"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e264978f')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

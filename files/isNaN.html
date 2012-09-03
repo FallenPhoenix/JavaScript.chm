@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>isNaN</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/isNaN">http://javascript.ru/isNaN</a></div><h2>isNaN</h2><div class="field field-type-text field-field-method-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e29912d8" >  	<div class="code-container" id="cc-4a368e29912d8"> 		<pre class="source" id="src-4a368e29912d8">isNaN<span class="br0">&#40;</span>testValue<span class="br0">&#41;</span></pre> 		<div class="src-edit-container" id="src-edit-4a368e29912d8"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e29912d8')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-method-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt>testValue</dt>
+<dd>значение на проверку<br />
+<dd>
+</dd></dd></dl>
+</div>
+  </div>
+</div>
+
+
+<div class="field field-type-text field-field-method-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Метод <code>isNaN</code> пытается преобразовать переданный параметр в число. Если параметр не может быть преобразован, возвращает <code>true</code>, иначе возвращает <code>false</code>.</p>
+<p>Эта функция полезна, так как значение <code>NaN</code> не может быть проверено операторами эквивалентности.</p>
+<p>Значение <code>x == NaN</code> и <code><code>x === NaN</code> всегда <code>false</code> для любого <code>x</code>, даже если <code>x=NaN</code>.</code></p>
+<div class="source-container" id="sc-4a368e298a8d8" >
+<div class="code-container" id="cc-4a368e298a8d8">
+<pre class="source" id="src-4a368e298a8d8"><span class="nu0">1</span> == NaN <span class="co1">// false</span>
+NaN == NaN <span class="co1">// false</span>
+isNaN<span class="br0">&#40;</span>NaN<span class="br0">&#41;</span> <span class="co1">// true</span>
+isNaN<span class="br0">&#40;</span><span class="st0">&quot;12&quot;</span><span class="br0">&#41;</span> <span class="co1">// false</span></pre><div class="src-edit-container" id="src-edit-4a368e298a8d8"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e298a8d8')" />			 		</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

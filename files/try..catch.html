@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>try..catch</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/try..catch">http://javascript.ru/try..catch</a></div><h2>try..catch</h2><p>Ловить все исключения, выпадающие из блока кода</p>
+
+<div class="field field-type-text field-field-syntax-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e2b46056" >  	<div class="source-controls-small">  		<span id="select-4a368e2b46056" onclick="return sourceEditor.select('4a368e2b46056')">Выделить все</span>   	</div>  	<div class="code-container" id="cc-4a368e2b46056"> 		<pre class="source" id="src-4a368e2b46056"><span class="kw1">try</span> <span class="br0">&#123;</span>
+   try_statements
+<span class="br0">&#125;</span>
+<span class="br0">&#91;</span><span class="kw1">catch</span> <span class="br0">&#40;</span>exception_var<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+   catch_statements
+<span class="br0">&#125;</span><span class="br0">&#93;</span>
+<span class="br0">&#91;</span><span class="kw1">finally</span> <span class="br0">&#123;</span>
+   finally_statements
+<span class="br0">&#125;</span><span class="br0">&#93;</span></pre> 		<div class="src-edit-container" id="src-edit-4a368e2b46056"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2b46056')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-syntax-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt>try_statements</dt>
+<dd>Код для выполнения и контроля над генерируемыми им исключениями<br />
+<dd>
+<dt>catch_statements</dt>
+<dd>Все исключения будут попадать в блок <code>catch_statements</code><br />
+<dd>
+<dt>exception_var</dt>
+<dd>Переменная, которой присваивается пойманное исключение<br />
+<dd>
+<dt>finally_statements</dt>
+<dd>Блок <code>finally</code> будет выполнен после окончания работы <code>try/catch</code>, вне зависимости от того, было ли исключение<br />
+<dd>
+</dd></dd></dd></dd></dd></dd></dd></dd></dl>
+</div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-syntax-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Конструкция <code>try..catch</code> в javascript представлена в своей полной форме, включая необязательную ветку <code>finally</code>.</p>
+<p>Допускается использование всех трех форм:</p>
+<ol>
+<li><code>try...catch</code></li>
+<li><code>try...finally</code></li>
+<li><code>try...catch...finally</code></li>
+</ol>
+<p>В любом случае сначала выполняется код блока <code>try</code>. Затем, если было исключение - оно перехватывается и выполняется код из <code>catch</code>. Затем, вне зависимости от работы <code>try/catch</code>, перед выходом из конструкции выполняется блок <code>finally</code>.</p>
+<div class="example">
+<div class="example-title">Пример: tryEval</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2b2b1f8" >
+<div class="source-controls-small">  		<span id="select-4a368e2b2b1f8" onclick="return sourceEditor.select('4a368e2b2b1f8')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e2b2b1f8">
+<pre class="source" id="src-4a368e2b2b1f8"><span class="kw2">function</span> tryEval<span class="br0">&#40;</span>code<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+  <span class="kw1">try</span><span class="br0">&#123;</span>
+    <span class="kw1">eval</span><span class="br0">&#40;</span>code<span class="br0">&#41;</span>
+  <span class="br0">&#125;</span> <span class="kw1">catch</span><span class="br0">&#40;</span>e<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <span class="kw3">alert</span><span class="br0">&#40;</span>e.<span class="kw3">name</span><span class="br0">&#41;</span>
+  <span class="br0">&#125;</span> <span class="kw1">finally</span> <span class="br0">&#123;</span>
+    <span class="kw3">alert</span><span class="br0">&#40;</span><span class="st0">&quot;finished&quot;</span><span class="br0">&#41;</span>
+  <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre><div class="src-edit-container" id="src-edit-4a368e2b2b1f8"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2b2b1f8')"/>			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>Запустим функцию <code>tryEval</code> с некорректным кодом. </p>
+<p>При этом <a href="eval.html" >eval</a> бросит исключение класса <a href="SyntaxError.html" >SyntaxError</a>, что приведет к переходу управления в <code>catch</code>.</p>
+<p>По окончанию <code>catch</code> выполнится <code>finally</code>.</p>
+<div class="example">
+<div class="example-title">Пример: некорректный код</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2b2c3f8" >
+<div class="source-controls-full">     		<input type="button" id="show-4a368e2b2c3f8" onclick="return sourceEditor.run('4a368e2b2c3f8')" value="Запустить!"/> 		<input type="button" id="show-changed-4a368e2b2c3f8" onclick="return sourceEditor.run('4a368e2b2c3f8', true)" value="Запустить измененное!" style="width:180px;display:none"/>  		<input type="button" id="edit-4a368e2b2c3f8" onclick="return sourceEditor.edit('4a368e2b2c3f8')" value="Изменить"/> 		<input type="button" id="select-4a368e2b2c3f8" onclick="return sourceEditor.select('4a368e2b2c3f8')" value="Выделить все"/>   	</div>
+<div class="code-container" id="cc-4a368e2b2c3f8">
+<pre class="source" id="src-4a368e2b2c3f8"><span class="kw2">function</span> tryEval<span class="br0">&#40;</span>code<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+  <span class="kw1">try</span><span class="br0">&#123;</span>
+    <span class="kw1">eval</span><span class="br0">&#40;</span>code<span class="br0">&#41;</span>
+  <span class="br0">&#125;</span> <span class="kw1">catch</span><span class="br0">&#40;</span>e<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <span class="kw3">alert</span><span class="br0">&#40;</span>e.<span class="kw3">name</span><span class="br0">&#41;</span>
+  <span class="br0">&#125;</span> <span class="kw1">finally</span> <span class="br0">&#123;</span>
+    <span class="kw3">alert</span><span class="br0">&#40;</span><span class="st0">&quot;готово&quot;</span><span class="br0">&#41;</span>
+  <span class="br0">&#125;</span>
+<span class="br0">&#125;</span>
+&nbsp;
+tryEval<span class="br0">&#40;</span><span class="st0">&quot;Некорректный код&quot;</span><span class="br0">&#41;</span></pre><div class="src-edit-container" id="src-edit-4a368e2b2c3f8"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2b2c3f8')"/>			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>Если код - правильный, то блок <code>catch</code> будет проигнорирован, но по окончании <code>try</code> - в любом случае запустится <code>finally</code>:</p>
+<div class="example">
+<div class="example-title">Пример: верный код</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2b2d6d7" >
+<div class="source-controls-full">     		<input type="button" id="show-4a368e2b2d6d7" onclick="return sourceEditor.run('4a368e2b2d6d7')" value="Запустить!"/> 		<input type="button" id="show-changed-4a368e2b2d6d7" onclick="return sourceEditor.run('4a368e2b2d6d7', true)" value="Запустить измененное!" style="width:180px;display:none"/>  		<input type="button" id="edit-4a368e2b2d6d7" onclick="return sourceEditor.edit('4a368e2b2d6d7')" value="Изменить"/> 		<input type="button" id="select-4a368e2b2d6d7" onclick="return sourceEditor.select('4a368e2b2d6d7')" value="Выделить все"/>   	</div>
+<div class="code-container" id="cc-4a368e2b2d6d7">
+<pre class="source" id="src-4a368e2b2d6d7">tryEval<span class="br0">&#40;</span><span class="st0">&quot;var a=5&quot;</span><span class="br0">&#41;</span></pre><div class="src-edit-container" id="src-edit-4a368e2b2d6d7"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2b2d6d7')"/>			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>Как правило, в <code>finally</code> ставят логирующий и очищающий состояние процессов код.</p>
+<h3>Вложенные <code>try..catch</code></h3>
+<p>Зачастую в <code>catch</code> нужно ловить не все подряд, а определенные исключения.</p>
+<p>В javascript это реализуется через проверку, например, при помощи <a href="instanceof.html" >instanceOf</a>:</p>
+<div class="source-container" id="sc-4a368e2b30de0" >
+<div class="source-controls-small">  		<span id="select-4a368e2b30de0" onclick="return sourceEditor.select('4a368e2b30de0')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e2b30de0">
+<pre class="source" id="src-4a368e2b30de0"><span class="kw1">try</span> <span class="br0">&#123;</span>
+ ...
+<span class="br0">&#125;</span> <span class="kw1">catch</span><span class="br0">&#40;</span>e<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+  <span class="kw1">if</span> <span class="br0">&#40;</span>!e <span class="kw1">instanceof</span> MyError<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <span class="co1">// если не мое - бросаем дальше</span>
+    <span class="kw1">throw</span> e
+  <span class="br0">&#125;</span>
+  .. обработать исключение ..
+<span class="br0">&#125;</span></pre><div class="src-edit-container" id="src-edit-4a368e2b30de0"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2b30de0')"/>			 		</div>
+</div>
+</div>
+<p>Пример с <code>tryEval</code> с отловом ошибок будет выглядить следующим образом.</p>
+<div class="example">
+<div class="example-title">Пример: отлов только синтаксических ошибок</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2b2de20" >
+<div class="source-controls-full">     		<input type="button" id="show-4a368e2b2de20" onclick="return sourceEditor.run('4a368e2b2de20')" value="Запустить!"/> 		<input type="button" id="show-changed-4a368e2b2de20" onclick="return sourceEditor.run('4a368e2b2de20', true)" value="Запустить измененное!" style="width:180px;display:none"/>  		<input type="button" id="edit-4a368e2b2de20" onclick="return sourceEditor.edit('4a368e2b2de20')" value="Изменить"/> 		<input type="button" id="select-4a368e2b2de20" onclick="return sourceEditor.select('4a368e2b2de20')" value="Выделить все"/>   	</div>
+<div class="code-container" id="cc-4a368e2b2de20">
+<pre class="source" id="src-4a368e2b2de20"><span class="kw2">function</span> tryEval<span class="br0">&#40;</span>code<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+  <span class="kw1">try</span><span class="br0">&#123;</span>
+    <span class="kw1">eval</span><span class="br0">&#40;</span>code<span class="br0">&#41;</span>
+  <span class="br0">&#125;</span> <span class="kw1">catch</span><span class="br0">&#40;</span>e<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <span class="strs"><span class="kw1">if</span> <span class="br0">&#40;</span>!<span class="br0">&#40;</span>e <span class="kw1">instanceof</span> SyntaxError<span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="kw1">throw</span> e</span>
+    <span class="kw3">alert</span><span class="br0">&#40;</span>e.<span class="kw3">name</span><span class="br0">&#41;</span>
+  <span class="br0">&#125;</span> <span class="kw1">finally</span> <span class="br0">&#123;</span>
+    <span class="kw3">alert</span><span class="br0">&#40;</span><span class="st0">&quot;готово&quot;</span><span class="br0">&#41;</span>
+  <span class="br0">&#125;</span>
+<span class="br0">&#125;</span>
+&nbsp;
+<span class="kw1">try</span> <span class="br0">&#123;</span>
+    tryEval<span class="br0">&#40;</span><span class="st0">&quot;throw new RangeError('исключение в корректном коде')&quot;</span><span class="br0">&#41;</span>
+<span class="br0">&#125;</span> <span class="kw1">catch</span><span class="br0">&#40;</span>e<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <span class="kw3">alert</span><span class="br0">&#40;</span><span class="st0">&quot;Выпало &quot;</span>+e.<span class="kw3">name</span><span class="br0">&#41;</span>
+<span class="br0">&#125;</span></pre><div class="src-edit-container" id="src-edit-4a368e2b2de20"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2b2de20')"/>			 		</div>
+</div>
+</div>
+</div>
+</div>
+<ol>
+<li>При запуске код внутри <a href="eval.html" >eval</a> генерирует ошибку <code>RangeError</code>.</li>
+<li>Блок <code>try..catch</code> внутри функции <code>tryEval</code> ее ловит, но так как она не принадлежит классу <code>SyntaxError</code> - бросает дальше</li>
+<li>Исключение выпадает из <code>tryEval</code> и ловится общим блоком в конце примера</li>
+</ol>
+<p>Если исключение не поймано нигде - последний шанс его обработки до генерации javascript-ошибки: событие <code>window.onerror</code>:</p>
+<div class="example">
+<div class="example-title">Пример: window.onerror</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2b300a1" >
+<div class="source-controls-full">     		<input type="button" id="show-4a368e2b300a1" onclick="return sourceEditor.run('4a368e2b300a1')" value="Запустить!"/> 		<input type="button" id="show-changed-4a368e2b300a1" onclick="return sourceEditor.run('4a368e2b300a1', true)" value="Запустить измененное!" style="width:180px;display:none"/>  		<input type="button" id="edit-4a368e2b300a1" onclick="return sourceEditor.edit('4a368e2b300a1')" value="Изменить"/> 		<input type="button" id="select-4a368e2b300a1" onclick="return sourceEditor.select('4a368e2b300a1')" value="Выделить все"/>   	</div>
+<div class="code-container" id="cc-4a368e2b300a1">
+<pre class="source" id="src-4a368e2b300a1">window.<span class="kw3">onerror</span> = <span class="kw2">function</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> 
+  <span class="kw3">alert</span><span class="br0">&#40;</span><span class="st0">&quot;OOPS!&quot;</span><span class="br0">&#41;</span> 
+<span class="br0">&#125;</span>
+<span class="kw1">throw</span> <span class="st0">&quot;something&quot;</span></pre><div class="src-edit-container" id="src-edit-4a368e2b300a1"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2b300a1')"/>			 		</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

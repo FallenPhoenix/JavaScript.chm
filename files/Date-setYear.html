@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>setYear</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/Date/setYear">http://javascript.ru/Date/setYear</a></div><h2>setYear</h2><div class="field field-type-text field-field-method-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e23eb457" >  	<div class="code-container" id="cc-4a368e23eb457"> 		<pre class="source" id="src-4a368e23eb457">setYear<span class="br0">&#40;</span>yearValue<span class="br0">&#41;</span></pre> 		<div class="src-edit-container" id="src-edit-4a368e23eb457"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e23eb457')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-method-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt>yearValue</dt>
+<dd>Сокращённое численное обозначение года, например 95<br />
+<dd>
+</dd></dd></dl>
+</div>
+  </div>
+</div>
+
+
+<div class="field field-type-text field-field-method-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>setYear более не рекомендуется к использованию и был заменён методом <code>setFullYear </code>.</p>
+<p>Если переданное значение является числом от 0 до 99 включительно, то значение года для экземпляра объекта <code>Date</code> устанавливается равным 1900 + <code>yearValue</code>. В противном случае значение года устанавливается равным <code>yearValue</code>.</p>
+<p>Для корректной обработки годов, не относящихся к XX веку, рекомендуется использовать <code>setFullYear</code>, всегда принимающий полное значение года.</p>
+<div class="example">
+<div class="example-title">Пример: Установка года</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e23e57d3" >
+<div class="source-controls-small">  		<span id="select-4a368e23e57d3" onclick="return sourceEditor.select('4a368e23e57d3')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e23e57d3">
+<pre class="source" id="src-4a368e23e57d3"><span class="co1">// Это 1996 год</span>
+theBigDay.<span class="me1">setYear</span><span class="br0">&#40;</span><span class="nu0">96</span><span class="br0">&#41;</span>
+<span class="co1">// И это 1996 год</span>
+theBigDay.<span class="me1">setYear</span><span class="br0">&#40;</span><span class="nu0">1996</span><span class="br0">&#41;</span>
+<span class="co1">// А 2000 год - только так</span>
+theBigDay.<span class="me1">setYear</span><span class="br0">&#40;</span><span class="nu0">2000</span><span class="br0">&#41;</span></pre><div class="src-edit-container" id="src-edit-4a368e23e57d3"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e23e57d3')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

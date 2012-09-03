@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>in</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/in">http://javascript.ru/in</a></div><h2>in</h2><div class="field field-type-text field-field-operator-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e2b9a465" >  	<div class="code-container" id="cc-4a368e2b9a465"> 		<pre class="source" id="src-4a368e2b9a465">prop <span class="kw1">in</span> object</pre> 		<div class="src-edit-container" id="src-edit-4a368e2b9a465"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2b9a465')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+</div>
+
+<div class="field field-type-text field-field-operator-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt>prop</dt>
+<dd>Строка или числовое выражение, являющееся именем свойства или индексом массива</dd>
+<dt>object</dt>
+<dd>Объект для поиска в нем свойства или массив - для проверки индекса</dd>
+</dl>
+</div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-operator-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Оператор <code>in</code> возвращает <code>true</code>, только если данное свойство присутствует в объекте или его прототипе.</p>
+<div class="example">
+<div class="example-title">Пример: объект</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e24bdf6b" >
+<div class="source-controls-small">  		<span id="select-4a368e24bdf6b" onclick="return sourceEditor.select('4a368e24bdf6b')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e24bdf6b">
+<pre class="source" id="src-4a368e24bdf6b">obj = <span class="br0">&#123;</span>
+  a: <span class="nu0">5</span>
+<span class="br0">&#125;</span>
+&nbsp;
+<span class="st0">&quot;a&quot;</span> <span class="kw1">in</span> obj <span class="co1">// true</span>
+<span class="st0">&quot;b&quot;</span> <span class="kw1">in</span> obj <span class="co1">// false</span>
+<span class="st0">&quot;toString&quot;</span> <span class="kw1">in</span> obj <span class="co1">// true, т.к toString есть в прототипе</span></pre><div class="src-edit-container" id="src-edit-4a368e24bdf6b"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e24bdf6b')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>Следующий пример иллюстрирует проверку индекса в массиве:</p>
+<div class="example">
+<div class="example-title">Пример: массив</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e24beb82" >
+<div class="source-controls-small">  		<span id="select-4a368e24beb82" onclick="return sourceEditor.select('4a368e24beb82')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e24beb82">
+<pre class="source" id="src-4a368e24beb82">arr = <span class="br0">&#91;</span> <span class="st0">&quot;a&quot;</span>, <span class="st0">&quot;b&quot;</span>, <span class="st0">&quot;c&quot;</span><span class="br0">&#93;</span>
+&nbsp;
+<span class="nu0">1</span> <span class="kw1">in</span> arr <span class="co1">// true</span>
+<span class="nu0">22</span> <span class="kw1">in</span> arr <span class="co1">// false</span>
+&nbsp;
+<span class="kw1">delete</span> arr<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span>
+<span class="nu0">1</span> <span class="kw1">in</span> arr <span class="co1">// false : элемент удален</span></pre><div class="src-edit-container" id="src-edit-4a368e24beb82"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e24beb82')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>Справа от оператора <code>in</code> должен находится объект, иначе интерпретатор сгенерирует ошибку <a href="TypeError.html" >TypeError</a>.</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e24bf9db" >
+<div class="code-container" id="cc-4a368e24bf9db">
+<pre class="source" id="src-4a368e24bf9db"><span class="st0">'a'</span> <span class="kw1">in</span> <span class="st0">&quot;test&quot;</span> <span class="co1">// TypeError</span></pre><div class="src-edit-container" id="src-edit-4a368e24bf9db"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e24bf9db')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+
+<div class="field field-type-nodereference field-field-see-also">
+  <h3 class="field-label">См. также</h3>
+  <ul class="field-items">
+          <li class="field-item"><a href="delete.html">delete</a> /Оператор/</li>
+          <li class="field-item"><a class="liexternal" href="http://javascript.ru/ecma/part11">Выражения</a> /Стандарт языка/</li>
+      </ul>
+</div>
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

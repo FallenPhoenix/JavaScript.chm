@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>for</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/for">http://javascript.ru/for</a></div><h2>for</h2><p>Создать цикл, указав начальное состояние, условие и операцию обновления состояния</p>
+
+<div class="field field-type-text field-field-syntax-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e2a99ed5" >  	<div class="code-container" id="cc-4a368e2a99ed5"> 		<pre class="source" id="src-4a368e2a99ed5"><span class="kw1">for</span> <span class="br0">&#40;</span><span class="br0">&#91;</span>initial-expression<span class="br0">&#93;</span>; <span class="br0">&#91;</span>condition<span class="br0">&#93;</span>; <span class="br0">&#91;</span>final-expression<span class="br0">&#93;</span><span class="br0">&#41;</span>
+   statement</pre> 		<div class="src-edit-container" id="src-edit-4a368e2a99ed5"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2a99ed5')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-syntax-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt>initial-expression</dt>
+<dd>Выражение (включая присваивание) или объявление переменной. Как правило, используется для инициализации переменной-счетчика. Это условие может объявлять новую переменную при помощи <code>var</code>. Такая переменная не является локальной переменной цикла, она видна во всей области видимости.<br />
+<dd>
+<dt>condition</dt>
+<dd>Выражение, которое вычисляется между итерациями. Если оно является верным <code>true</code>, то выполняется следующая итерация, иначе - управление переходит дальше, вызовам после цикла.<br />
+<dd>
+<dt>final-expression</dt>
+<dd>Выражение, которое вычисляется в конце каждой итерации, перед проверкой условия <code>condition</code>. Обычно используется для увеличения переменной-счетчика.<br />
+<dd>
+<dt>statement</dt>
+<dd><a href="Blok.html" >Блок</a> или javascript-вызов для выполнения при каждой итерации цикла, пока верно условие <code>condition</code><br />
+<dd>
+</dd></dd></dd></dd></dd></dd></dd></dd></dl>
+</div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-syntax-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>В следующем примере в начальном условии объявляется переменная-счетчик <code>i</code> и увеличивается до 9 по 1 за каждую итерацию</p>
+<div class="example">
+<div class="example-title">Пример: со счетчиком</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2a9381c" >
+<div class="code-container" id="cc-4a368e2a9381c">
+<pre class="source" id="src-4a368e2a9381c"><span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw2">var</span> i = <span class="nu0">0</span>; i &lt; <span class="nu0">9</span>; i++<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+   n += i
+<span class="br0">&#125;</span></pre><div class="src-edit-container" id="src-edit-4a368e2a9381c"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2a9381c')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>Ни одно условие не является обязательным.</p>
+<div class="example">
+<div class="example-title">Пример: бесконечный цикл с выходом изнутри</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2a94070" >
+<div class="code-container" id="cc-4a368e2a94070">
+<pre class="source" id="src-4a368e2a94070"><span class="kw1">for</span><span class="br0">&#40;</span>;;<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+  ...
+  <span class="kw1">if</span> <span class="br0">&#40;</span>какое-то условие<span class="br0">&#41;</span> <span class="kw1">break</span>;
+<span class="br0">&#125;</span></pre><div class="src-edit-container" id="src-edit-4a368e2a94070"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2a94070')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+
+<div class="field field-type-nodereference field-field-see-also">
+  <h3 class="field-label">См. также</h3>
+  <ul class="field-items">
+          <li class="field-item"><a class="liexternal" href="http://javascript.ru/ecma/part11">Выражения</a> /Стандарт языка/</li>
+      </ul>
+</div>
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

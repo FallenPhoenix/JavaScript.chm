@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>Date.parse</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/Date.parse">http://javascript.ru/Date.parse</a></div><h2>Date.parse</h2><div class="field field-type-text field-field-method-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e233aff1" >  	<div class="code-container" id="cc-4a368e233aff1"> 		<pre class="source" id="src-4a368e233aff1">Date.<span class="me1">parse</span><span class="br0">&#40;</span>dateVal<span class="br0">&#41;</span></pre> 		<div class="src-edit-container" id="src-edit-4a368e233aff1"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e233aff1')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-method-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt class="arequired">dateVal</dt>
+<dd>Строка, содержащая дату в стандартном строковом формате.</dd>
+</dl>
+</div>
+  </div>
+</div>
+
+
+<div class="field field-type-text field-field-method-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Метод <code>parse</code> получает строку с датой (напр. "Jan 03, 2000") и возвращает целое число, представляющее собой количество миллисекунд, истекших с полуночи 1 января 1970 года GMT+0 до даты, указанной в параметре <code>dateVal</code>.</p>
+<p>Это статический метод, который можно вызывать без создания объекта даты, поэтому для доступа к нему используется форма <code>Date.parse</code>, а не объект <code>.parse</code>.</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e232bf6c" >
+<div class="source-controls-small">  		<span id="select-4a368e232bf6c" onclick="return sourceEditor.select('4a368e232bf6c')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e232bf6c">
+<pre class="source" id="src-4a368e232bf6c"><span class="kw2">var</span> d = <span class="kw2">new</span> Date<span class="br0">&#40;</span><span class="br0">&#41;</span>;
+d.<span class="me1">setTime</span><span class="br0">&#40;</span>Date.<span class="me1">parse</span><span class="br0">&#40;</span><span class="st0">&quot;21 May 1958 10:12&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>;
+document.<span class="kw1">write</span><span class="br0">&#40;</span>d.<span class="me1">toLocaleString</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>;
+&nbsp;
+<span class="co1">// Выведет на экран следующий результат:</span>
+Wednesday, May <span class="nu0">21</span>, <span class="nu0">1958</span> <span class="nu0">10</span>:<span class="nu0">12</span>:<span class="nu0">00</span></pre><div class="src-edit-container" id="src-edit-4a368e232bf6c"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e232bf6c')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>В случае, если метод <code>parse</code> не смог разобрать переданную ему в качестве параметра строку, он возвращает значение <code>NaN</code>.</p>
+<h3>Правила разбора строки</h3>
+<p>Поддерживается стандарт IETF standard (<a class="liexternal" href="http://tools.ietf.org/html/rfc1123" class="liexternal">RFC 1123</a>, раздел 5.2.14 и т.д.)</p>
+<p>Существуют следующие правила перевода даты из текстовой строки:</p>
+<ul>
+<li>Для краткого формата даты допускается использование разделителей "/" или "-", но порядок элементов должен быть строго "месяц/день/год", например "7/20/96".</li>
+<li>Для полного формата даты порядок указания элементов может быть произвольным. Если используется два знака для обозначения года, то число должно быть меньше 70 для указания 21-го века. Например "July 10 1995".</li>
+<li>Любой текст в круглых скобках рассматривается как комментарии. Комментарии могут быть вложенными, например: "July 10 1995 (this (1234) is a comment)". </li>
+<li>Запятые и пробелы рассматриваются как разделители, могут повторяться. </li>
+<li>Месяца и дни недели должны иметь два и больше знаков. Если в двузначном написании элементы становятся идентичными, то используется последнее значение, например "Ju" это Июль, а не Июнь. </li>
+<li>Если в полном формате даты указан неверный день недели, то он игнорируется.<br />
+Яваскрипт обрабатывает все стандартные временные зоны, включая UTC и GMT. </li>
+<li>Значения для часов, минут и секунд могут быть пропущены, например "10:", "10:11", и "10:11:12".</li>
+<li>Если время указано в 24-часовом формате, то указание полудня считается ошибкой, например "23:15 PM" - ошибка. </li>
+<li>Строка, содержащая неправильную дату - ошибочна. Например, строка содержащая два года или два месяца. </li>
+</ul>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e232cf72" >
+<div class="source-controls-small">  		<span id="select-4a368e232cf72" onclick="return sourceEditor.select('4a368e232cf72')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e232cf72">
+<pre class="source" id="src-4a368e232cf72">IPOdate.<span class="me1">setTime</span><span class="br0">&#40;</span>Date.<span class="me1">parse</span><span class="br0">&#40;</span><span class="st0">&quot;Aug 9, 1995&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> ;
+&nbsp;
+<span class="co1">// Возвращает 807937200000 в зоне GMT-0300, </span>
+<span class="co1">// и другие значения в других зонах, так как зона</span>
+<span class="co1">// не указана в аргументе</span>
+Date.<span class="me1">parse</span><span class="br0">&#40;</span><span class="st0">&quot;Aug 9, 1995&quot;</span><span class="br0">&#41;</span>;
+&nbsp;
+<span class="co1">// Возвращает 807926400000 в любой зоне.</span>
+Date.<span class="me1">parse</span><span class="br0">&#40;</span><span class="st0">&quot;Wed, 09 Aug 1995 00:00:00 GMT&quot;</span><span class="br0">&#41;</span>;</pre><div class="src-edit-container" id="src-edit-4a368e232cf72"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e232cf72')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>Array</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/Array">http://javascript.ru/Array</a></div><h2>Array</h2><h3 class="field-label">Создание</h3>
+
+<div class="field field-type-text field-object-syntax">
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e20a03df" >  	<div class="source-controls-small">  		<span id="select-4a368e20a03df" onclick="return sourceEditor.select('4a368e20a03df')">Выделить все</span>   	</div>  	<div class="code-container" id="cc-4a368e20a03df"> 		<pre class="source" id="src-4a368e20a03df"><span class="coMULTI">/* обычный синтаксис */</span>
+<span class="kw2">var</span> array = <span class="br0">&#91;</span> elem0, elem1, elem2, ... <span class="br0">&#93;</span>
+<span class="kw2">var</span> empty = <span class="br0">&#91;</span><span class="br0">&#93;</span>
+&nbsp;
+<span class="coMULTI">/* Синтаксис с new Array() */</span>
+<span class="kw2">var</span> array = <span class="kw2">new</span> Array<span class="br0">&#40;</span> elem0, elem1, elem2, ...<span class="br0">&#41;</span>
+<span class="kw2">var</span> empty = <span class="kw2">new</span> Array<span class="br0">&#40;</span><span class="br0">&#41;</span>
+&nbsp;
+<span class="coMULTI">/* Редкий синтаксис: аргумент new Array - одно число */</span>
+<span class="kw2">var</span> array = <span class="kw2">new</span> Array<span class="br0">&#40;</span><span class="nu0">10</span><span class="br0">&#41;</span></pre> 		<div class="src-edit-container" id="src-edit-4a368e20a03df"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e20a03df')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-object-arguments">  
+<h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt>elem0, elem1, ...</dt>
+<dd>
+<ul>
+<li>Если ни один из параметров <code>elem0, elem1, ...</code> не указан, то инициализируется пустой массив.</li>
+<li>Если указан лишь один числовой параметр <code>elem0</code> и массив объявлен через <code>new Array</code>, то будет инициализирован пустой массив длины, равной данному числу. При этом все элементы являются <code>undefined</code>.</li>
+<li>В ином случае создается массив из перечисленных элементов.</li>
+</ul>
+</dd>
+</dl>
+</div>
+  </div>
+</div>
+
+<div class="field field-type-text field-object-intro">
+  <div class="field-items">
+      <div class="field-item"><p>Массив пронумерованных элементов, также может служить стеком или очередью. Для ассоциативных массивов используйте <a href="Object.html" >Object</a>.</p>
+</div>
+  </div>
+</div>
+
+
+<hr/>
+<div class="field field-type-text field-object-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Объект <code>Array</code> предоставляет функционал </p>
+<ol>
+<li>Массива с любыми числовыми индексами (разреженного)</li>
+<li>Стека/очереди</li>
+</ol>
+<p>Для задания массива, как правило, используется синтаксис с квадратными скобками. Объявление через <code>new Array</code> тоже возможно, но почти не используется.</p>
+<div class="example">
+<div class="example-title">Пример: Создать пустой массив</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368da8b76f9" >
+<div class="code-container" id="cc-4a368da8b76f9">
+<pre class="source" id="src-4a368da8b76f9"><span class="kw2">var</span> arr = <span class="br0">&#91;</span><span class="br0">&#93;</span></pre><div class="src-edit-container" id="src-edit-4a368da8b76f9"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368da8b76f9')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<div class="example">
+<div class="example-title">Пример: добавить элемент в конец</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368da8b7d1c" >
+<div class="code-container" id="cc-4a368da8b7d1c">
+<pre class="source" id="src-4a368da8b7d1c">arr<span class="br0">&#91;</span>arr.<span class="me1">length</span><span class="br0">&#93;</span> = <span class="nu0">5</span>  <span class="coMULTI">/* или arr.push(5) */</span></pre><div class="src-edit-container" id="src-edit-4a368da8b7d1c"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368da8b7d1c')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<div class="example">
+<div class="example-title">Пример: Создать массив из разных элементов</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368da8b8c89" >
+<div class="source-controls-full">     		<input type="button" id="show-4a368da8b8c89" onclick="return sourceEditor.run('4a368da8b8c89')" value="Запустить!" /> 		<input type="button" id="show-changed-4a368da8b8c89" onclick="return sourceEditor.run('4a368da8b8c89', true)" value="Запустить измененное!" style="width:180px;display:none" />  		<input type="button" id="edit-4a368da8b8c89" onclick="return sourceEditor.edit('4a368da8b8c89')" value="Изменить" /> 		<input type="button" id="select-4a368da8b8c89" onclick="return sourceEditor.select('4a368da8b8c89')" value="Выделить все" />   	</div>
+<div class="code-container" id="cc-4a368da8b8c89">
+<pre class="source" id="src-4a368da8b8c89"><span class="kw2">var</span> arr = <span class="br0">&#91;</span> <span class="nu0">4</span>, <span class="st0">&quot;test&quot;</span>, , <span class="kw2">false</span>, <span class="br0">&#91;</span><span class="nu0">0</span>,<span class="nu0">1</span><span class="br0">&#93;</span> <span class="br0">&#93;</span>
+&nbsp;
+<span class="kw3">alert</span><span class="br0">&#40;</span>arr<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="co1">// =&gt; &quot;test&quot;</span>
+<span class="kw3">alert</span><span class="br0">&#40;</span>arr<span class="br0">&#91;</span><span class="nu0">2</span><span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="co1">// =&gt; undefined</span>
+<span class="kw3">alert</span><span class="br0">&#40;</span>arr<span class="br0">&#91;</span><span class="nu0">3</span><span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="co1">// =&gt; false</span>
+<span class="kw3">alert</span><span class="br0">&#40;</span>arr<span class="br0">&#91;</span><span class="nu0">4</span><span class="br0">&#93;</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="co1">// =&gt; 1</span></pre><div class="src-edit-container" id="src-edit-4a368da8b8c89"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368da8b8c89')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>Можно добавить объект под любым индексом, даже превосходящим текущую длину массива. При этом массив хранит (и потребляет память) только те элементы, которые установлены.</p>
+<p>В примере ниже массив будет хранить два элемента: номер 1 и номер 999.</p>
+<div class="example">
+<div class="example-title">Пример: разреженный массив</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368da8b9cbd" >
+<div class="source-controls-full">     		<input type="button" id="show-4a368da8b9cbd" onclick="return sourceEditor.run('4a368da8b9cbd')" value="Запустить!" /> 		<input type="button" id="show-changed-4a368da8b9cbd" onclick="return sourceEditor.run('4a368da8b9cbd', true)" value="Запустить измененное!" style="width:180px;display:none" />  		<input type="button" id="edit-4a368da8b9cbd" onclick="return sourceEditor.edit('4a368da8b9cbd')" value="Изменить" /> 		<input type="button" id="select-4a368da8b9cbd" onclick="return sourceEditor.select('4a368da8b9cbd')" value="Выделить все" />   	</div>
+<div class="code-container" id="cc-4a368da8b9cbd">
+<pre class="source" id="src-4a368da8b9cbd"><span class="kw2">var</span> arr = <span class="br0">&#91;</span><span class="br0">&#93;</span>
+arr<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span> = <span class="nu0">5</span>
+arr<span class="br0">&#91;</span><span class="nu0">999</span><span class="br0">&#93;</span> = <span class="nu0">6</span>
+&nbsp;
+<span class="kw3">alert</span><span class="br0">&#40;</span>arr<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="co1">// =&gt; undefined, такого значения нет</span>
+<span class="kw3">alert</span><span class="br0">&#40;</span>arr.<span class="me1">length</span><span class="br0">&#41;</span> <span class="co1">// =&gt; 1000 : последний индекс+1</span></pre><div class="src-edit-container" id="src-edit-4a368da8b9cbd"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368da8b9cbd')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+
+
+<hr/>
+  <h3 class="field-label">Методы</h3>
+<dl>
+
+<dt><a href="Array-pop.html">pop </a></dt>
+<dd>Удаляет последний элемент массива и возвращает урезанный массив</dd>
+
+
+<dt><a href="Array-push.html">push</a></dt>
+<dd>Добавить элемент в конец массива</dd>
+
+
+<dt><a href="Array-shift.html">shift </a></dt>
+<dd>Удаляет первый элемент массива и возвращает удалённый элемент.</dd>
+
+
+<dt><a href="Array-unshift.html">unshift </a></dt>
+<dd>Добавляет указанные элементы в начало массива и возвращает новую длину массива.</dd>
+
+
+<dt><a href="Array-sort.html">sort </a></dt>
+<dd>Сортирует элементы массива и возвращает отсортированный массив.</dd>
+
+
+<dt><a href="Array-slice.html">slice</a></dt>
+<dd>Возвращает подмассив (часть исходного массива).</dd>
+
+
+<dt><a href="Array-reverse.html">reverse </a></dt>
+<dd>Меняет порядок следования элементов в массиве на обратный</dd>
+
+
+<dt><a href="Array-join.html">join</a></dt>
+<dd>Возвращает строку, состоящую из всех элементов массива, соединённых между собой строкой-аргументом</dd>
+
+
+<dt><a href="Array-concat.html">concat</a></dt>
+<dd>возвращает новый массив, составленный из текущего объекта и аргументов</dd>
+
+
+<dt><a href="Array-splice.html">splice </a></dt>
+<dd>Удаляет элементы из массива и, при необходимости, добавляет новые элементы на их места. Возвращает удалённые элементы в виде массива.</dd>
+
+</dl>
+
+
+<hr/>
+  <h3 class="field-label">Свойства</h3>
+<dl>
+
+<dt><a href="Array-index.html">index</a></dt>
+<dd>Псевдо-свойство массива, созданного в результате сравнения на соответствие регулярному выражению. Для такого массива данное свойство содержит индекс найденного соответствия в исследуемой строке.</dd>
+
+
+<dt><a href="Array-input.html">input </a></dt>
+<dd>Псевдо-свойство массива, созданного в результате сравнения на соответствие регулярному выражению. </p>
+<p>Для такого массива данное свойство содержит строку, над которой производили сравнение.</dd>
+
+
+<dt><a href="Array-length.html">length</a></dt>
+<dd>Длина массива: число, на единицу превосходящее максимальный индекс массива</dd>
+
+</dl>
+
+
+<div class="field field-type-nodereference field-field-see-also">
+  <h3 class="field-label">См. также</h3>
+  <ul class="field-items">
+          <li class="field-item"><a class="liexternal" href="http://javascript.ru/tutorial/basic/array">Массивы </a> /Статья/</li>
+          <li class="field-item"><a class="liexternal" href="http://javascript.ru/ecma/part15">Встроенные объекты ECMAScript</a> /Стандарт языка/</li>
+      </ul>
+</div>
+
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>Function</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/Function">http://javascript.ru/Function</a></div><h2>Function</h2><h3 class="field-label">Создание</h3>
+
+<div class="field field-type-text field-object-syntax">
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e24d75b5" >  	<div class="code-container" id="cc-4a368e24d75b5"> 		<pre class="source" id="src-4a368e24d75b5"><span class="kw2">new</span> <span class="kw2">Function</span> <span class="br0">&#40;</span><span class="br0">&#91;</span>arg1<span class="br0">&#91;</span>, arg2<span class="br0">&#91;</span>, ... <span class="me1">argN</span><span class="br0">&#93;</span><span class="br0">&#93;</span>,<span class="br0">&#93;</span> functionBody<span class="br0">&#41;</span></pre> 		<div class="src-edit-container" id="src-edit-4a368e24d75b5"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e24d75b5')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-object-arguments">  
+<h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt>arg1, arg2, ... argN</dt>
+<dd>Имена параметров для создаваемой функции. Каждый аргумент должен быть строкой, которая является корректным идентификатором javascript или списком таких строк, разделенных запятой. Например: "x", "theValue" или "a,b".</dd>
+<dt>functionBody</dt>
+<dd>javascript-код тела функции</dd>
+</dl>
+</div>
+  </div>
+</div>
+
+
+
+<hr/>
+<div class="field field-type-text field-object-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Каждая функция в яваскрипт является объектом класса <code>Function</code>.</p>
+<p>Все аргументы, переданные функции, интерпретируются как имена параметров для создаваемой функции, в порядке их перечисления.</p>
+<p>Вызов конструктора <code>Function</code> как функции работает так же, как вызов с <a href="new.html" >new</a>. Иначе говоря, оператор <code>new</code> при вызове <code>Function</code> необязателен.</p>
+<div class="example">
+<div class="example-title">Пример: Пример создания функции</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e24d059d" >
+<div class="source-controls-small">  		<span id="select-4a368e24d059d" onclick="return sourceEditor.select('4a368e24d059d')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e24d059d">
+<pre class="source" id="src-4a368e24d059d"><span class="kw2">var</span> multiply = <span class="kw2">new</span> <span class="kw2">Function</span><span class="br0">&#40;</span><span class="st0">&quot;x&quot;</span>, <span class="st0">&quot;y&quot;</span>, <span class="st0">&quot;return x * y&quot;</span><span class="br0">&#41;</span>
+<span class="co1">// или так:</span>
+<span class="kw2">var</span> multiply = <span class="kw2">new</span> <span class="kw2">Function</span><span class="br0">&#40;</span><span class="st0">&quot;x,y&quot;</span>, <span class="st0">&quot;return x * y&quot;</span><span class="br0">&#41;</span>
+&nbsp;
+<span class="kw2">var</span> theAnswer = multiply<span class="br0">&#40;</span><span class="nu0">7</span>, <span class="nu0">6</span><span class="br0">&#41;</span>;</pre><div class="src-edit-container" id="src-edit-4a368e24d059d"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e24d059d')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+
+
+<hr/>
+  <h3 class="field-label">Методы</h3>
+<dl>
+
+<dt><a href="Function-call.html">call</a></dt>
+<dd>Позволяет выполнить функцию/метод  в контексте указанного объекта.<a></a></dd>
+
+
+<dt><a href="Function-apply.html">apply</a></dt>
+<dd>Позволяет вызывать функцию или метод одного объекта в контексте другого</dd>
+
+</dl>
+
+
+<hr/>
+  <h3 class="field-label">Свойства</h3>
+<dl>
+
+<dt><a href="Function-length.html">length</a></dt>
+<dd>число аргументов, объявленных в определении функции</dd>
+
+</dl>
+
+
+<div class="field field-type-nodereference field-field-see-also">
+  <h3 class="field-label">См. также</h3>
+  <ul class="field-items">
+          <li class="field-item"><a href="function-syntax.html">function</a> /Синтаксическая конструкция/</li>
+          <li class="field-item"><a href="function-operator.html">function</a> /Оператор/</li>
+          <li class="field-item"><a class="liexternal" href="http://javascript.ru/tutorial/basic/functions">Функции</a> /Статья/</li>
+          <li class="field-item"><a class="liexternal" href="http://javascript.ru/ecma/part13">Определение функции</a> /Стандарт языка/</li>
+      </ul>
+</div>
+
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

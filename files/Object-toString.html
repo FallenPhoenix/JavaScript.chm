@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>toString </title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/Object/toString">http://javascript.ru/Object/toString</a></div><h2>toString </h2><div class="field field-type-text field-field-method-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e269867b" >  	<div class="code-container" id="cc-4a368e269867b"> 		<pre class="source" id="src-4a368e269867b">object.<span class="me1">toString</span><span class="br0">&#40;</span><span class="br0">&#41;</span></pre> 		<div class="src-edit-container" id="src-edit-4a368e269867b"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e269867b')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-method-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"></div>
+  </div>
+</div>
+
+
+<div class="field field-type-text field-field-method-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Каждый объект обладает методом <code>toString</code>, который вызывается автоматически каждый раз, когда требуется строковое представление объекта. </p>
+<p>Например, это произойдет в вызовах:</p>
+<div class="source-container" id="sc-4a368e26870c5" >
+<div class="source-controls-small">  		<span id="select-4a368e26870c5" onclick="return sourceEditor.select('4a368e26870c5')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e26870c5">
+<pre class="source" id="src-4a368e26870c5"><span class="co1">// alert требует строку,</span>
+<span class="co1">// поэтому произойдет неявный вызов obj.toString</span>
+<span class="kw3">alert</span><span class="br0">&#40;</span>obj<span class="br0">&#41;</span> 
+&nbsp;
+<span class="co1">// операция объединения строк сделает строку из obj</span>
+<span class="kw2">var</span> s = <span class="st0">'Объект в виде строки:'</span>+obj</pre><div class="src-edit-container" id="src-edit-4a368e26870c5"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e26870c5')" />			 		</div>
+</div>
+</div>
+<p>Объект <code>Object</code> предоставляет базовый метод <code>toString</code>, который обычно перекрывается наследующими от <code>Object</code> объектами.</p>
+<p>По умолчанию, если этот метод не перекрыт объектом-наследником Object - он возвращает "[object &lt;тип объекта&gt;]".</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e26843fb" >
+<div class="code-container" id="cc-4a368e26843fb">
+<pre class="source" id="src-4a368e26843fb"><span class="kw2">var</span> o = <span class="kw2">new</span> Object<span class="br0">&#40;</span><span class="br0">&#41;</span>;
+<span class="kw3">alert</span><span class="br0">&#40;</span>o.<span class="me1">toString</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>  <span class="co1">// [object Object]</span></pre><div class="src-edit-container" id="src-edit-4a368e26843fb"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e26843fb')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>Каждый основной объект яваскрипт обладает своим собственным методом <code>toString</code>, например:</p>
+<div class="source-container" id="sc-4a368e2687d0b" >
+<div class="code-container" id="cc-4a368e2687d0b">
+<pre class="source" id="src-4a368e2687d0b"><span class="kw2">var</span> d = <span class="kw2">new</span> Date<span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="kw3">alert</span><span class="br0">&#40;</span>d<span class="br0">&#41;</span> <span class="co1">// выведет d.toString()</span></pre><div class="src-edit-container" id="src-edit-4a368e2687d0b"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2687d0b')" />			 		</div>
+</div>
+</div>
+<p>Полезной практикой является перекрытие <code>toString</code> для новых типов объектов. Метод <code>toString</code> не получает аргументов и возвращает строку. Как правило, эта строка содержит основную информацию об объекте.</p>
+<div class="example">
+<div class="example-title">Пример: До перекрытия метода toString</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2684cbd" >
+<div class="source-controls-small">  		<span id="select-4a368e2684cbd" onclick="return sourceEditor.select('4a368e2684cbd')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e2684cbd">
+<pre class="source" id="src-4a368e2684cbd"><span class="kw2">function</span> Dog<span class="br0">&#40;</span><span class="kw3">name</span>,color<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+   <span class="kw1">this</span>.<span class="kw3">name</span>=<span class="kw3">name</span>
+   <span class="kw1">this</span>.<span class="me1">color</span>=color
+<span class="br0">&#125;</span>
+&nbsp;
+theDog = <span class="kw2">new</span> Dog<span class="br0">&#40;</span><span class="st0">&quot;Барбос&quot;</span>,<span class="st0">&quot;черный&quot;</span><span class="br0">&#41;</span>;</pre><div class="src-edit-container" id="src-edit-4a368e2684cbd"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2684cbd')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>Если вызвать метод <code>toString</code> сейчас, то он вернет <code>[object Object]</code>.</p>
+<p>Для изменения этого поведения добавим в прототип свой метод <code>toString</code>:</p>
+<div class="example">
+<div class="example-title">Пример: После перекрытия метода toString</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2685b14" >
+<div class="source-controls-small">  		<span id="select-4a368e2685b14" onclick="return sourceEditor.select('4a368e2685b14')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e2685b14">
+<pre class="source" id="src-4a368e2685b14">Dog.<span class="me1">prototype</span>.<span class="me1">toString</span> = <span class="kw2">function</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+  <span class="kw1">return</span> <span class="st0">&quot;Собака &quot;</span> + <span class="kw1">this</span>.<span class="kw3">name</span> + <span class="st0">&quot;, цвет:&quot;</span> + <span class="kw1">this</span>.<span class="me1">color</span>
+<span class="br0">&#125;</span>
+&nbsp;
+theDog = <span class="kw2">new</span> Dog<span class="br0">&#40;</span><span class="st0">&quot;Барбос&quot;</span>,<span class="st0">&quot;черный&quot;</span><span class="br0">&#41;</span>;
+&nbsp;
+<span class="kw3">alert</span><span class="br0">&#40;</span>theDog<span class="br0">&#41;</span> <span class="co1">// =&gt; &quot;Собака Барбос, цвет: черный&quot;</span></pre><div class="src-edit-container" id="src-edit-4a368e2685b14"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2685b14')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>Каждый раз, когда объект <code>theDog</code> будет использован в качестве строки, яваскрипт автоматически вызовет метод <code>toString</code>, который вернет "Собака Барбос, цвет: черный".</p>
+</div>
+  </div>
+</div>
+
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

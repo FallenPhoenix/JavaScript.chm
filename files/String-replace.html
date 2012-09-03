@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>replace</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/String/replace">http://javascript.ru/String/replace</a></div><h2>replace</h2><div class="field field-type-text field-field-method-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e285445e" >  	<div class="code-container" id="cc-4a368e285445e"> 		<pre class="source" id="src-4a368e285445e">str.<span class="me1">replace</span><span class="br0">&#40;</span>regexp, newSubStr|function<span class="br0">&#41;</span></pre> 		<div class="src-edit-container" id="src-edit-4a368e285445e"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e285445e')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-method-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt>regexp</dt>
+<dd>объект типа <a href="RegExp.html" >RegExp</a> или строка<br />
+<dd>
+<dt>newSubStr|function</dt>
+<dd>новая подстрока или функция, которая ее возвращает<br />
+<dd>
+</dd></dd></dd></dd></dl>
+</div>
+  </div>
+</div>
+
+
+<div class="field field-type-text field-field-method-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Этот метод не меняет вызывающую строку, а возвращает новую, после замен.</p>
+<p>Чтобы произвести глобальны поиск и замену, используйте <code>regexp</code> c флагом "g".</p>
+<h3>Строка замены</h3>
+<p>Если вы указываете строку как второй параметр - она может включать в себя следующие специальные сочетания:</p>
+<dl>
+<dt>$$</dt>
+<dd>Вставляет "$"</dd>
+<dt>$&amp;</dt>
+<dd>Вставляет совпавшую подстроку</dd>
+<dt>$`</dt>
+<dd>Вставляет часть строки, которая предшествует совпавшей подстроке</dd>
+<dt>$'</dt>
+<dd>Вставляет часть строки, которая следует за совпавшей подстрокой</dd>
+<dt>$n или $nn, где <code>n/nn</code> - десятичные цифры</dt>
+<dd>Вставляет n-ю скобку в совпадении, если первый аргумент - объект <code>RegExp</code></dd>
+</dl>
+<h3>Функция замены</h3>
+<p>Если вы указываете функцию в качестве второго параметра, то она вызывается при каждом совпадении.</p>
+<p>Ваша функция может динамически генерировать строку, которая заменит совпавшую подстроку. В качестве значения для замены используется результат работы функции.</p>
+<p>Функция может использовать совпавшие подстроки - она их получает в параметрах вызова. Первый параметр всегда содержит полную совпавшую подстроку.</p>
+<p>Если при вызове <code>replace</code> указано регулярное выражение, а не строка, то последующие параметры будут содержать значения скобочных групп.</p>
+<p>Наконец, последние два параметра - позиция, на которой произошло совпадения и вызывающая строка.</p>
+<p>Следующий пример вернет <code>my XX, zz</code>.</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e284000c" >
+<div class="source-controls-small">  		<span id="select-4a368e284000c" onclick="return sourceEditor.select('4a368e284000c')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e284000c">
+<pre class="source" id="src-4a368e284000c"><span class="kw2">function</span> replacer<span class="br0">&#40;</span>str, p1, p2, offset, s<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+  <span class="kw1">return</span> p1 + <span class="st0">&quot;, &quot;</span> + p2;
+<span class="br0">&#125;</span>
+&nbsp;
+newString = <span class="st0">&quot;my XXzz&quot;</span>.<span class="me1">replace</span><span class="br0">&#40;</span>/<span class="br0">&#40;</span>X+<span class="br0">&#41;</span><span class="br0">&#40;</span>z+<span class="br0">&#41;</span>/, replacer<span class="br0">&#41;</span></pre><div class="src-edit-container" id="src-edit-4a368e284000c"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e284000c')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>Значения параметров при вызове <code>replacer</code>:</p>
+<dl>
+<dt>str</dt>
+<dd><code>"XXzz"</code> - совпавшая подстрока</dd>
+<dt>p1</dt>
+<dd><code>"XX"</code> - первая скобка</dd>
+<dt>p2</dt>
+<dd><code>"zz"</code> - вторая скобка</dd>
+<dt>offset</dt>
+<dd><code>3</code> - позиция в тексте для поиска</dd>
+<dt>s</dt>
+<dd><code>"my XXzz"</code> - вызывающая строка, т.е строка для поиска</dd>
+</dl>
+<p>В следующем примере используется строка замены. Глобального поиска при этом не происходит.</p>
+<div class="example">
+<div class="example-title">Пример: строка замены</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2840f34" >
+<div class="code-container" id="cc-4a368e2840f34">
+<pre class="source" id="src-4a368e2840f34">str = <span class="st0">&quot;тест еще тест&quot;</span>
+str.<span class="me1">replace</span><span class="br0">&#40;</span><span class="st0">&quot;тест&quot;</span>,<span class="st0">&quot;прошел&quot;</span><span class="br0">&#41;</span> <span class="co1">// = &quot;прошел еще тест&quot;</span></pre><div class="src-edit-container" id="src-edit-4a368e2840f34"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2840f34')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>Для глобального поиска используйте регулярное выражение.</p>
+<div class="example">
+<div class="example-title">Пример: Глобальная замена строки</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e28419fa" >
+<div class="code-container" id="cc-4a368e28419fa">
+<pre class="source" id="src-4a368e28419fa">str = <span class="st0">&quot;тест еще тест&quot;</span>
+str.<span class="me1">replace</span><span class="br0">&#40;</span>/тест/g,<span class="st0">&quot;прошел&quot;</span><span class="br0">&#41;</span> <span class="co1">// = &quot;прошел еще прошел&quot;</span>
+<span class="co1">// или так</span>
+str.<span class="me1">replace</span><span class="br0">&#40;</span><span class="kw2">new</span> RegExp<span class="br0">&#40;</span><span class="st0">&quot;тест&quot;</span>,<span class="st0">'g'</span><span class="br0">&#41;</span>,<span class="st0">&quot;прошел&quot;</span><span class="br0">&#41;</span></pre><div class="src-edit-container" id="src-edit-4a368e28419fa"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e28419fa')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>Следующий пример использует при замене сочетания $1 и $2 для ссылок на результат поиска.</p>
+<div class="example">
+<div class="example-title">Пример: Замена со ссылками</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2842a93" >
+<div class="code-container" id="cc-4a368e2842a93">
+<pre class="source" id="src-4a368e2842a93"><span class="kw2">var</span> re = /<span class="br0">&#40;</span>\w+<span class="br0">&#41;</span>\s<span class="br0">&#40;</span>\w+<span class="br0">&#41;</span>/;
+<span class="kw2">var</span> str = <span class="st0">&quot;John Smith&quot;</span>;
+<span class="kw2">var</span> newstr = str.<span class="me1">replace</span><span class="br0">&#40;</span>re, <span class="st0">&quot;$2, $1&quot;</span><span class="br0">&#41;</span> <span class="co1">// &quot;Smith, John&quot;</span></pre><div class="src-edit-container" id="src-edit-4a368e2842a93"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2842a93')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

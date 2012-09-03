@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>delete</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/delete">http://javascript.ru/delete</a></div><h2>delete</h2><div class="field field-type-text field-field-operator-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e2b9318c" >  	<div class="code-container" id="cc-4a368e2b9318c"> 		<pre class="source" id="src-4a368e2b9318c"><span class="kw1">delete</span> expression</pre> 		<div class="src-edit-container" id="src-edit-4a368e2b9318c"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2b9318c')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+</div>
+
+<div class="field field-type-text field-field-operator-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt>expression</dt>
+<dd>выражение, приводимое к ссылке на удаляемый объект </dd>
+</dl>
+</div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-operator-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Удаляет объект, свойство объекта или элемент массива по указанному индексу.</p>
+<p>Значением <code>expression</code> должна являтся ссылка на удаляемое свойство, например:</p>
+<div class="source-container" id="sc-4a368ddf8ac06" >
+<div class="code-container" id="cc-4a368ddf8ac06">
+<pre class="source" id="src-4a368ddf8ac06"><span class="kw1">delete</span> variableName
+<span class="kw1">delete</span> objectExpression.<span class="me1">property</span>
+<span class="kw1">delete</span> objectExpression<span class="br0">&#91;</span><span class="st0">&quot;property&quot;</span><span class="br0">&#93;</span>
+<span class="kw1">delete</span> array<span class="br0">&#91;</span>index<span class="br0">&#93;</span></pre><div class="src-edit-container" id="src-edit-4a368ddf8ac06"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368ddf8ac06')"/>			 		</div>
+</div>
+</div>
+<p>Если <code>expression</code> не приводится к свойству, оператор <code>delete</code> не делает ничего.</p>
+<p>При успешном выполнении оператор <code>delete</code> удаляет свойство из объекта.</p>
+<p>При этом <code>delete</code> не меняет прототип объекта, даже если там есть свойство, совпадающее по названию с удаляемым.</p>
+<p>Некоторые свойства объектов не могут быть удалены. В спецификации такие свойства обозначены флагом <code>DontDelete</code>.</p>
+<p>Можно удалить переменные, объявленные глобально без <code>var</code>, но нельзя - объявленные через <code>var</code>.</p>
+<p>Оператор <code>delete</code> возвращает <code>false</code> только если свойство существует, но не может быть удалено, и <code>true</code> - в любых других случаях.</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368ddf87965" >
+<div class="source-controls-small">  		<span id="select-4a368ddf87965" onclick="return sourceEditor.select('4a368ddf87965')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368ddf87965">
+<pre class="source" id="src-4a368ddf87965">x = <span class="nu0">42</span>;        <span class="co1">// создать свойство глобального объекта window</span>
+<span class="kw2">var</span> y = <span class="nu0">43</span>;    <span class="co1">// объявить как переменную</span>
+myobj = <span class="kw2">new</span> Number<span class="br0">&#40;</span><span class="br0">&#41;</span>
+myobj.<span class="me1">h</span> = <span class="nu0">4</span>    <span class="co1">// создать свойство h</span>
+myobj.<span class="me1">k</span> = <span class="nu0">5</span>    <span class="co1">// создать свойство k</span>
+&nbsp;
+<span class="kw1">delete</span> x       <span class="co1">// возвратит true (объявлено без var)</span>
+<span class="kw1">delete</span> y       <span class="co1">// возвратит false (объявлено с var, флаг DontDelete)</span>
+<span class="kw1">delete</span> Math.<span class="me1">PI</span> <span class="co1">// возвратит false (встроенный объект, флаг DontDelete)</span>
+<span class="kw1">delete</span> myobj.<span class="me1">h</span> <span class="co1">// возвратит true (пользовательское свойство)</span>
+<span class="kw1">with</span><span class="br0">&#40;</span>myobj<span class="br0">&#41;</span> <span class="br0">&#123;</span> 
+  <span class="kw1">delete</span> k;    <span class="co1">// возвратит true (эквивалент delete myobj.k)</span>
+<span class="br0">&#125;</span> 
+<span class="kw1">delete</span> myobj   <span class="co1">// возвратит true (аналог delete x)</span></pre><div class="src-edit-container" id="src-edit-4a368ddf87965"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368ddf87965')"/>			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>Вы не можете удалить свойство из объекта, которое он унаследовал от прототипа (хотя вы можете удалить его напрямую из прототипа).</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368ddf89846" >
+<div class="source-controls-small">  		<span id="select-4a368ddf89846" onclick="return sourceEditor.select('4a368ddf89846')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368ddf89846">
+<pre class="source" id="src-4a368ddf89846"><span class="kw2">function</span> Foo<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#123;</span><span class="br0">&#125;</span>
+ Foo.<span class="me1">prototype</span>.<span class="me1">bar</span> = <span class="nu0">42</span>;
+ <span class="kw2">var</span> foo = <span class="kw2">new</span> Foo<span class="br0">&#40;</span><span class="br0">&#41;</span>;
+ <span class="kw1">delete</span> foo.<span class="me1">bar</span>;           <span class="co1">// ничего не сделает</span>
+ <span class="kw3">alert</span><span class="br0">&#40;</span>foo.<span class="me1">bar</span><span class="br0">&#41;</span>;           <span class="co1">// введет 42, свойство унаследовано</span>
+ <span class="kw1">delete</span> Foo.<span class="me1">prototype</span>.<span class="me1">bar</span>; <span class="co1">// удалит из прототипа</span>
+ <span class="kw3">alert</span><span class="br0">&#40;</span>foo.<span class="me1">bar</span><span class="br0">&#41;</span>;           <span class="co1">// выведет &quot;undefined&quot;, свойства больше нет</span></pre><div class="src-edit-container" id="src-edit-4a368ddf89846"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368ddf89846')"/>			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>При удалении элементов массива, его длина не меняется. Даже если вы удалите последний элемент: <code>delete a[a.length-1]</code> - его длина останется той же.</p>
+<p>При этом элемент исчезнет из массива:</p>
+<div class="source-container" id="sc-4a368ddf8b7b6" >
+<div class="source-controls-small">  		<span id="select-4a368ddf8b7b6" onclick="return sourceEditor.select('4a368ddf8b7b6')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368ddf8b7b6">
+<pre class="source" id="src-4a368ddf8b7b6">arr = <span class="br0">&#91;</span><span class="st0">&quot;a&quot;</span>, <span class="st0">&quot;b&quot;</span>, <span class="st0">&quot;c&quot;</span><span class="br0">&#93;</span>
+<span class="kw1">delete</span> arr<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="co1">// удалили b</span>
+&nbsp;
+<span class="kw3">alert</span><span class="br0">&#40;</span>arr.<span class="me1">length</span><span class="br0">&#41;</span> <span class="co1">// 3</span>
+<span class="kw3">alert</span><span class="br0">&#40;</span>arr<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="co1">// undefined</span>
+&nbsp;
+<span class="kw3">alert</span><span class="br0">&#40;</span><span class="nu0">1</span> <span class="kw1">in</span> arr<span class="br0">&#41;</span> <span class="co1">// <span class="strs">false</span></span></pre><div class="src-edit-container" id="src-edit-4a368ddf8b7b6"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368ddf8b7b6')"/>			 		</div>
+</div>
+</div>
+<p>Если вы хотите, чтобы элемент остался в массиве, но стал <code>undefined</code> - просто приравняйте его к <code>undefined</code>:</p>
+<div class="source-container" id="sc-4a368ddf8c6ab" >
+<div class="code-container" id="cc-4a368ddf8c6ab">
+<pre class="source" id="src-4a368ddf8c6ab">arr<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span> = undefined
+<span class="kw3">alert</span><span class="br0">&#40;</span><span class="nu0">1</span> <span class="kw1">in</span> arr<span class="br0">&#41;</span> <span class="co1">// <span class="strs">true</span></span></pre><div class="src-edit-container" id="src-edit-4a368ddf8c6ab"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368ddf8c6ab')"/>			 		</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+
+<div class="field field-type-nodereference field-field-see-also">
+  <h3 class="field-label">См. также</h3>
+  <ul class="field-items">
+          <li class="field-item"><a class="liexternal" href="http://javascript.ru/ecma/part11">Выражения</a> /Стандарт языка/</li>
+      </ul>
+</div>
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

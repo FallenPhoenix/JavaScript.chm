@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>undefined</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/undefined">http://javascript.ru/undefined</a></div><h2>undefined</h2><p>Обозначает неопределенное значение</p>
+
+<div class="field field-type-text field-field-property-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Эта глобальная переменная содержит элементарное неопределенное значение - то, которое имеет переменная, значение которой не указано.</p>
+<p>Например, функция без директивы <code>return</code> возвращает <code>undefined</code>. </p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2a52dc9" >
+<div class="source-controls-small">  		<span id="select-4a368e2a52dc9" onclick="return sourceEditor.select('4a368e2a52dc9')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e2a52dc9">
+<pre class="source" id="src-4a368e2a52dc9"><span class="kw2">function</span> a<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+   <span class="kw3">alert</span><span class="br0">&#40;</span><span class="st0">'test'</span><span class="br0">&#41;</span>
+<span class="br0">&#125;</span>
+&nbsp;
+result = a<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="co1">// result является undefined</span>
+<span class="kw3">alert</span><span class="br0">&#40;</span>result === undefined<span class="br0">&#41;</span> <span class="co1">// true</span></pre><div class="src-edit-container" id="src-edit-4a368e2a52dc9"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2a52dc9')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>Обращение к несуществующему свойству объекта также даст <code>undefined</code>.</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2a53ba1" >
+<div class="code-container" id="cc-4a368e2a53ba1">
+<pre class="source" id="src-4a368e2a53ba1">notexists = window.<span class="me1">notexists</span>  
+<span class="kw3">alert</span><span class="br0">&#40;</span>result === undefined<span class="br0">&#41;</span> <span class="co1">// true</span></pre><div class="src-edit-container" id="src-edit-4a368e2a53ba1"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2a53ba1')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>Как видно из примеров, определить, является ли значение <code>undefined</code>, можно строгим (тройным) знаком равенства.</p>
+<p>Например, можно проверить, существует ли глобальная переменная:</p>
+<div class="source-container" id="sc-4a368e2a54483" >
+<div class="code-container" id="cc-4a368e2a54483">
+<pre class="source" id="src-4a368e2a54483"><span class="kw1">if</span> <span class="br0">&#40;</span>window.<span class="me1">somevar</span> !== undefined<span class="br0">&#41;</span> <span class="br0">&#123;</span> .... <span class="br0">&#125;</span></pre><div class="src-edit-container" id="src-edit-4a368e2a54483"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2a54483')" />			 		</div>
+</div>
+</div>
+<p>Заметим, что нужен именно строгий оператор сравнения, т.к <code>x==undefined</code> верно также если <code>x</code> является <code>null</code>, а это уже другое значение.</p>
+<p>Строгое сравнение является лучшей альтернативой использованию <code>typeof</code>:</p>
+<div class="source-container" id="sc-4a368e2a54bcf" >
+<div class="code-container" id="cc-4a368e2a54bcf">
+<pre class="source" id="src-4a368e2a54bcf"><span class="kw2">var</span> x
+<span class="kw1">if</span> <span class="br0">&#40;</span><span class="kw1">typeof</span> x == <span class="st0">'undefined'</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+   ...
+<span class="br0">&#125;</span></pre><div class="src-edit-container" id="src-edit-4a368e2a54bcf"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2a54bcf')" />			 		</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

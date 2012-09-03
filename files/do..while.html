@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>do..while</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/do..while">http://javascript.ru/do..while</a></div><h2>do..while</h2><p>Задает цикл с проверкой условия после каждой итерации</p>
+
+<div class="field field-type-text field-field-syntax-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e2a8f54b" >  	<div class="code-container" id="cc-4a368e2a8f54b"> 		<pre class="source" id="src-4a368e2a8f54b"><span class="kw1">do</span>
+   statement
+<span class="kw1">while</span> <span class="br0">&#40;</span>condition<span class="br0">&#41;</span></pre> 		<div class="src-edit-container" id="src-edit-4a368e2a8f54b"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2a8f54b')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-syntax-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt>statement</dt>
+<dd>Блок или вызов javascript, который будет выполняться, пока верно условие condition<br />
+<dd>
+<dt>condition</dt>
+<dd>Выражение будет вычислено каждый раз во время цикла. Если оно верно, <code>statement</code> будет выполнено еще раз, если нет - контроль пойдет на операторы после <code>do..while</code><br />
+<dd>
+</dd></dd></dd></dd></dl>
+</div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-syntax-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>В следующем примере оператор <code>do..while</code> выполнится хотя бы один раз и продолжит выполняться, пока <code>i&lt;5</code>.</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2a87e77" >
+<div class="source-controls-small">  		<span id="select-4a368e2a87e77" onclick="return sourceEditor.select('4a368e2a87e77')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e2a87e77">
+<pre class="source" id="src-4a368e2a87e77">i = ...
+<span class="kw1">do</span> <span class="br0">&#123;</span>
+   i += <span class="nu0">1</span>;
+   document.<span class="kw1">write</span><span class="br0">&#40;</span>i<span class="br0">&#41;</span>
+<span class="br0">&#125;</span> <span class="kw1">while</span> <span class="br0">&#40;</span>i &lt; <span class="nu0">5</span><span class="br0">&#41;</span></pre><div class="src-edit-container" id="src-edit-4a368e2a87e77"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2a87e77')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+
+<div class="field field-type-nodereference field-field-see-also">
+  <h3 class="field-label">См. также</h3>
+  <ul class="field-items">
+          <li class="field-item"><a class="liexternal" href="http://javascript.ru/ecma/part11">Выражения</a> /Стандарт языка/</li>
+      </ul>
+</div>
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>window.closed</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/window.closed">http://javascript.ru/window.closed</a></div><h2>window.closed</h2><p>Закрыто ли данное окно, используется с <a href="window.open.html" >window.open</a></p>
+
+<div class="field field-type-text field-field-property-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>При открытии нового окна(или повторном использовании существующего с тем же именем) метод (window#open) возвращает ссылку это окно.</p>
+<div class="source-container" id="sc-4a368e291fe22" >
+<div class="code-container" id="cc-4a368e291fe22">
+<pre class="source" id="src-4a368e291fe22">newWin = window.<span class="kw3">open</span><span class="br0">&#40;</span>....<span class="br0">&#41;</span></pre><div class="src-edit-container" id="src-edit-4a368e291fe22"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e291fe22')" />			 		</div>
+</div>
+</div>
+<p>При обращении к новому окну может понадобиться проверить, не закрыл ли посетитель новое окно.</p>
+<div class="source-container" id="sc-4a368e2920538" >
+<div class="source-controls-small">  		<span id="select-4a368e2920538" onclick="return sourceEditor.select('4a368e2920538')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e2920538">
+<pre class="source" id="src-4a368e2920538"><span class="kw1">if</span> <span class="br0">&#40;</span>!newWin.<span class="me1">closed</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    newWin.<span class="me1">document</span>.<span class="kw1">write</span><span class="br0">&#40;</span><span class="st0">&quot;Что-нибудь&quot;</span><span class="br0">&#41;</span>
+<span class="br0">&#125;</span> <span class="kw1">else</span> <span class="br0">&#123;</span>
+   <span class="kw3">alert</span><span class="br0">&#40;</span><span class="st0">&quot;Вы почему окно закрыли, а?&quot;</span><span class="br0">&#41;</span>
+<span class="br0">&#125;</span></pre><div class="src-edit-container" id="src-edit-4a368e2920538"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2920538')" />			 		</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

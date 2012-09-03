@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>throw</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/throw">http://javascript.ru/throw</a></div><h2>throw</h2><p>Инициировать("бросить") исключение</p>
+
+<div class="field field-type-text field-field-syntax-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e2b28c50" >  	<div class="code-container" id="cc-4a368e2b28c50"> 		<pre class="source" id="src-4a368e2b28c50"><span class="kw1">throw</span> expression</pre> 		<div class="src-edit-container" id="src-edit-4a368e2b28c50"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2b28c50')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-syntax-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt>expression</dt>
+<dd>Любое выражение. Результат вычисления <code>expression</code> будет брошен как исключение<br />
+<dd>
+</dd></dd></dl>
+</div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-syntax-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Используйте <code>throw</code> для генерации исключения, аналогично Java/PHP и другим языкам.</p>
+<p>В отличие от них, javascript позволяет бросать исключение любого формата:</p>
+<div class="example">
+<div class="example-title">Пример: исключения</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2b1d311" >
+<div class="source-controls-small">  		<span id="select-4a368e2b1d311" onclick="return sourceEditor.select('4a368e2b1d311')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e2b1d311">
+<pre class="source" id="src-4a368e2b1d311"><span class="kw1">throw</span> <span class="st0">&quot;Ошибка!&quot;</span>
+<span class="kw1">throw</span> <span class="nu0">12</span>
+<span class="kw1">throw</span> <span class="kw2">true</span>
+<span class="kw1">throw</span> <span class="br0">&#123;</span> 
+  message: <span class="st0">&quot;Ошибка доступа&quot;</span>,
+  code: <span class="nu0">403</span>
+<span class="br0">&#125;</span></pre><div class="src-edit-container" id="src-edit-4a368e2b1d311"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2b1d311')"/>			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>Удобным соглашением является выбор для исключения объекта <a href="Error.html" >Error</a> или его наследника.</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2b1e2a8" >
+<div class="source-controls-small">  		<span id="select-4a368e2b1e2a8" onclick="return sourceEditor.select('4a368e2b1e2a8')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e2b1e2a8">
+<pre class="source" id="src-4a368e2b1e2a8"><span class="kw2">function</span> toInt<span class="br0">&#40;</span>value<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+  <span class="kw2">var</span> intVal = +value
+  <span class="kw1">if</span> <span class="br0">&#40;</span>isNaN<span class="br0">&#40;</span>intVal<span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <span class="strs"><span class="kw1">throw</span> <span class="kw2">new</span> Error<span class="br0">&#40;</span><span class="st0">&quot;Неправильный формат данных: &quot;</span>+value<span class="br0">&#41;</span></span>
+  <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre><div class="src-edit-container" id="src-edit-4a368e2b1e2a8"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2b1e2a8')"/>			 		</div>
+</div>
+</div>
+</div>
+</div>
+<div class="example">
+<div class="example-title">Пример: используем toInt</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2b1f319" >
+<div class="source-controls-small">  		<span id="select-4a368e2b1f319" onclick="return sourceEditor.select('4a368e2b1f319')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e2b1f319">
+<pre class="source" id="src-4a368e2b1f319"><span class="kw1">try</span> <span class="br0">&#123;</span>
+  <span class="kw2">var</span> i = <span class="st0">&quot;something&quot;</span>
+  i = toInt<span class="br0">&#40;</span>i<span class="br0">&#41;</span>
+<span class="br0">&#125;</span> <span class="kw1">catch</span><span class="br0">&#40;</span>e<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+  <span class="kw3">alert</span><span class="br0">&#40;</span>e.<span class="me1">message</span><span class="br0">&#41;</span>
+<span class="br0">&#125;</span></pre><div class="src-edit-container" id="src-edit-4a368e2b1f319"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2b1f319')"/>			 		</div>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+function toInt(value) {
+  var intVal = +value
+  if (isNaN(intVal)) {
+    throw new Error("Неправильный формат данных: "+value)
+  }
+}
+
+//...
+function doToInt() {
+try {
+  var i = "something"
+  i = toInt(i)
+} catch(e) {
+  alert(e.message)
+}
+}
+</script><p><a href="#" onclick="doToInt(); return false">Запустить пример</a></p>
+</div>
+  </div>
+</div>
+
+
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

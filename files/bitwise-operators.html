@@ -1,0 +1,418 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>Побитовые операторы</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/bitwise-operators">http://javascript.ru/bitwise-operators</a></div><h2>Побитовые операторы</h2>
+
+<div class="field field-type-text field-field-operator-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Побитовые операторы интерпретируют операнды как последовательность из 32 битов (нулей и единиц).  Они производят операции, используя двоичное представление числа и возвращают новую последовательность из 32 бит (число) в качестве результата.</p>
+<p>В следующей таблице перечислены все побитовые операторы.<br />
+Далее двоичное представление числа и операторы разобраны более подробно.</p>
+<table class="fullwidth-table">
+<tr>
+<th>Оператор</th>
+<th>Использование</th>
+<th>Описание</th>
+</tr>
+<tr>
+<td>Побитовое И (AND)</td>
+<td style="white-space: nowrap"><code>a &amp; b</code></td>
+<td>Ставит 1 на каждого бита результата, для которого соответствующие биты операндов равны 1.</td>
+</tr>
+<tr>
+<td>Побитовое ИЛИ (OR)</td>
+<td style="white-space: nowrap"><code>a | b</code></td>
+<td>Ставит 1 для каждого бита результата, для которого хотя бы один из соответствующих битов операндов равен 1.</td>
+</tr>
+<tr>
+<td>Побитовое исключающее ИЛИ (XOR)</td>
+<td style="white-space: nowrap"><code>a ^ b</code></td>
+<td>Ставит 1 для каждого бита результата, для которого только один(но не оба) из соответствующих битов операндов равен 1.</td>
+</tr>
+<tr>
+<td>Побитовое НЕ (NOT)</td>
+<td style="white-space: nowrap"><code>~ a</code></td>
+<td>Заменяет каждый бит операнда на противоположный.</td>
+</tr>
+<tr>
+<td>Левый сдвиг</td>
+<td style="white-space: nowrap"><code>a &lt;&lt; b</code></td>
+<td>Сдвигает двоичное представление <code>a</code> на <code>b</code> битов влева, добавляя справа нули.</td>
+</tr>
+<tr>
+<td>Правый сдвиг, переносящий знак</td>
+<td style="white-space: nowrap"><code>a &gt;&gt; b</code></td>
+<td>Сдвигает двоичное представление <code>a</code> на <code>b</code> битов вправо, отбрасывая сдвигаемые биты.</td>
+</tr>
+<tr>
+<td>Правый сдвиг с заполнением нулями</td>
+<td style="white-space: nowrap"><code>a &gt;&gt;&gt; b</code></td>
+<td>Сдвигает двоичное представление <code>a</code> на <code>b</code> битов вправо, отбрасывая сдвигаемые биты и добавляя нули слева.</td>
+</tr>
+</table>
+<h2>Формат 32-битного целого числа со знаком</h2>
+<p>Операнды всех побитовых операндов интерпретируются как 32-битные целые числа со знаком и старшим битом слева и дополнением до двойки.</p>
+<p>"Старший бит слева" - означает, что самый значимый бит (битовая позиция с самым большим значением) находится на крайнем левом месте.</p>
+<p>"Дополнение до двойки" означает, что двоичный вид числа, обратного данному (например, 5 и -5) получается путем обращения(двоичного НЕ) всех битов с добавлением 1.</p>
+<p>Например, вот число 314:</p>
+<div class="source-container" id="sc-4a368e2c3d06a" >
+<div class="code-container" id="cc-4a368e2c3d06a">
+<pre class="source" id="src-4a368e2c3d06a"><span class="nu0">00000000000000000000000100111010</span></pre><div class="src-edit-container" id="src-edit-4a368e2c3d06a"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2c3d06a')"/>			 		</div>
+</div>
+</div>
+<p>Чтобы получить -314, первый шаг - обратить биты числа:</p>
+<div class="source-container" id="sc-4a368e2c3d69e" >
+<div class="code-container" id="cc-4a368e2c3d69e">
+<pre class="source" id="src-4a368e2c3d69e"><span class="nu0">11111111111111111111111011000101</span></pre><div class="src-edit-container" id="src-edit-4a368e2c3d69e"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2c3d69e')"/>			 		</div>
+</div>
+</div>
+<p>Второй шаг - прибавить единицу:</p>
+<div class="source-container" id="sc-4a368e2c3dcc5" >
+<div class="code-container" id="cc-4a368e2c3dcc5">
+<pre class="source" id="src-4a368e2c3dcc5"><span class="nu0">11111111111111111111111011000110</span></pre><div class="src-edit-container" id="src-edit-4a368e2c3dcc5"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2c3dcc5')"/>			 		</div>
+</div>
+</div>
+<p>Принцип дополнения до двойки делит все двоичные представления на два множества: если крайний-левый бит равен 0 - число положительное, если 1 - число отрицательное. Поэтому этот бит называется <i>знаковым битом</i>.</p>
+<h2>Побитовые операции</h2>
+<p>Бинарные побитовые операторы работают следующим образом:</p>
+<ul>
+<li>Операнды преобразуются в 32-битные целые числа, представленные последовательностью битов (нулей и единиц)</li>
+<li>Каждый бит в первом операнде рассматривается вместе с соответствующим битом второго операнда: первый бит с первым, второй со вторым и т.п.</li>
+<li>Оператор применяется к каждой паре бит, давая соответствующий бит результата.</li>
+</ul>
+<h3>&amp; (побитовое И)</p>
+<p>Выполняет операцию И над каждой парой бит. <code>a</code> И <code>b</code> равно единице только когда оба бита равны единице.</p>
+<p>Таблица истинности для И:</p>
+<table class="standard-table">
+<tbody>
+<tr>
+<td class="header">a
+</td>
+<td class="header">b
+</td>
+<td class="header">a И b
+</td>
+</tr>
+<tr>
+<td>0
+</td>
+<td>0
+</td>
+<td>0
+</td>
+</tr>
+<tr>
+<td>0
+</td>
+<td>1
+</td>
+<td>0
+</td>
+</tr>
+<tr>
+<td>1
+</td>
+<td>0
+</td>
+<td>0
+</td>
+</tr>
+<tr>
+<td>1
+</td>
+<td>1
+</td>
+<td>1
+</td>
+</tr>
+</tbody>
+</table>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2c33338" >
+<div class="source-controls-small">  		<span id="select-4a368e2c33338" onclick="return sourceEditor.select('4a368e2c33338')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e2c33338">
+<pre class="source" id="src-4a368e2c33338"><span class="nu0">9</span> <span class="br0">&#40;</span>по осн. <span class="nu0">10</span><span class="br0">&#41;</span> 
+  = <span class="nu0">00000000000000000000000000001001</span> <span class="br0">&#40;</span>по осн. <span class="nu0">2</span><span class="br0">&#41;</span>
+<span class="nu0">14</span> <span class="br0">&#40;</span>по осн. <span class="nu0">10</span><span class="br0">&#41;</span> 
+  = <span class="nu0">00000000000000000000000000001110</span> <span class="br0">&#40;</span>по осн. <span class="nu0">2</span><span class="br0">&#41;</span>
+                   --------------------------------
+<span class="nu0">14</span> &amp; <span class="nu0">9</span> <span class="br0">&#40;</span>по осн. <span class="nu0">10</span><span class="br0">&#41;</span> 
+  = <span class="nu0">00000000000000000000000000001000</span> <span class="br0">&#40;</span>по осн. <span class="nu0">2</span><span class="br0">&#41;</span> 
+  = <span class="nu0">8</span> <span class="br0">&#40;</span>по осн. <span class="nu0">10</span><span class="br0">&#41;</span></pre><div class="src-edit-container" id="src-edit-4a368e2c33338"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2c33338')"/>			 		</div>
+</div>
+</div>
+</div>
+</div>
+<h3>| (Побитовое ИЛИ)</p>
+<p>Выполняет операцию ИЛИ над каждой парой бит. <code>a</code> ИЛИ <code>b</code> равно 1, если хотя бы один бит из <code>a,b</code> равен 1.</p>
+<p>Таблица истинности для ИЛИ:</p>
+<table class="standard-table">
+<tbody>
+<tr>
+<td class="header">a
+</td>
+<td class="header">b
+</td>
+<td class="header">a ИЛИ b
+</td>
+</tr>
+<tr>
+<td>0
+</td>
+<td>0
+</td>
+<td>0
+</td>
+</tr>
+<tr>
+<td>0
+</td>
+<td>1
+</td>
+<td>1
+</td>
+</tr>
+<tr>
+<td>1
+</td>
+<td>0
+</td>
+<td>1
+</td>
+</tr>
+<tr>
+<td>1
+</td>
+<td>1
+</td>
+<td>1
+</td>
+</tr>
+</tbody>
+</table>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2c349f1" >
+<div class="source-controls-small">  		<span id="select-4a368e2c349f1" onclick="return sourceEditor.select('4a368e2c349f1')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e2c349f1">
+<pre class="source" id="src-4a368e2c349f1"><span class="nu0">9</span> <span class="br0">&#40;</span>по осн. <span class="nu0">10</span><span class="br0">&#41;</span> 
+  = <span class="nu0">00000000000000000000000000001001</span> <span class="br0">&#40;</span>по осн. <span class="nu0">2</span><span class="br0">&#41;</span>
+<span class="nu0">14</span> <span class="br0">&#40;</span>по осн. <span class="nu0">10</span><span class="br0">&#41;</span>
+  = <span class="nu0">00000000000000000000000000001110</span> <span class="br0">&#40;</span>по осн. <span class="nu0">2</span><span class="br0">&#41;</span>
+                   --------------------------------
+<span class="nu0">14</span> | <span class="nu0">9</span> <span class="br0">&#40;</span>по осн. <span class="nu0">10</span><span class="br0">&#41;</span> 
+  = <span class="nu0">00000000000000000000000000001111</span> <span class="br0">&#40;</span>по осн. <span class="nu0">2</span><span class="br0">&#41;</span> 
+  = <span class="nu0">15</span> <span class="br0">&#40;</span>по осн. <span class="nu0">10</span><span class="br0">&#41;</span></pre><div class="src-edit-container" id="src-edit-4a368e2c349f1"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2c349f1')"/>			 		</div>
+</div>
+</div>
+</div>
+</div>
+<h3>^ (Исключающее ИЛИ)</h3>
+<p>Выполняет операцию исключающего ИЛИ над каждой парой бит.<br />
+ <code>a</code> Исключающее ИЛИ <code>b</code> равно 1, если только <code>a=1</code> или только <code>b=1</code>, но не оба одновременно <code>a=b=1</code>.</p>
+<p>Таблица истинности для исключающего ИЛИ:</p>
+<table class="standard-table">
+<tbody>
+<tr>
+<td class="header">a
+</td>
+<td class="header">b
+</td>
+<td class="header">a Исключающее ИЛИ b
+</td>
+</tr>
+<tr>
+<td>0
+</td>
+<td>0
+</td>
+<td>0
+</td>
+</tr>
+<tr>
+<td>0
+</td>
+<td>1
+</td>
+<td>1
+</td>
+</tr>
+<tr>
+<td>1
+</td>
+<td>0
+</td>
+<td>1
+</td>
+</tr>
+<tr>
+<td>1
+</td>
+<td>1
+</td>
+<td>0
+</td>
+</tr>
+</tbody>
+</table>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2c36089" >
+<div class="source-controls-small">  		<span id="select-4a368e2c36089" onclick="return sourceEditor.select('4a368e2c36089')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e2c36089">
+<pre class="source" id="src-4a368e2c36089"><span class="nu0">9</span> <span class="br0">&#40;</span>по осн. <span class="nu0">10</span><span class="br0">&#41;</span> 
+  = <span class="nu0">00000000000000000000000000001001</span> <span class="br0">&#40;</span>по осн. <span class="nu0">2</span><span class="br0">&#41;</span>
+<span class="nu0">14</span> <span class="br0">&#40;</span>по осн. <span class="nu0">10</span><span class="br0">&#41;</span> 
+  = <span class="nu0">00000000000000000000000000001110</span> <span class="br0">&#40;</span>по осн. <span class="nu0">2</span><span class="br0">&#41;</span>
+                   --------------------------------
+<span class="nu0">14</span> ^ <span class="nu0">9</span> <span class="br0">&#40;</span>по осн. <span class="nu0">10</span><span class="br0">&#41;</span> 
+  = <span class="nu0">00000000000000000000000000000111</span> <span class="br0">&#40;</span>по осн. <span class="nu0">2</span><span class="br0">&#41;</span> 
+  = <span class="nu0">7</span> <span class="br0">&#40;</span>по осн. <span class="nu0">10</span><span class="br0">&#41;</span></pre><div class="src-edit-container" id="src-edit-4a368e2c36089"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2c36089')"/>			 		</div>
+</div>
+</div>
+</div>
+</div>
+<h3>~ (Побитовое НЕ)</h3>
+<p>Производит операцию НЕ над каждым битом, заменяя его на обратный ему.</p>
+<p>Таблица истинности для НЕ:</p>
+<table class="standard-table">
+<tbody>
+<tr>
+<td class="header">a
+</td>
+<td class="header">НЕ a
+</td>
+</tr>
+<tr>
+<td>0
+</td>
+<td>1
+</td>
+</tr>
+<tr>
+<td>1
+</td>
+<td>0
+</td>
+</tr>
+</tbody>
+</table>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2c3767d" >
+<div class="source-controls-small">  		<span id="select-4a368e2c3767d" onclick="return sourceEditor.select('4a368e2c3767d')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e2c3767d">
+<pre class="source" id="src-4a368e2c3767d"><span class="nu0">9</span> <span class="br0">&#40;</span>по осн. <span class="nu0">10</span><span class="br0">&#41;</span> 
+  = <span class="nu0">00000000000000000000000000001001</span> <span class="br0">&#40;</span>по осн. <span class="nu0">2</span><span class="br0">&#41;</span>
+               --------------------------------
+~<span class="nu0">9</span> <span class="br0">&#40;</span>по осн. <span class="nu0">10</span><span class="br0">&#41;</span> 
+  = <span class="nu0">11111111111111111111111111110110</span> <span class="br0">&#40;</span>по осн. <span class="nu0">2</span><span class="br0">&#41;</span> 
+  = <span class="nu0">-10</span> <span class="br0">&#40;</span>по осн. <span class="nu0">10</span><span class="br0">&#41;</span></pre><div class="src-edit-container" id="src-edit-4a368e2c3767d"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2c3767d')"/>			 		</div>
+</div>
+</div>
+</div>
+</div>
+<h2>Операторы битового сдвига</h2>
+<p>Операторы битового сдвига принимают два операнда. Первый - это число для сдвига, а второй - количество битов, которые нужно сдвинуть в первом операнде.</p>
+<p>Направление сдвига - то же, что и направление стрелок в операторе.</p>
+<h3>&lt;&lt; (Левый сдвиг)</h3>
+<p>Этот оператор сдвигает первый операнд на указанное число битов влево. Лишние биты отбрасываются, справа добавляются нулевые биты.</p>
+<p>Например, <code>9 &lt;&lt; 2</code> даст <code>36</code>:</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2c387de" >
+<div class="source-controls-small">  		<span id="select-4a368e2c387de" onclick="return sourceEditor.select('4a368e2c387de')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e2c387de">
+<pre class="source" id="src-4a368e2c387de"><span class="nu0">9</span> <span class="br0">&#40;</span>по осн.<span class="nu0">10</span><span class="br0">&#41;</span>
+  = <span class="nu0">00000000000000000000000000001001</span> <span class="br0">&#40;</span>по осн.<span class="nu0">2</span><span class="br0">&#41;</span>
+                  --------------------------------
+<span class="nu0">9</span> &lt;&lt; <span class="nu0">2</span> <span class="br0">&#40;</span>по осн.<span class="nu0">10</span><span class="br0">&#41;</span>
+  = <span class="nu0">00000000000000000000000000100100</span> <span class="br0">&#40;</span>по осн.<span class="nu0">2</span><span class="br0">&#41;</span> 
+  = <span class="nu0">36</span> <span class="br0">&#40;</span>по осн.<span class="nu0">10</span><span class="br0">&#41;</span></pre><div class="src-edit-container" id="src-edit-4a368e2c387de"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2c387de')"/>			 		</div>
+</div>
+</div>
+</div>
+</div>
+<h2>&gt;&gt; (Правый сдвиг, переносящий знак) </h2>
+<p>Этот оператор сдвигает биты вправо, отбрасывая лишние. Копии крайнего-левого бита добавляются слева. Так как итоговый крайний-левый бит имеет то же значение, что и исходный, знак числа (представленный крайним-левым битом) не изменяется.</p>
+<p>Поэтому он назван "переносящим знак".</p>
+<p>Например, <code>9 &gt;&gt; 2</code> даст <code>2</code>:</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2c399bc" >
+<div class="source-controls-small">  		<span id="select-4a368e2c399bc" onclick="return sourceEditor.select('4a368e2c399bc')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e2c399bc">
+<pre class="source" id="src-4a368e2c399bc"><span class="nu0">9</span> <span class="br0">&#40;</span>по осн.<span class="nu0">10</span><span class="br0">&#41;</span>
+  = <span class="nu0">00000000000000000000000000001001</span> <span class="br0">&#40;</span>по осн.<span class="nu0">2</span><span class="br0">&#41;</span>
+                  --------------------------------
+<span class="nu0">9</span> &gt;&gt; <span class="nu0">2</span> <span class="br0">&#40;</span>по осн.<span class="nu0">10</span><span class="br0">&#41;</span>
+  = <span class="nu0">00000000000000000000000000000010</span> <span class="br0">&#40;</span>по осн.<span class="nu0">2</span><span class="br0">&#41;</span> 
+  = <span class="nu0">2</span> <span class="br0">&#40;</span>по осн.<span class="nu0">10</span><span class="br0">&#41;</span></pre><div class="src-edit-container" id="src-edit-4a368e2c399bc"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2c399bc')"/>			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>Аналогично, <code>-9 &gt;&gt; 2</code> даст <code>-3</code>, так как знак сохранен:</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2c3ab66" >
+<div class="source-controls-small">  		<span id="select-4a368e2c3ab66" onclick="return sourceEditor.select('4a368e2c3ab66')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e2c3ab66">
+<pre class="source" id="src-4a368e2c3ab66"><span class="nu0">-9</span> <span class="br0">&#40;</span>по осн.<span class="nu0">10</span><span class="br0">&#41;</span>
+  = <span class="nu0">11111111111111111111111111110111</span> <span class="br0">&#40;</span>по осн.<span class="nu0">2</span><span class="br0">&#41;</span>
+                   --------------------------------
+<span class="nu0">-9</span> &gt;&gt; <span class="nu0">2</span> <span class="br0">&#40;</span>по осн.<span class="nu0">10</span><span class="br0">&#41;</span>
+  = <span class="nu0">11111111111111111111111111111101</span> <span class="br0">&#40;</span>по осн.<span class="nu0">2</span><span class="br0">&#41;</span> = <span class="nu0">-3</span> <span class="br0">&#40;</span>по осн.<span class="nu0">10</span><span class="br0">&#41;</span></pre><div class="src-edit-container" id="src-edit-4a368e2c3ab66"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2c3ab66')"/>			 		</div>
+</div>
+</div>
+</div>
+</div>
+<h3>&gt;&gt;&gt; (Правый сдвиг с заполнением нулями)</h3>
+<p>Этот оператор сдвигает биты первого операнда вправо. Лишние биты справа отбрасываются. Слева добавляются нулевые биты.</p>
+<p>Знаковый бит становится равным 0, поэтому результат всегда положителен.<br />
+Для неотрицательных чисел правый сдвиг с заполнением нулями и правый сдвиг с переносом знака дадут одинаковый результат, т.к в обоих случаях слева добавятся нули.</p>
+<p>Для отрицательных чисел - результат работы разный. Например, <code>-9 &gt;&gt;&gt; 2</code> даст  <code>1073741821</code>, отличное от <code>-9 &gt;&gt; 2</code> (дает -3):</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2c3bd0a" >
+<div class="source-controls-small">  		<span id="select-4a368e2c3bd0a" onclick="return sourceEditor.select('4a368e2c3bd0a')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e2c3bd0a">
+<pre class="source" id="src-4a368e2c3bd0a"><span class="nu0">-9</span> <span class="br0">&#40;</span>по осн.<span class="nu0">10</span><span class="br0">&#41;</span>
+  = <span class="nu0">11111111111111111111111111110111</span> <span class="br0">&#40;</span>по осн.<span class="nu0">2</span><span class="br0">&#41;</span>
+                    --------------------------------
+<span class="nu0">-9</span> &gt;&gt;&gt; <span class="nu0">2</span> <span class="br0">&#40;</span>по осн.<span class="nu0">10</span><span class="br0">&#41;</span>
+  = <span class="nu0">00111111111111111111111111111101</span> <span class="br0">&#40;</span>по осн.<span class="nu0">2</span><span class="br0">&#41;</span> 
+  = <span class="nu0">1073741821</span> <span class="br0">&#40;</span>по осн.<span class="nu0">10</span><span class="br0">&#41;</span></pre><div class="src-edit-container" id="src-edit-4a368e2c3bd0a"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2c3bd0a')"/>			 		</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+
+<div class="field field-type-nodereference field-field-see-also">
+  <h3 class="field-label">См. также</h3>
+  <ul class="field-items">
+          <li class="field-item"><a class="liexternal" href="http://javascript.ru/ecma/part11">Выражения</a> /Стандарт языка/</li>
+      </ul>
+</div>
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

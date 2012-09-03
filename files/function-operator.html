@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>function</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/function-operator">http://javascript.ru/function-operator</a></div><h2>function</h2><div class="field field-type-text field-field-operator-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e2b96186" >  	<div class="code-container" id="cc-4a368e2b96186"> 		<pre class="source" id="src-4a368e2b96186"><span class="kw2">function</span> <span class="br0">&#91;</span><span class="kw3">name</span><span class="br0">&#93;</span><span class="br0">&#40;</span><span class="br0">&#91;</span>param1, param2, ..., paramN<span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+   statements
+<span class="br0">&#125;</span></pre> 		<div class="src-edit-container" id="src-edit-4a368e2b96186"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2b96186')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+</div>
+
+<div class="field field-type-text field-field-operator-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt>name</dt>
+<dd>Имя функции. Может быть опущено, при этом создаваемая функция будет "анонимной"</dd>
+<dt>paramN</dt>
+<dd>Название аргумента, передаваемого функции. Функция может иметь до 255 аргументов</dd>
+<dt>statements</dt>
+<dd>Тело функции</dd>
+</dl>
+</div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-operator-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Определение функции при помощи оператора <code>function</code> очень похоже и имеет почти такое же синтаксис, как и определение при помощи <a href="function-syntax.html" >синтаксической конструкции</a>.</p>
+<p>Следующий пример определяет безымянную функцию и присваивает ссылку на нее переменной <code>x</code>. Функция возвращает квадрат аргумента.</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e046362f" >
+<div class="code-container" id="cc-4a368e046362f">
+<pre class="source" id="src-4a368e046362f"><span class="kw2">var</span> x = <span class="kw2">function</span><span class="br0">&#40;</span>y<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+   <span class="kw1">return</span> y * y;
+<span class="br0">&#125;</span></pre><div class="src-edit-container" id="src-edit-4a368e046362f"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e046362f')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>Пример ниже задает массив из трех функций:</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e0463dec" >
+<div class="source-controls-small">  		<span id="select-4a368e0463dec" onclick="return sourceEditor.select('4a368e0463dec')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e0463dec">
+<pre class="source" id="src-4a368e0463dec"><span class="kw2">var</span> a = <span class="br0">&#91;</span>
+   <span class="kw2">function</span><span class="br0">&#40;</span>y<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+      <span class="kw1">return</span> y
+   <span class="br0">&#125;</span>
+   ,
+   <span class="kw2">function</span><span class="br0">&#40;</span>y<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+   <span class="br0">&#123;</span>
+      <span class="kw1">return</span> y * y
+   <span class="br0">&#125;</span>
+   ,
+   <span class="kw2">function</span> <span class="br0">&#40;</span>y<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+      <span class="kw1">return</span> y * y * y
+   <span class="br0">&#125;</span>
+<span class="br0">&#93;</span></pre><div class="src-edit-container" id="src-edit-4a368e0463dec"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e0463dec')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>Для этого массива:</p>
+<div class="source-container" id="sc-4a368e0464c21" >
+<div class="code-container" id="cc-4a368e0464c21">
+<pre class="source" id="src-4a368e0464c21">a<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="br0">&#40;</span><span class="nu0">5</span><span class="br0">&#41;</span> = <span class="nu0">5</span>
+a<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#40;</span><span class="nu0">5</span><span class="br0">&#41;</span> = <span class="nu0">25</span>
+a<span class="br0">&#91;</span><span class="nu0">2</span><span class="br0">&#93;</span><span class="br0">&#40;</span><span class="nu0">5</span><span class="br0">&#41;</span> = <span class="nu0">125</span></pre><div class="src-edit-container" id="src-edit-4a368e0464c21"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e0464c21')" />			 		</div>
+</div>
+</div>
+<p>See also</p>
+</div>
+  </div>
+</div>
+
+
+<div class="field field-type-nodereference field-field-see-also">
+  <h3 class="field-label">См. также</h3>
+  <ul class="field-items">
+          <li class="field-item"><a href="Function.html">Function</a> /Объект/</li>
+          <li class="field-item"><a href="function-syntax.html">function</a> /Синтаксическая конструкция/</li>
+          <li class="field-item"><a class="liexternal" href="http://javascript.ru/tutorial/basic/functions">Функции</a> /Статья/</li>
+          <li class="field-item"><a class="liexternal" href="http://javascript.ru/ecma/part13">Определение функции</a> /Стандарт языка/</li>
+      </ul>
+</div>
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

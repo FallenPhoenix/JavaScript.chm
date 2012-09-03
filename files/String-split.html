@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>split</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/String/split">http://javascript.ru/String/split</a></div><h2>split</h2><div class="field field-type-text field-field-method-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e2792ff2" >  	<div class="code-container" id="cc-4a368e2792ff2"> 		<pre class="source" id="src-4a368e2792ff2"><span class="kw2">var</span> arr = str.<span class="me1">split</span><span class="br0">&#40;</span><span class="br0">&#91;</span>separator<span class="br0">&#93;</span><span class="br0">&#91;</span>, limit<span class="br0">&#93;</span><span class="br0">&#41;</span>;</pre> 		<div class="src-edit-container" id="src-edit-4a368e2792ff2"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2792ff2')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-method-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt>separator</dt>
+<dd>регулярное выражение или строка, по которой делить <code>str</code><br />
+<dd>
+<dt>limit</dt>
+<dd>максимальное количество кусков, на которые может быть разбита строка<br />
+<dd>
+</dd></dd></dd></dd></dl>
+</div>
+  </div>
+</div>
+
+
+<div class="field field-type-text field-field-method-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Метод <code>split</code> возвращает новый массив.</p>
+<p>Строка бьется по <code>separator</code>, при разбивании <code>separator</code> пропадает:</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e27815ba" >
+<div class="code-container" id="cc-4a368e27815ba">
+<pre class="source" id="src-4a368e27815ba">arr = <span class="st0">&quot;a,b,c&quot;</span>.<span class="me1">split</span><span class="br0">&#40;</span><span class="st0">','</span><span class="br0">&#41;</span>  <span class="co1">// массив [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]</span></pre><div class="src-edit-container" id="src-edit-4a368e27815ba"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e27815ba')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>Если <code>separator</code> не указан или совпадений нет, то возвращаемый массив состоит из одного элемента - исходной строки.</p>
+<p>Если <code>separator</code> является регулярным выражением со вложенными скобками, то каждый раз при совпадении <code>separator</code> все результаты захвата скобками, включая <code>undefined</code> результаты, добавляются в выходной массив.</p>
+<p>Если вызывающая строка пуста, то <code>split</code> возвращает массив из одной пустой строки, а не пустой массив.</p>
+<p>Следующий пример делит по ',' и убирает лишние пробелы вокруг запятой.</p>
+<div class="example">
+<div class="example-title">Пример: по регулярному выражению</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2781e9e" >
+<div class="code-container" id="cc-4a368e2781e9e">
+<pre class="source" id="src-4a368e2781e9e"><span class="kw2">var</span> tags = <span class="st0">&quot;Лето, зима, осень 2009 года&quot;</span>
+<span class="kw2">var</span> re = /\s*,\s*/
+<span class="kw2">var</span> tagList = tags.<span class="me1">split</span><span class="br0">&#40;</span>re<span class="br0">&#41;</span>;
+<span class="kw3">alert</span><span class="br0">&#40;</span>tagList<span class="br0">&#41;</span> <span class="co1">//  [&quot;Лето&quot;, &quot;зима&quot;, &quot;осень 2009 года&quot;]</span></pre><div class="src-edit-container" id="src-edit-4a368e2781e9e"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2781e9e')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<blockquote><p>
+При делении с ограничением <code>limit</code> - элементы массива свыше <code>limit</code> будут отброшены.
+</p></blockquote>
+<p>Это поведение отличается от принятого во многих языках програмирования.</p>
+<div class="example">
+<div class="example-title">Пример: Ограничение массива</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2784456" >
+<div class="code-container" id="cc-4a368e2784456">
+<pre class="source" id="src-4a368e2784456"><span class="kw2">var</span> str =<span class="st0">&quot;a b с d&quot;</span>
+str.<span class="me1">split</span><span class="br0">&#40;</span><span class="st0">' '</span>,<span class="nu0">2</span><span class="br0">&#41;</span>  
+<span class="co1">// [&quot;a&quot;, &quot;b&quot;], а не [&quot;a&quot; &quot;b c d&quot;]</span></pre><div class="src-edit-container" id="src-edit-4a368e2784456"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2784456')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>Следующий пример иллюстрирует добавление в массив результатов захвата вложенными скобками.</p>
+<div class="example">
+<div class="example-title">Пример: Вложенные скобки</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2785389" >
+<div class="code-container" id="cc-4a368e2785389">
+<pre class="source" id="src-4a368e2785389"><span class="kw2">var</span> myString = <span class="st0">&quot;Hello 1 word. Sentence number 2.&quot;</span>
+<span class="kw2">var</span> splits = myString.<span class="me1">split</span><span class="br0">&#40;</span>/<span class="br0">&#40;</span>\d<span class="br0">&#41;</span>/<span class="br0">&#41;</span>
+<span class="co1">// splits =  [&quot;Hello &quot;, &quot;1&quot;, &quot; word. Sentence number &quot;, &quot;2&quot;, &quot;.&quot;]</span></pre><div class="src-edit-container" id="src-edit-4a368e2785389"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2785389')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>Благодаря скобкам, найденный разделитель <code>separator</code> сохранился и вошел в результирующий массив.</p>
+</div>
+  </div>
+</div>
+
+<div class="field field-type-nodereference field-field-see-also">
+  <h3 class="field-label">См. также</h3>
+  <ul class="field-items">
+          <li class="field-item"><a href="Array-join.html">join</a> /Метод/</li>
+      </ul>
+</div>
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

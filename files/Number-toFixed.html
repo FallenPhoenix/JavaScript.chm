@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>toFixed</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/Number/toFixed">http://javascript.ru/Number/toFixed</a></div><h2>toFixed</h2><div class="field field-type-text field-field-method-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e263c6db" >  	<div class="code-container" id="cc-4a368e263c6db"> 		<pre class="source" id="src-4a368e263c6db">numObj.<span class="me1">toFixed</span><span class="br0">&#40;</span><span class="br0">&#91;</span>fractionDigits<span class="br0">&#93;</span><span class="br0">&#41;</span></pre> 		<div class="src-edit-container" id="src-edit-4a368e263c6db"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e263c6db')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-method-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt>fractionDigits</dt>
+<dd>Необязательный. Количество цифр после десятичного знака. Это число должно находиться в диапазоне от 0 до 20 включительно. Если не указано, то считается равным 0</dd>
+</dl>
+</div>
+  </div>
+</div>
+
+
+<div class="field field-type-text field-field-method-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Возвращает строковое представление числа без использования экспоненциальной записи, и ровно с <code>fractionDigits</code> цифр после запятой. Число округляется при необходимости, и дробная часть добивается нулями до нужной длины.</p>
+<p>Если число больше 1e+21, то метод просто вызывает <code>Number.toString()</code> и возвращает строку в экспоненциальной записи.</p>
+<p>Инициирует исключение <a href="RangeError.html" >RangeError</a>, если <code>fractionDigits</code> меньше 0 или больше 20. Хотя некоторые реализации могут поддерживать значения больше 20.</p>
+<p>Инициирует исключение <a href="TypeError.html" >TypeError</a>, если объект не является <a href="Number.html" >Number</a>.</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e263390b" >
+<div class="source-controls-small">  		<span id="select-4a368e263390b" onclick="return sourceEditor.select('4a368e263390b')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e263390b">
+<pre class="source" id="src-4a368e263390b"><span class="kw2">var</span> n = <span class="nu0">12345.6789</span>;
+n.<span class="me1">toFixed</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;              <span class="co1">// 12346: округление, длина дробной части ноль</span>
+&nbsp;
+n.<span class="me1">toFixed</span><span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span>;             <span class="co1">// 12345.7: округление </span>
+&nbsp;
+n.<span class="me1">toFixed</span><span class="br0">&#40;</span><span class="nu0">6</span><span class="br0">&#41;</span>;             <span class="co1">// 12345.678900: добили нулями</span>
+&nbsp;
+<span class="br0">&#40;</span><span class="nu0">1</span>.23e<span class="nu0">+20</span><span class="br0">&#41;</span>.<span class="me1">toFixed</span><span class="br0">&#40;</span><span class="nu0">2</span><span class="br0">&#41;</span>;    <span class="co1">// 123000000000000000000.00</span>
+&nbsp;
+<span class="br0">&#40;</span><span class="nu0">1</span>.23e<span class="nu0">-10</span><span class="br0">&#41;</span>.<span class="me1">toFixed</span><span class="br0">&#40;</span><span class="nu0">2</span><span class="br0">&#41;</span>     <span class="co1">// 0.00</span></pre><div class="src-edit-container" id="src-edit-4a368e263390b"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e263390b')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

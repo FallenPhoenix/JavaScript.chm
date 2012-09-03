@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>test</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/RegExp/test">http://javascript.ru/RegExp/test</a></div><h2>test</h2><div class="field field-type-text field-field-method-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e270920f" >  	<div class="code-container" id="cc-4a368e270920f"> 		<pre class="source" id="src-4a368e270920f">regexp.<span class="me1">test</span><span class="br0">&#40;</span><span class="br0">&#91;</span>str<span class="br0">&#93;</span><span class="br0">&#41;</span></pre> 		<div class="src-edit-container" id="src-edit-4a368e270920f"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e270920f')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-method-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt>str</dt>
+<dd>текст, в котором искать<br />
+<dd>
+</dd></dd></dl>
+</div>
+  </div>
+</div>
+
+
+<div class="field field-type-text field-field-method-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Используется, чтобы выяснить, есть ли совпадения регулярного выражения со строкой, аналогично <a href="String-search.html" >String#search</a>.</p>
+<p>Чтобы получить сами совпадения - используйте <a href="RegExp-exec.html" >exec</a> или <a href="String-match.html" >String#match</a>.</p>
+<p>Следующий пример выводит сообщение, в зависимости от наличия совпадений:</p>
+<div class="source-container" id="sc-4a368e2702677" >
+<div class="source-controls-small">  		<span id="select-4a368e2702677" onclick="return sourceEditor.select('4a368e2702677')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e2702677">
+<pre class="source" id="src-4a368e2702677"><span class="kw2">function</span> testinput<span class="br0">&#40;</span>re, str<span class="br0">&#41;</span><span class="br0">&#123;</span>
+   <span class="kw1">if</span> <span class="br0">&#40;</span>re.<span class="me1">test</span><span class="br0">&#40;</span>str<span class="br0">&#41;</span><span class="br0">&#41;</span>
+      midstring = <span class="st0">&quot; содержит &quot;</span>;
+   <span class="kw1">else</span>
+      midstring = <span class="st0">&quot; не содержит &quot;</span>;
+   document.<span class="kw1">write</span> <span class="br0">&#40;</span>str + midstring + re.<span class="me1">source</span><span class="br0">&#41;</span>;
+<span class="br0">&#125;</span></pre><div class="src-edit-container" id="src-edit-4a368e2702677"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2702677')" />			 		</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

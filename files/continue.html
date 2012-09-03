@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>continue</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/continue">http://javascript.ru/continue</a></div><h2>continue</h2><p>Прекращает текущую итерацию цикла и продолжает выполнение со следующей итерации</p>
+
+<div class="field field-type-text field-field-syntax-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e2a831cc" >  	<div class="code-container" id="cc-4a368e2a831cc"> 		<pre class="source" id="src-4a368e2a831cc"><span class="kw1">continue</span> <span class="br0">&#91;</span>label<span class="br0">&#93;</span></pre> 		<div class="src-edit-container" id="src-edit-4a368e2a831cc"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2a831cc')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-syntax-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt>label</dt>
+<dd>Необязательная метка для перехода к следующей итерации несколькими уровнями циклов выше<br />
+<dd>
+</dd></dd></dl>
+</div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-syntax-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2a78187" >
+<div class="source-controls-small">  		<span id="select-4a368e2a78187" onclick="return sourceEditor.select('4a368e2a78187')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e2a78187">
+<pre class="source" id="src-4a368e2a78187"><span class="kw1">for</span><span class="br0">&#40;</span>i=<span class="nu0">0</span>; i&lt;<span class="nu0">10</span>; i++<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+  <span class="kw1">if</span> <span class="br0">&#40;</span>i&lt;<span class="nu0">5</span><span class="br0">&#41;</span> <span class="kw1">continue</span>;
+&nbsp;
+  <span class="kw3">alert</span><span class="br0">&#40;</span>i<span class="br0">&#41;</span> <span class="co1">// 5</span>
+  <span class="kw1">break</span>;
+<span class="br0">&#125;</span></pre><div class="src-edit-container" id="src-edit-4a368e2a78187"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2a78187')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>В противоположность оператору <a href="break.html" >break</a>, <code>continue</code> не останавливает исполнение цикла.</p>
+<p>Вместо этого:</p>
+<ul>
+<li>для цикла <a href="while.html" >while</a> - передает управление на проверку условия цикла</li>
+<li>для цикла <a href="for.html" >for</a> - передает управление на обновление условия</li>
+</ul>
+<p>Оператор <code>continue</code> может содержать необязательную метку. Тогда управление будет передано на следующую итерации внешнего цикла с такой меткой.</p>
+<div class="example">
+<div class="example-title">Пример: переход на метку</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2a79062" >
+<div class="source-controls-small">  		<span id="select-4a368e2a79062" onclick="return sourceEditor.select('4a368e2a79062')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e2a79062">
+<pre class="source" id="src-4a368e2a79062"><span class="strs">top:</span>
+<span class="kw1">for</span><span class="br0">&#40;</span>i=<span class="nu0">0</span>; i&lt;<span class="nu0">10</span>; i++<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+  <span class="kw1">for</span><span class="br0">&#40;</span>j=<span class="nu0">0</span>; j&lt;<span class="nu0">10</span>; j++<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>i==j<span class="br0">&#41;</span> <span class="strs"><span class="kw1">continue</span> top</span> 
+    ...
+  <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre><div class="src-edit-container" id="src-edit-4a368e2a79062"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2a79062')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>В этом примере оператор <code>continue</code> при совпадающих <code>i,j</code> переведет управление сразу на следующую итерацию внешнего цикла по <code>i</code>.</p>
+<p>Как и для оператора <a href="break.html" >break</a>, для перехода на метку вызов <code>continue</code> должен быть вложен в цикл с такой меткой.</p>
+</div>
+  </div>
+</div>
+
+
+<div class="field field-type-nodereference field-field-see-also">
+  <h3 class="field-label">См. также</h3>
+  <ul class="field-items">
+          <li class="field-item"><a class="liexternal" href="http://javascript.ru/ecma/part11">Выражения</a> /Стандарт языка/</li>
+      </ul>
+</div>
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

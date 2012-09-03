@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>toString</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/Number/toString">http://javascript.ru/Number/toString</a></div><h2>toString</h2><div class="field field-type-text field-field-method-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e265a5d7" >  	<div class="code-container" id="cc-4a368e265a5d7"> 		<pre class="source" id="src-4a368e265a5d7">objectname.<span class="me1">toString</span><span class="br0">&#40;</span><span class="br0">&#91;</span>radix<span class="br0">&#93;</span><span class="br0">&#41;</span></pre> 		<div class="src-edit-container" id="src-edit-4a368e265a5d7"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e265a5d7')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-method-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt>radix</dt>
+<dd>Необязательный. Указывает основание для преобразования числовых значений в строки. От 2 до 36. По умолчанию 10.</dd>
+</dl>
+</div>
+  </div>
+</div>
+
+
+<div class="field field-type-text field-field-method-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Метод <code>toString</code> объекта <code>Number</code> перекрывает стандартный метод <code>Object#toString</code>.</p>
+<p>Первый аргумент преобразуется в строку и используется как основание системы счисления. </p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2653068" >
+<div class="source-controls-small">  		<span id="select-4a368e2653068" onclick="return sourceEditor.select('4a368e2653068')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e2653068">
+<pre class="source" id="src-4a368e2653068"><span class="kw2">var</span> count = <span class="nu0">10</span>;
+<span class="kw3">print</span><span class="br0">&#40;</span>count.<span class="me1">toString</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>;   <span class="co1">// &quot;10&quot;</span>
+<span class="kw3">print</span><span class="br0">&#40;</span><span class="br0">&#40;</span><span class="nu0">17</span><span class="br0">&#41;</span>.<span class="me1">toString</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>;    <span class="co1">// &quot;17&quot;</span>
+&nbsp;
+<span class="kw2">var</span> x = <span class="nu0">7</span>;
+<span class="kw3">print</span><span class="br0">&#40;</span>x.<span class="me1">toString</span><span class="br0">&#40;</span><span class="nu0">2</span><span class="br0">&#41;</span><span class="br0">&#41;</span>;      <span class="co1">// &quot;111&quot;</span></pre><div class="src-edit-container" id="src-edit-4a368e2653068"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2653068')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

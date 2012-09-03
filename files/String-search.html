@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>search</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/String/search">http://javascript.ru/String/search</a></div><h2>search</h2><div class="field field-type-text field-field-method-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e282b948" >  	<div class="code-container" id="cc-4a368e282b948"> 		<pre class="source" id="src-4a368e282b948">idx = str.<span class="me1">search</span><span class="br0">&#40;</span>regexp<span class="br0">&#41;</span></pre> 		<div class="src-edit-container" id="src-edit-4a368e282b948"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e282b948')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-method-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt>regexp</dt>
+<dd>объект типа <a href="RegExp.html" >RegExp</a> или строка<br />
+<dd>
+</dd></dd></dl>
+</div>
+  </div>
+</div>
+
+
+<div class="field field-type-text field-field-method-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Этот метод удобен, когда нужно проверить, есть ли совпадения с регулярным выражением (аналогично <a href="RegExp-test.html" >RegExp#test</a>).</p>
+<p>Чтобы получить больше информации, используйте более медленный метод <a href="String-match.html" >match</a> (или родственный ему метод <a href="RegExp-exec.html" >RegExp#exec</a>).</p>
+<div class="example">
+<div class="example-title">Пример: Проверка на совпадение</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2824c10" >
+<div class="source-controls-small">  		<span id="select-4a368e2824c10" onclick="return sourceEditor.select('4a368e2824c10')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e2824c10">
+<pre class="source" id="src-4a368e2824c10"><span class="kw2">function</span> testinput<span class="br0">&#40;</span>re, str<span class="br0">&#41;</span><span class="br0">&#123;</span>
+   <span class="kw1">if</span> <span class="br0">&#40;</span>str.<span class="me1">search</span><span class="br0">&#40;</span>re<span class="br0">&#41;</span> != <span class="nu0">-1</span><span class="br0">&#41;</span>
+      <span class="kw1">return</span> <span class="kw2">true</span>
+   <span class="kw1">else</span>
+      <span class="kw1">return</span> <span class="kw2">false</span>
+<span class="br0">&#125;</span>
+<span class="kw3">alert</span><span class="br0">&#40;</span>testinput<span class="br0">&#40;</span>/something/, <span class="st0">&quot;somestr&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="co1">// false</span></pre><div class="src-edit-container" id="src-edit-4a368e2824c10"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2824c10')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

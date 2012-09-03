@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>sort </title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/Array/sort">http://javascript.ru/Array/sort</a></div><h2>sort </h2><div class="field field-type-text field-field-method-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e212a7a5" >  	<div class="code-container" id="cc-4a368e212a7a5"> 		<pre class="source" id="src-4a368e212a7a5">arrayObj.<span class="me1">sort</span><span class="br0">&#40;</span> <span class="br0">&#91;</span>sortFunction<span class="br0">&#93;</span> <span class="br0">&#41;</span></pre> 		<div class="src-edit-container" id="src-edit-4a368e212a7a5"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e212a7a5')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-method-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt>
+sortFunction<br />
+</dt>
+<dd>
+Необязательный параметр - функция сортировки.</dd></dl>
+<ul>
+<li>Если указана функция, то элементы массива будут отсортированы согласно значениям, возвращаемых функцией. Условия на функцию можно записать следующим образом:<br />
+<div class="source-container" id="sc-4a368e211fbc3" >
+<div class="source-controls-small">  		<span id="select-4a368e211fbc3" onclick="return sourceEditor.select('4a368e211fbc3')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e211fbc3">
+<pre class="source" id="src-4a368e211fbc3"><span class="kw2">function</span> sortFunction<span class="br0">&#40;</span>a, b<span class="br0">&#41;</span><span class="br0">&#123;</span>
+  <span class="kw1">if</span><span class="br0">&#40;</span>a меньше, чем b по некоторому критерию<span class="br0">&#41;</span>
+     <span class="kw1">return</span> <span class="nu0">-1</span> <span class="co1">// Или любое число, меньшее нуля</span>
+  <span class="kw1">if</span><span class="br0">&#40;</span>a больше, чем b по некоторому критерию<span class="br0">&#41;</span>
+     <span class="kw1">return</span> <span class="nu0">1</span>  <span class="co1">// Или любое число, большее нуля</span>
+  <span class="co1">// в случае а = b вернуть 0</span>
+  <span class="kw1">return</span> <span class="nu0">0</span>
+<span class="br0">&#125;</span></pre><div class="src-edit-container" id="src-edit-4a368e211fbc3"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e211fbc3')" />			 		</div>
+</div>
+</div>
+</li>
+<li>Если параметр не указан, массив будет отсортирован в лексикографическом порядке (возрастающий порядок следования символов в таблице ASCII).</li>
+</ul>
+
+
+</div>
+  </div>
+</div>
+
+
+<div class="field field-type-text field-field-method-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Данный метод изменяет исходный массив. Получившийся массив также возвращается в качестве результата.</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2125ce1" >
+<div class="source-controls-small">  		<span id="select-4a368e2125ce1" onclick="return sourceEditor.select('4a368e2125ce1')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e2125ce1">
+<pre class="source" id="src-4a368e2125ce1">arr = <span class="br0">&#91;</span><span class="nu0">1</span>,<span class="nu0">-1</span>, <span class="nu0">0</span><span class="br0">&#93;</span>
+a = arr.<span class="me1">sort</span><span class="br0">&#40;</span><span class="br0">&#41;</span> 
+&nbsp;
+<span class="co1">// =&gt; arr = [ -1, 0, 1 ]</span>
+&nbsp;
+<span class="kw3">alert</span><span class="br0">&#40;</span>a == arr<span class="br0">&#41;</span> <span class="co1">// =&gt; true, это тот же сортированный массив</span></pre><div class="src-edit-container" id="src-edit-4a368e2125ce1"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2125ce1')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+<div class="field field-type-nodereference field-field-see-also">
+  <h3 class="field-label">См. также</h3>
+  <ul class="field-items">
+          <li class="field-item"><a href="Array-reverse.html">reverse </a> /Метод/</li>
+      </ul>
+</div>
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>Math.random</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/Math.random">http://javascript.ru/Math.random</a></div><h2>Math.random</h2><div class="field field-type-text field-field-method-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e25d7cf7" >  	<div class="code-container" id="cc-4a368e25d7cf7"> 		<pre class="source" id="src-4a368e25d7cf7"><span class="kw2">var</span> randomNumber = Math.<span class="me1">random</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;</pre> 		<div class="src-edit-container" id="src-edit-4a368e25d7cf7"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e25d7cf7')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-method-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"></div>
+  </div>
+</div>
+
+
+<div class="field field-type-text field-field-method-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Заметим, что числа в яваскрипт хранятся в формате с плавающей точкой  IEEE 754 с округлением в сторону ближайшего четного. Поэтому иногда, в очень редких случаях, возможна генерация обычно исключенной верхней границы.</p>
+<div class="example">
+<div class="example-title">Пример: Cлучайное число от 0(включительно) до 1</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e25cb092" >
+<div class="code-container" id="cc-4a368e25cb092">
+<pre class="source" id="src-4a368e25cb092"><span class="kw2">function</span> getRandom<span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+  <span class="kw1">return</span> Math.<span class="me1">random</span><span class="br0">&#40;</span><span class="br0">&#41;</span>;
+<span class="br0">&#125;</span></pre><div class="src-edit-container" id="src-edit-4a368e25cb092"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e25cb092')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<div class="example">
+<div class="example-title">Пример: Случайное число между min и max</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e25cb9da" >
+<div class="code-container" id="cc-4a368e25cb9da">
+<pre class="source" id="src-4a368e25cb9da"><span class="kw2">function</span> getRandomArbitary<span class="br0">&#40;</span>min, max<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+  <span class="kw1">return</span> Math.<span class="me1">random</span><span class="br0">&#40;</span><span class="br0">&#41;</span> * <span class="br0">&#40;</span>max - min<span class="br0">&#41;</span> + min;
+<span class="br0">&#125;</span></pre><div class="src-edit-container" id="src-edit-4a368e25cb9da"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e25cb9da')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<div class="example">
+<div class="example-title">Пример: Случайное целое между min и max</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e25cdcec" >
+<div class="source-controls-small">  		<span id="select-4a368e25cdcec" onclick="return sourceEditor.select('4a368e25cdcec')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e25cdcec">
+<pre class="source" id="src-4a368e25cdcec"><span class="co1">// использование Math.round() даст неравномерное распределение!</span>
+<span class="kw2">function</span> getRandomInt<span class="br0">&#40;</span>min, max<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+  <span class="kw1">return</span> Math.<span class="me1">floor</span><span class="br0">&#40;</span>Math.<span class="me1">random</span><span class="br0">&#40;</span><span class="br0">&#41;</span> * <span class="br0">&#40;</span>max - min + <span class="nu0">1</span><span class="br0">&#41;</span><span class="br0">&#41;</span> + min;
+<span class="br0">&#125;</span></pre><div class="src-edit-container" id="src-edit-4a368e25cdcec"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e25cdcec')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>toDateString</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/Date/toDateString">http://javascript.ru/Date/toDateString</a></div><h2>toDateString</h2><div class="field field-type-text field-field-method-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e247f8aa" >  	<div class="code-container" id="cc-4a368e247f8aa"> 		<pre class="source" id="src-4a368e247f8aa">toDateString<span class="br0">&#40;</span><span class="br0">&#41;</span></pre> 		<div class="src-edit-container" id="src-edit-4a368e247f8aa"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e247f8aa')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-method-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt></dt>
+<dd>
+<dd>
+</dd></dd></dl>
+</div>
+  </div>
+</div>
+
+
+<div class="field field-type-text field-field-method-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Экземпляр объекта <code>Date</code> означает некоторый момент времени. Вызов метода <code>toString</code> вернёт информацию об этом моменте в виде строки, содержащей пригодное для человеческого восприятия текстовое представление даты на английском языке, в американском формате. Для SpiderMonkey (реализация JavaScript от Mozilla) это представление состоит из даты (день, месяц, год),  за которой следует время (часы, минуты, секунды и часовой пояс). Иногда требуется получить только информацию о дате - для этого существует метод <code>toDateString</code>.</p>
+<p>Метод toDateString представляется особенно полезным, если учесть тот факт, что для корректных реализаций ECMA-262 формат строки, получаемой в результате вызова метода toString для объектов Date, не регламентирован. По этой причине не существует простого и надёжного способа выделить из этой строки часть, соответствующую дате.</p>
+<div class="example">
+<div class="example-title">Пример: Использование toDateString</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2478118" >
+<div class="code-container" id="cc-4a368e2478118">
+<pre class="source" id="src-4a368e2478118"><span class="kw2">var</span> d = <span class="kw2">new</span> Date<span class="br0">&#40;</span><span class="nu0">1957</span>, <span class="nu0">9</span>, <span class="nu0">4</span>, <span class="nu0">19</span>, <span class="nu0">28</span>, <span class="nu0">34</span><span class="br0">&#41;</span>;
+<span class="kw3">alert</span><span class="br0">&#40;</span>d.<span class="me1">toString</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>; <span class="co1">// выведет Fri Oct 04 1957 23:28:34 GMT+0400 (Russian Standard Time)</span>
+<span class="kw3">alert</span><span class="br0">&#40;</span>d.<span class="me1">toDateString</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>; <span class="co1">// выведет Fri Oct 04 1957</span></pre><div class="src-edit-container" id="src-edit-4a368e2478118"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2478118')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

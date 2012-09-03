@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title> indexOf</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/String/-indexOf">http://javascript.ru/String/-indexOf</a></div><h2> indexOf</h2><div class="field field-type-text field-field-method-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e28153f7" >  	<div class="code-container" id="cc-4a368e28153f7"> 		<pre class="source" id="src-4a368e28153f7">str.<span class="me1">indexOf</span><span class="br0">&#40;</span>searchValue<span class="br0">&#91;</span>, fromIndex<span class="br0">&#93;</span><span class="br0">&#41;</span></pre> 		<div class="src-edit-container" id="src-edit-4a368e28153f7"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e28153f7')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-method-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt>searchValue</dt>
+<dd>искомая подстрока<br />
+<dd>
+<dt>fromIndex</dt>
+<dd>позиция, с которой начинать поиск: от 0 до длины строки-1</dd>
+</dd></dd></dl>
+</div>
+  </div>
+</div>
+
+
+<div class="field field-type-text field-field-method-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Символы в строке идут слева направо. Позиция первого 0, последнего - на единицу меньше, чем длина строки.</p>
+<p>Метод чувствителен к регистру символов.</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e27f3824" >
+<div class="code-container" id="cc-4a368e27f3824">
+<pre class="source" id="src-4a368e27f3824"><span class="st0">&quot;Привет, мир&quot;</span>.<span class="me1">indexOf</span><span class="br0">&#40;</span><span class="st0">&quot;Привет&quot;</span><span class="br0">&#41;</span>    <span class="co1">// вернет 0</span>
+<span class="st0">&quot;Привет, мир&quot;</span>.<span class="me1">indexOf</span><span class="br0">&#40;</span><span class="st0">&quot;Корова&quot;</span><span class="br0">&#41;</span>    <span class="co1">// вернет -1</span>
+<span class="st0">&quot;Привет, мир&quot;</span>.<span class="me1">indexOf</span><span class="br0">&#40;</span><span class="st0">&quot;мир&quot;</span><span class="br0">&#41;</span>    <span class="co1">// вернет 8</span>
+<span class="st0">&quot;Привет, мир&quot;</span>.<span class="me1">indexOf</span><span class="br0">&#40;</span><span class="st0">&quot;Мир&quot;</span><span class="br0">&#41;</span> <span class="co1">// вернет -1</span></pre><div class="src-edit-container" id="src-edit-4a368e27f3824"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e27f3824')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<div class="example">
+<div class="example-title">Пример: с позицией</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2800d11" >
+<div class="code-container" id="cc-4a368e2800d11">
+<pre class="source" id="src-4a368e2800d11"><span class="st0">&quot;Привет, мир&quot;</span>.<span class="me1">indexOf</span><span class="br0">&#40;</span><span class="st0">&quot;Привет&quot;</span>,<span class="nu0">0</span><span class="br0">&#41;</span>    <span class="co1">// вернет 0</span>
+<span class="st0">&quot;Привет, мир&quot;</span>.<span class="me1">indexOf</span><span class="br0">&#40;</span><span class="st0">&quot;р&quot;</span>,<span class="nu0">1</span><span class="br0">&#41;</span>    <span class="co1">// вернет 1</span>
+<span class="st0">&quot;Привет, мир&quot;</span>.<span class="me1">indexOf</span><span class="br0">&#40;</span><span class="st0">&quot;р&quot;</span>,<span class="nu0">5</span><span class="br0">&#41;</span>    <span class="co1">// вернет 10</span></pre><div class="src-edit-container" id="src-edit-4a368e2800d11"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2800d11')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<div class="example">
+<div class="example-title">Пример: для пустой подстроки</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e28021d0" >
+<div class="code-container" id="cc-4a368e28021d0">
+<pre class="source" id="src-4a368e28021d0"><span class="st0">&quot;Привет, мир&quot;</span>.<span class="me1">indexOf</span><span class="br0">&#40;</span><span class="st0">&quot;&quot;</span>,<span class="nu0">5</span><span class="br0">&#41;</span>    <span class="co1">// вернет 5</span>
+<span class="st0">&quot;Привет, мир&quot;</span>.<span class="me1">indexOf</span><span class="br0">&#40;</span><span class="st0">&quot;&quot;</span>,<span class="nu0">7</span><span class="br0">&#41;</span>    <span class="co1">// вернет 7</span>
+<span class="st0">&quot;Привет, мир&quot;</span>.<span class="me1">indexOf</span><span class="br0">&#40;</span><span class="st0">&quot;&quot;</span>,<span class="nu0">999</span><span class="br0">&#41;</span>    <span class="co1">// вернет 11 (длину)</span></pre><div class="src-edit-container" id="src-edit-4a368e28021d0"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e28021d0')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>Следующий пример демонстрирует использование <code>indexOf</code> для подсчета количества повторений буквы в строке.</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e28035fb" >
+<div class="source-controls-small">  		<span id="select-4a368e28035fb" onclick="return sourceEditor.select('4a368e28035fb')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e28035fb">
+<pre class="source" id="src-4a368e28035fb">count = <span class="nu0">0</span>;
+pos = str.<span class="me1">indexOf</span><span class="br0">&#40;</span><span class="st0">&quot;x&quot;</span><span class="br0">&#41;</span>;
+<span class="kw1">while</span> <span class="br0">&#40;</span> pos != <span class="nu0">-1</span> <span class="br0">&#41;</span> <span class="br0">&#123;</span>
+   count++;
+   pos = str.<span class="me1">indexOf</span><span class="br0">&#40;</span><span class="st0">&quot;x&quot;</span>,pos<span class="nu0">+1</span><span class="br0">&#41;</span>;
+<span class="br0">&#125;</span></pre><div class="src-edit-container" id="src-edit-4a368e28035fb"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e28035fb')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

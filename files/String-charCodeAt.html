@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>charCodeAt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/String/charCodeAt">http://javascript.ru/String/charCodeAt</a></div><h2>charCodeAt</h2><div class="field field-type-text field-field-method-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e27cba0a" >  	<div class="code-container" id="cc-4a368e27cba0a"> 		<pre class="source" id="src-4a368e27cba0a"><span class="kw2">var</span> codepoint = string.<span class="me1">charCodeAt</span><span class="br0">&#40;</span>index<span class="br0">&#41;</span></pre> 		<div class="src-edit-container" id="src-edit-4a368e27cba0a"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e27cba0a')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-method-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt>index</dt>
+<dd>целое число от 0 до длины строки-1<br />
+<dd>
+</dd></dd></dl>
+</div>
+  </div>
+</div>
+
+
+<div class="field field-type-text field-field-method-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Юникодное значение от 0 до 1,114,111. Первые 128 значений Unicode совпадают с кодировкой ASCII.</p>
+<p>Заметим, что <code>charCodeAt()</code> всегда возвращает значение, меньшее 65536. Это - из за того, что более высокие юникод-символы представлены парой вспомогательных псевдо-символов, которые вместе составляют реальный символ.</p>
+<p>Из-за этого, чтобы получить полный символ для символов, юникод-значение которых больше или равно 65536, необходимо получить не только  <code>charCodeAt(0)</code>, но и <code>charCodeAt(1)</code> (как для строки из двух букв). </p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e27aba45" >
+<div class="source-controls-small">  		<span id="select-4a368e27aba45" onclick="return sourceEditor.select('4a368e27aba45')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e27aba45">
+<pre class="source" id="src-4a368e27aba45"><span class="kw2">function</span> fixedCharCodeAt <span class="br0">&#40;</span>str, idx<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <span class="kw2">var</span> code = str.<span class="me1">charCodeAt</span><span class="br0">&#40;</span>idx<span class="br0">&#41;</span>;
+    <span class="kw1">if</span> <span class="br0">&#40;</span>0xD800 &lt;= code &amp;&amp; code &lt;= 0xDBFF<span class="br0">&#41;</span> <span class="br0">&#123;</span> 
+        <span class="co1">// Верхний вспомогательный символ</span>
+        <span class="kw2">var</span> hi = code;
+        <span class="kw2">var</span> low = str.<span class="me1">charCodeAt</span><span class="br0">&#40;</span>idx<span class="nu0">+1</span><span class="br0">&#41;</span>;
+        <span class="kw1">return</span> <span class="br0">&#40;</span><span class="br0">&#40;</span>hi - 0xD800<span class="br0">&#41;</span> * 0x400<span class="br0">&#41;</span> + <span class="br0">&#40;</span>low - 0xDC00<span class="br0">&#41;</span> + 0x10000;
+    <span class="br0">&#125;</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>0xDC00 &lt;= code &amp;&amp; code &lt;= 0xDFFF<span class="br0">&#41;</span> <span class="br0">&#123;</span> 
+       <span class="co1">// Нижний вспомогательный символ</span>
+        <span class="kw2">var</span> hi = str.<span class="me1">charCodeAt</span><span class="br0">&#40;</span>idx<span class="nu0">-1</span><span class="br0">&#41;</span>;
+        <span class="kw2">var</span> low = code;
+        <span class="kw1">return</span> <span class="br0">&#40;</span><span class="br0">&#40;</span>hi - 0xD800<span class="br0">&#41;</span> * 0x400<span class="br0">&#41;</span> + <span class="br0">&#40;</span>low - 0xDC00<span class="br0">&#41;</span> + 0x10000;
+    <span class="br0">&#125;</span>
+    <span class="kw1">return</span> code;
+<span class="br0">&#125;</span>
+<span class="kw3">alert</span><span class="br0">&#40;</span>fixedCharCodeAt <span class="br0">&#40;</span><span class="st0">'<span class="es0">\u</span>D800<span class="es0">\u</span>DC00'</span>, <span class="nu0">0</span><span class="br0">&#41;</span><span class="br0">&#41;</span>; <span class="co1">// 65536</span>
+<span class="kw3">alert</span><span class="br0">&#40;</span>fixedCharCodeAt <span class="br0">&#40;</span><span class="st0">'<span class="es0">\u</span>D800<span class="es0">\u</span>DC00'</span>, <span class="nu0">1</span><span class="br0">&#41;</span><span class="br0">&#41;</span>; <span class="co1">// 65536</span></pre><div class="src-edit-container" id="src-edit-4a368e27aba45"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e27aba45')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p><code>charCodeAt()</code> возвращает NaN, если указанный индекс меньше нуля или больше/равен длине строки.</p>
+<div class="example">
+<div class="example-title">Пример: Использование <code>charCodeAt</code></div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e27aedcb" >
+<div class="code-container" id="cc-4a368e27aedcb">
+<pre class="source" id="src-4a368e27aedcb"><span class="co1">// возвратит 65, unicode-код для А</span>
+<span class="st0">&quot;ABC&quot;</span>.<span class="me1">charCodeAt</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span> <span class="co1">// 65</span></pre><div class="src-edit-container" id="src-edit-4a368e27aedcb"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e27aedcb')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>Следующий пример предоставляет способ убедиться, что проход по циклу всегда дает целый символ, даже если строка содержит символы за пределами основного многоязычного набора.</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e27af539" >
+<div class="source-controls-small">  		<span id="select-4a368e27af539" onclick="return sourceEditor.select('4a368e27af539')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e27af539">
+<pre class="source" id="src-4a368e27af539"><span class="kw2">var</span> str = <span class="st0">'A<span class="es0">\u</span>D800<span class="es0">\u</span>DC00Z'</span> <span class="co1">// 2 символа</span>
+<span class="co1">// мы могли объявить сложный символ напрямую,</span>
+<span class="co1">// т.к наш javascript-код имеет кодировку UTF.</span>
+<span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw2">var</span> i=<span class="nu0">0</span>, chr; i &lt; str.<span class="me1">length</span>; i++<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span><span class="br0">&#40;</span>chr = getWholeChar<span class="br0">&#40;</span>str, i<span class="br0">&#41;</span><span class="br0">&#41;</span> === <span class="kw2">false</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        <span class="kw1">continue</span> <span class="co1">// на позиции i вспомогательный символ</span>
+    <span class="br0">&#125;</span> 
+    <span class="co1">// alert будет последовательно вызван для всех символов </span>
+    <span class="kw3">alert</span><span class="br0">&#40;</span>chr<span class="br0">&#41;</span>;
+<span class="br0">&#125;</span>
+&nbsp;
+<span class="kw2">function</span> getWholeChar <span class="br0">&#40;</span>str, i<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <span class="kw2">var</span> code = str.<span class="me1">charCodeAt</span><span class="br0">&#40;</span>i<span class="br0">&#41;</span>;
+    <span class="kw1">if</span> <span class="br0">&#40;</span>0xD800 &lt;= code &amp;&amp; code &lt;= 0xDBFF<span class="br0">&#41;</span> <span class="br0">&#123;</span> 
+        <span class="co1">// верхний вспомогательный</span>
+        <span class="kw1">if</span> <span class="br0">&#40;</span>str.<span class="me1">length</span> &lt;= <span class="br0">&#40;</span>i<span class="nu0">+1</span><span class="br0">&#41;</span><span class="br0">&#41;</span>  <span class="br0">&#123;</span>
+            <span class="kw1">throw</span> <span class="st0">'High surrogate without following low surrogate'</span>;
+        <span class="br0">&#125;</span>
+        <span class="kw2">var</span> next = str.<span class="me1">charCodeAt</span><span class="br0">&#40;</span>i<span class="nu0">+1</span><span class="br0">&#41;</span>;
+        <span class="kw1">if</span> <span class="br0">&#40;</span>0xDC00 &gt; next || next &gt; 0xDFFF<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+            <span class="kw1">throw</span> <span class="st0">'High surrogate without following low surrogate'</span>;
+        <span class="br0">&#125;</span>
+        <span class="kw1">return</span> str<span class="br0">&#91;</span>i<span class="br0">&#93;</span>+str<span class="br0">&#91;</span>i<span class="nu0">+1</span><span class="br0">&#93;</span>;
+    <span class="br0">&#125;</span>
+    <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>0xDC00 &lt;= code &amp;&amp; code &lt;= 0xDFFF<span class="br0">&#41;</span> <span class="br0">&#123;</span> 
+       <span class="co1">// Нижний вспомогательный</span>
+        <span class="kw1">if</span> <span class="br0">&#40;</span>i === <span class="nu0">0</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+            <span class="kw1">throw</span> <span class="st0">'Low surrogate without preceding high surrogate'</span>;
+        <span class="br0">&#125;</span>
+        <span class="kw2">var</span> prev = str.<span class="me1">charCodeAt</span><span class="br0">&#40;</span>i<span class="nu0">-1</span><span class="br0">&#41;</span>;
+        <span class="kw1">if</span> <span class="br0">&#40;</span>0xD800 &gt; prev || prev &gt; 0xDBFF<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+            <span class="kw1">throw</span> <span class="st0">'Low surrogate without preceding high surrogate'</span>;
+        <span class="br0">&#125;</span>
+        <span class="kw1">return</span> <span class="kw2">false</span>; 
+    <span class="br0">&#125;</span>
+    <span class="kw1">return</span> str<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="co1">// используем обращение к строке как к массиву</span>
+<span class="br0">&#125;</span></pre><div class="src-edit-container" id="src-edit-4a368e27af539"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e27af539')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>splice </title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/Array/splice">http://javascript.ru/Array/splice</a></div><h2>splice </h2><div class="field field-type-text field-field-method-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e223d74e" >  	<div class="code-container" id="cc-4a368e223d74e"> 		<pre class="source" id="src-4a368e223d74e">arrayObj.<span class="me1">splice</span><span class="br0">&#40;</span> start, deleteCount, <span class="br0">&#91;</span>elem1<span class="br0">&#91;</span>, elem2<span class="br0">&#91;</span>, ...<span class="br0">&#91;</span>, elemN<span class="br0">&#93;</span><span class="br0">&#93;</span><span class="br0">&#93;</span><span class="br0">&#93;</span> <span class="br0">&#41;</span></pre> 		<div class="src-edit-container" id="src-edit-4a368e223d74e"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e223d74e')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-method-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt class="arequired">
+start<br />
+</dt>
+<dd>
+Индекс в массиве, с которого начинать удаление.<br />
+</dd>
+<dt class="arequired">
+deleteCount<br />
+</dt>
+<dd>
+Кол-во элементов, которое требуется удалить, начиная с индекса <em>start</em>.</dd></dl>
+<ul>
+<li><strong>IE</strong>: если этот параметр не указан, то ни одни элемент не будет удалён.</li>
+<li><strong>Firefox</strong>: если этот параметр не указан, то будут удалены все элементы, начиная с индекса <em>start</em>.</li>
+<li><strong>Opera</strong>: (исследовано в версии 9.61) если этот параметр не указан, то будут удалён 1 элемент, имеющий индекс <em>start</em>+1. В этом же случае вместо удалённого элемента будет возвращена пустая строка.</li>
+</ul>
+
+<dt>
+elem1, elem2, ..., elemN<br />
+</dt>
+<dd>
+Добавляемые элементы в массив. Добавление начинается с позиции <em>start</em>.<br />
+</dd>
+
+</div>
+  </div>
+</div>
+
+
+<div class="field field-type-text field-field-method-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Пожалуй, самый комплексный метод для работы с массивом.</p>
+<p>Он объединяет в себе две разные функциональности: удаляет часть массива и добавляет новые элементы на место удаленных.</p>
+<p>При этом можно свести к нулю количество удаляемых элементов - тогда это будет просто добавление.</p>
+<p>И можно не добавлять элементов - тогда это будет просто удаление.</p>
+<p>Метод возвращает массив из удаленных элементов.</p>
+<div class="example">
+<div class="example-title">Пример: Удаление</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e222e511" >
+<div class="source-controls-small">  		<span id="select-4a368e222e511" onclick="return sourceEditor.select('4a368e222e511')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e222e511">
+<pre class="source" id="src-4a368e222e511">arr = <span class="br0">&#91;</span> <span class="st0">&quot;a&quot;</span>, <span class="st0">&quot;b&quot;</span>, <span class="st0">&quot;c&quot;</span>, <span class="st0">&quot;d&quot;</span>, <span class="st0">&quot;e&quot;</span> <span class="br0">&#93;</span>
+removed = arr.<span class="me1">splice</span><span class="br0">&#40;</span><span class="nu0">1</span>,<span class="nu0">2</span><span class="br0">&#41;</span> 
+&nbsp;
+<span class="co1">// removed = [ &quot;b&quot;, &quot;c&quot;] (2 элемента с arr[1])</span>
+<span class="co1">// arr = [&quot;a&quot;, &quot;d&quot;, &quot;e&quot;] (те что остались)</span></pre><div class="src-edit-container" id="src-edit-4a368e222e511"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e222e511')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<div class="example">
+<div class="example-title">Пример: Удаление одного элемента</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e222ef5b" >
+<div class="code-container" id="cc-4a368e222ef5b">
+<pre class="source" id="src-4a368e222ef5b">arr = <span class="br0">&#91;</span> <span class="st0">&quot;a&quot;</span>, <span class="st0">&quot;b&quot;</span>, <span class="st0">&quot;c&quot;</span>, <span class="st0">&quot;d&quot;</span>, <span class="st0">&quot;e&quot;</span> <span class="br0">&#93;</span>
+<span class="co1">// удалим с индекса 2 один элемент</span>
+arr.<span class="me1">splice</span><span class="br0">&#40;</span><span class="nu0">2</span>,<span class="nu0">1</span><span class="br0">&#41;</span> 
+<span class="co1">// arr = [&quot;a&quot;, &quot;b&quot;, &quot;d&quot;, &quot;e&quot;]</span></pre><div class="src-edit-container" id="src-edit-4a368e222ef5b"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e222ef5b')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<div class="example">
+<div class="example-title">Пример: Добавление элементов</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e222f85c" >
+<div class="source-controls-small">  		<span id="select-4a368e222f85c" onclick="return sourceEditor.select('4a368e222f85c')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e222f85c">
+<pre class="source" id="src-4a368e222f85c">arr = <span class="br0">&#91;</span> <span class="st0">&quot;a&quot;</span>, <span class="st0">&quot;b&quot;</span>, <span class="st0">&quot;c&quot;</span>, <span class="st0">&quot;d&quot;</span>, <span class="st0">&quot;e&quot;</span> <span class="br0">&#93;</span>
+<span class="co1">// начиная с индекса 2 удалим 0 элементов </span>
+<span class="co1">// и добавим &quot;b+&quot;</span>
+arr.<span class="me1">splice</span><span class="br0">&#40;</span><span class="nu0">2</span>,<span class="nu0">0</span>,<span class="st0">&quot;b+&quot;</span><span class="br0">&#41;</span>
+<span class="co1">// arr = [&quot;a&quot;, &quot;b&quot;, &quot;b+&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;]</span></pre><div class="src-edit-container" id="src-edit-4a368e222f85c"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e222f85c')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<div class="example">
+<div class="example-title">Пример: С конца</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e22304d6" >
+<div class="code-container" id="cc-4a368e22304d6">
+<pre class="source" id="src-4a368e22304d6">arr = <span class="br0">&#91;</span> <span class="st0">&quot;a&quot;</span>, <span class="st0">&quot;b&quot;</span>, <span class="st0">&quot;c&quot;</span>, <span class="st0">&quot;d&quot;</span>, <span class="st0">&quot;e&quot;</span> <span class="br0">&#93;</span>
+<span class="co1">// удалим с индекса 1 начиная с конца 1 элемент</span>
+arr.<span class="me1">splice</span><span class="br0">&#40;</span><span class="nu0">-1</span>,<span class="nu0">1</span><span class="br0">&#41;</span></pre><div class="src-edit-container" id="src-edit-4a368e22304d6"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e22304d6')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

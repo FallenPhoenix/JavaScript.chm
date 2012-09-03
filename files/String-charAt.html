@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>charAt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/String/charAt">http://javascript.ru/String/charAt</a></div><h2>charAt</h2><div class="field field-type-text field-field-method-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e27e91b5" >  	<div class="code-container" id="cc-4a368e27e91b5"> 		<pre class="source" id="src-4a368e27e91b5">str.<span class="me1">charAt</span><span class="br0">&#40;</span>index<span class="br0">&#41;</span></pre> 		<div class="src-edit-container" id="src-edit-4a368e27e91b5"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e27e91b5')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-method-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt>index</dt>
+<dd>Целое число от 0 до количества символов в строке минус 1<br />
+<dd>
+</dd></dd></dl>
+</div>
+  </div>
+</div>
+
+
+<div class="field field-type-text field-field-method-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Символы идут слева направо. Первый символ имеет позицию 0, а последний <code>string.length-1</code>. </p>
+<p>Если указанный <code>index</code> лежит за пределами этого диапазона, яваскрипт вернет пустую строку.</p>
+<div class="example">
+<div class="example-title">Пример: перечисление символов в строке</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e27dbaa6" >
+<div class="source-controls-small">  		<span id="select-4a368e27dbaa6" onclick="return sourceEditor.select('4a368e27dbaa6')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e27dbaa6">
+<pre class="source" id="src-4a368e27dbaa6"><span class="kw2">var</span> anyString=<span class="st0">&quot;Привет, мир&quot;</span>
+&nbsp;
+document.<span class="me1">writeln</span><span class="br0">&#40;</span><span class="st0">&quot;Символ на позиции 0 '&quot;</span> + anyString.<span class="me1">charAt</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span> + <span class="st0">&quot;'&quot;</span><span class="br0">&#41;</span>
+document.<span class="me1">writeln</span><span class="br0">&#40;</span><span class="st0">&quot;Символ на позиции 1 '&quot;</span> + anyString.<span class="me1">charAt</span><span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span> + <span class="st0">&quot;'&quot;</span><span class="br0">&#41;</span>
+document.<span class="me1">writeln</span><span class="br0">&#40;</span><span class="st0">&quot;Символ на позиции 2 '&quot;</span> + anyString.<span class="me1">charAt</span><span class="br0">&#40;</span><span class="nu0">2</span><span class="br0">&#41;</span> + <span class="st0">&quot;'&quot;</span><span class="br0">&#41;</span>
+document.<span class="me1">writeln</span><span class="br0">&#40;</span><span class="st0">&quot;Символ на позиции 3 '&quot;</span> + anyString.<span class="me1">charAt</span><span class="br0">&#40;</span><span class="nu0">3</span><span class="br0">&#41;</span> + <span class="st0">&quot;'&quot;</span><span class="br0">&#41;</span>
+document.<span class="me1">writeln</span><span class="br0">&#40;</span><span class="st0">&quot;Символ на позиции 4 '&quot;</span> + anyString.<span class="me1">charAt</span><span class="br0">&#40;</span><span class="nu0">4</span><span class="br0">&#41;</span> + <span class="st0">&quot;'&quot;</span><span class="br0">&#41;</span>
+document.<span class="me1">writeln</span><span class="br0">&#40;</span><span class="st0">&quot;Символ на позиции 999 '&quot;</span> + anyString.<span class="me1">charAt</span><span class="br0">&#40;</span><span class="nu0">999</span><span class="br0">&#41;</span> + <span class="st0">&quot;'&quot;</span><span class="br0">&#41;</span></pre><div class="src-edit-container" id="src-edit-4a368e27dbaa6"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e27dbaa6')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>Выведет:</p>
+<div class="source-container" id="sc-4a368e27df03e" >
+<div class="source-controls-small">  		<span id="select-4a368e27df03e" onclick="return sourceEditor.select('4a368e27df03e')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e27df03e">
+<pre class="source" id="src-4a368e27df03e">Символ на позиции 0 'П'
+Символ на позиции 1 'р'
+Символ на позиции 2 'и'
+Символ на позиции 3 'в'
+Символ на позиции 4 'е'
+Символ на позиции 999 ''</pre><div class="src-edit-container" id="src-edit-4a368e27df03e"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e27df03e')" />			 		</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

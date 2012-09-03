@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>exec</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/RegExp/exec">http://javascript.ru/RegExp/exec</a></div><h2>exec</h2><div class="field field-type-text field-field-method-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e271cf1d" >  	<div class="code-container" id="cc-4a368e271cf1d"> 		<pre class="source" id="src-4a368e271cf1d"><span class="kw2">var</span> result1 = regexp.<span class="me1">exec</span><span class="br0">&#40;</span>str<span class="br0">&#41;</span>
+<span class="kw2">var</span> result2 = regexp.<span class="me1">exec</span><span class="br0">&#40;</span>str<span class="br0">&#41;</span></pre> 		<div class="src-edit-container" id="src-edit-4a368e271cf1d"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e271cf1d')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-method-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt>str</dt>
+<dd>текст, в котором искать<br />
+<dd>
+</dd></dd></dl>
+</div>
+  </div>
+</div>
+
+
+<div class="field field-type-text field-field-method-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Выполняет поиск совпадений в указанной строке. Возвращает массив результатов или <code>null</code></p>
+<p>Если вы хотите просто проверить, есть ли совпадения, используйте для этого метод <a href="RegExp-test.html" >test</a> или <a href="String-search.html" >String#search</a>.</p>
+<p>Метод <code>exec</code> при совпадении возвращает массив и обновляет свойства объекта <code>regexp</code>. Если совпадений нет - <code>exec</code> возвращает <code>null</code>.</p>
+<p>Если указан флаг "g", то повторный вызов <code>exec</code> будет давать следующее совпадение.</p>
+<div class="source-container" id="sc-4a368e270cf6e" >
+<div class="code-container" id="cc-4a368e270cf6e">
+<pre class="source" id="src-4a368e270cf6e">regexp = /a+<span class="br0">&#40;</span>b+<span class="br0">&#40;</span>c+<span class="br0">&#41;</span><span class="br0">&#41;</span>/g
+str = <span class="st0">&quot;abc aabbcc&quot;</span>
+result1 = regexp.<span class="me1">exec</span><span class="br0">&#40;</span>str<span class="br0">&#41;</span> 
+result2 = regexp.<span class="me1">exec</span><span class="br0">&#40;</span>str<span class="br0">&#41;</span></pre><div class="src-edit-container" id="src-edit-4a368e270cf6e"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e270cf6e')" />			 		</div>
+</div>
+</div>
+<dl>
+<dt>result1</dt>
+<dd>Вложенный массив совпадений ["abc", "bc", "c"]</dd>
+<dt>regexp.lastIndex после result1</dt>
+<dd>3</dd>
+<dt>result2</dt>
+<dd>Вложенный массив совпадений ["aabbcc", "bbcc", "cc"]</dd>
+<dt>regexp.lastIndex после result2</dt>
+<dd>10</dd>
+</dl>
+<p>Это происходит за счет автоматического обновления при выполнении <code>exec</code> индекса конца последнего поиска <a href="RegExp-lastIndex.html" >lastIndex</a>. Следующий поиск начинается от <code>lastIndex</code>. </p>
+<p>Например, следующий скрипт выдает все совпадения:</p>
+<div class="source-container" id="sc-4a368e270dc96" >
+<div class="source-controls-small">  		<span id="select-4a368e270dc96" onclick="return sourceEditor.select('4a368e270dc96')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e270dc96">
+<pre class="source" id="src-4a368e270dc96"><span class="kw2">var</span> myRe = /ab*/g;
+<span class="kw2">var</span> str = <span class="st0">&quot;abbcdefabh&quot;</span>;
+<span class="kw2">var</span> myArray;
+<span class="kw1">while</span> <span class="br0">&#40;</span><span class="br0">&#40;</span>myArray = myRe.<span class="me1">exec</span><span class="br0">&#40;</span>str<span class="br0">&#41;</span><span class="br0">&#41;</span> != <span class="kw2">null</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+  <span class="kw2">var</span> msg = <span class="st0">&quot;Нашел &quot;</span> + myArray<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span> + <span class="st0">&quot;.  &quot;</span>;
+  msg += <span class="st0">&quot;Следующий поиск начнется с &quot;</span> + myRe.<span class="me1">lastIndex</span>;
+  document.<span class="kw1">write</span><span class="br0">&#40;</span>msg<span class="br0">&#41;</span>;
+<span class="br0">&#125;</span></pre><div class="src-edit-container" id="src-edit-4a368e270dc96"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e270dc96')" />			 		</div>
+</div>
+</div>
+<p>Он выведет текст:</p>
+<div class="source-container" id="sc-4a368e270f88e" >
+<div class="code-container" id="cc-4a368e270f88e">
+<pre class="source" id="src-4a368e270f88e">Нашел abb. Следующий поиск начнется с 3
+Нашел ab. Следующий поиск начнется с 9</pre><div class="src-edit-container" id="src-edit-4a368e270f88e"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e270f88e')" />			 		</div>
+</div>
+</div>
+<p>Вы можете вызвать <code>exec</code> при неявном определении объекта <a href="RegExp.html" >RegExp</a>:</p>
+<div class="source-container" id="sc-4a368e270ff37" >
+<div class="code-container" id="cc-4a368e270ff37">
+<pre class="source" id="src-4a368e270ff37"><span class="kw2">var</span> matches = /<span class="br0">&#40;</span>hello \S+<span class="br0">&#41;</span>/.<span class="me1">exec</span><span class="br0">&#40;</span><span class="st0">'This is a hello world!'</span><span class="br0">&#41;</span>;
+<span class="kw3">alert</span><span class="br0">&#40;</span>matches<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#41;</span>;</pre><div class="src-edit-container" id="src-edit-4a368e270ff37"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e270ff37')" />			 		</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

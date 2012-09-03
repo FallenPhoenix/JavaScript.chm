@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>function</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/function-syntax">http://javascript.ru/function-syntax</a></div><h2>function</h2><p>Объявить функцию</p>
+
+<div class="field field-type-text field-field-syntax-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e2ad400e" >  	<div class="code-container" id="cc-4a368e2ad400e"> 		<pre class="source" id="src-4a368e2ad400e"><span class="kw2">function</span> <span class="kw3">name</span><span class="br0">&#40;</span><span class="br0">&#91;</span>param_1<span class="br0">&#93;</span> <span class="br0">&#91;</span>, param_2<span class="br0">&#93;</span> <span class="br0">&#91;</span>..., param_n<span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+   statements
+<span class="br0">&#125;</span></pre> 		<div class="src-edit-container" id="src-edit-4a368e2ad400e"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2ad400e')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-syntax-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt>name</dt>
+<dd>Имя функции</dd>
+<dt>param_1, param_2, ..., param_n</dt>
+<dd>Названия параметров<br />
+<dd>
+<dt>statements</dt>
+<dd>Тело функции</dd>
+</dd></dd></dl>
+</div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-syntax-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Существует два вида использования этой конструкции:</p>
+<dl>
+<dt>объявление функции</dt>
+<dd>
+<div class="source-container" id="sc-4a368e2ac5f21" >
+<div class="code-container" id="cc-4a368e2ac5f21">
+<pre class="source" id="src-4a368e2ac5f21"><span class="kw2">function</span> func<span class="br0">&#40;</span>a<span class="br0">&#41;</span> <span class="br0">&#123;</span> ... <span class="br0">&#125;</span></pre><div class="src-edit-container" id="src-edit-4a368e2ac5f21"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2ac5f21')" />			 		</div>
+</div>
+</div>
+<dt>присвоение анонимной функции</dt>
+<dd>
+<div class="source-container" id="sc-4a368e2ac6725" >
+<div class="code-container" id="cc-4a368e2ac6725">
+<pre class="source" id="src-4a368e2ac6725"><span class="kw2">var</span> func = <span class="kw2">function</span><span class="br0">&#40;</span>a<span class="br0">&#41;</span> <span class="br0">&#123;</span> ...<span class="br0">&#125;</span></pre><div class="src-edit-container" id="src-edit-4a368e2ac6725"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2ac6725')" />			 		</div>
+</div>
+</div>
+</dd>
+</dd></dl>
+<p>Их отличие - в области видимости. Присвоенная анонимная функция видна с момента присвоения, а объявленная явно - везде:</p>
+<div class="example">
+<div class="example-title">Пример: видимость функций</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2ac04d6" >
+<div class="source-controls-small">  		<span id="select-4a368e2ac04d6" onclick="return sourceEditor.select('4a368e2ac04d6')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e2ac04d6">
+<pre class="source" id="src-4a368e2ac04d6"><span class="co1">// функции определены ниже</span>
+&nbsp;
+<span class="kw3">alert</span><span class="br0">&#40;</span>decl<span class="br0">&#41;</span> <span class="co1">// функция видна, все ок</span>
+&nbsp;
+&nbsp;
+<span class="kw3">alert</span><span class="br0">&#40;</span>anon<span class="br0">&#41;</span> <span class="co1">// функция еще не определена - ошибка</span>
+&nbsp;
+<span class="co1">// сами функции </span>
+<span class="kw2">function</span> decl<span class="br0">&#40;</span>a<span class="br0">&#41;</span> <span class="br0">&#123;</span> <span class="br0">&#125;</span>
+<span class="kw2">var</span> anon = <span class="kw2">function</span><span class="br0">&#40;</span>a<span class="br0">&#41;</span> <span class="br0">&#123;</span> <span class="br0">&#125;</span></pre><div class="src-edit-container" id="src-edit-4a368e2ac04d6"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2ac04d6')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>Функция, объявленная внутри другой функции, видит переменные внешней функции. Они доступны ей даже тогда, когда родительская функция завершила исполнение. Это называется <a class="liexternal" href="http://javascript.ru/tutorial/basic/closure" >замыканием</a>.</p>
+<p>Значение возвращается оператором <code>return</code>. Функции без <code>return</code> или с <code>return</code> без значения возвращают <a href="undefined.html" >undefined</a>.</p>
+<p>В теле функции доступна специальная переменная <code>arguments</code>, которая содержит параметры и ссылку на объект, представляющий собой текущую функцию (в javascript функции - объекты класса <a href="Function.html" >Function</a>):</p>
+<div class="example">
+<div class="example-title">Пример: arguments</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2ac304e" >
+<div class="source-controls-small">  		<span id="select-4a368e2ac304e" onclick="return sourceEditor.select('4a368e2ac304e')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e2ac304e">
+<pre class="source" id="src-4a368e2ac304e"><span class="co1">// Вызов</span>
+func<span class="br0">&#40;</span><span class="nu0">5</span><span class="br0">&#41;</span>
+&nbsp;
+<span class="co1">// Выведет</span>
+<span class="kw2">function</span> func<span class="br0">&#40;</span>a,b<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+  <span class="kw3">alert</span><span class="br0">&#40;</span>arguments.<span class="me1">length</span><span class="br0">&#41;</span>  <span class="co1">// 1</span>
+  <span class="kw3">alert</span><span class="br0">&#40;</span>arguments<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="br0">&#41;</span>  <span class="co1">// 5</span>
+  <span class="kw3">alert</span><span class="br0">&#40;</span>arguments<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#41;</span>  <span class="co1">// undefined</span>
+  <span class="kw3">alert</span><span class="br0">&#40;</span>arguments.<span class="me1">callee</span><span class="br0">&#41;</span> <span class="co1">// ссылка на функцию func</span>
+<span class="br0">&#125;</span></pre><div class="src-edit-container" id="src-edit-4a368e2ac304e"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2ac304e')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+
+<div class="field field-type-nodereference field-field-see-also">
+  <h3 class="field-label">См. также</h3>
+  <ul class="field-items">
+          <li class="field-item"><a href="Function.html">Function</a> /Объект/</li>
+          <li class="field-item"><a href="function-operator.html">function</a> /Оператор/</li>
+          <li class="field-item"><a class="liexternal" href="http://javascript.ru/tutorial/basic/functions">Функции</a> /Статья/</li>
+          <li class="field-item"><a class="liexternal" href="http://javascript.ru/ecma/part13">Определение функции</a> /Стандарт языка/</li>
+      </ul>
+</div>
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

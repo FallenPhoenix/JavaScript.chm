@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>arguments</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/arguments">http://javascript.ru/arguments</a></div><h2>arguments</h2><p>Переменная, доступная внутри функции и содержащая аргументы и ссылку на саму функцию.</p>
+
+<div class="field field-type-text field-field-property-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Локальная переменная <code>arguments</code> доступна внутри функций.</p>
+<p>Вы можете обращаться к аргументом по номеру, начиная от 0. При этом <code>arguments</code> содержит не объявленные, а реально переданные аргументы.</p>
+<p>Следующий пример выведет реально переданные три аргумента, несмотря на то, что в функции их всего два.</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2a32c13" >
+<div class="source-controls-small">  		<span id="select-4a368e2a32c13" onclick="return sourceEditor.select('4a368e2a32c13')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e2a32c13">
+<pre class="source" id="src-4a368e2a32c13"><span class="kw2">function</span> func<span class="br0">&#40;</span>a,b<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+  <span class="kw3">alert</span><span class="br0">&#40;</span>arguments<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="br0">&#41;</span>
+  <span class="kw3">alert</span><span class="br0">&#40;</span>arguments<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#41;</span>
+  <span class="kw3">alert</span><span class="br0">&#40;</span>arguments<span class="br0">&#91;</span><span class="nu0">2</span><span class="br0">&#93;</span><span class="br0">&#41;</span>
+<span class="br0">&#125;</span>
+&nbsp;
+func<span class="br0">&#40;</span><span class="nu0">1</span>,<span class="nu0">2</span>,<span class="nu0">3</span>,<span class="nu0">4</span><span class="br0">&#41;</span></pre><div class="src-edit-container" id="src-edit-4a368e2a32c13"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2a32c13')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>Кроме цифровых индексов, у <code>arguments</code> есть свойство <code>length</code>, такое же как у массива.</p>
+<p>Благодаря этому можно вызывать функции с переменным числом параметров. В следующем примере функция возвращает сумму всех аргументов.</p>
+<div class="example">
+<div class="example-title">Пример: сумма аргументов</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2a33888" >
+<div class="source-controls-small">  		<span id="select-4a368e2a33888" onclick="return sourceEditor.select('4a368e2a33888')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e2a33888">
+<pre class="source" id="src-4a368e2a33888"><span class="kw2">function</span> sum<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+  <span class="kw2">var</span> s = <span class="nu0">0</span>
+  <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw2">var</span> i=<span class="nu0">0</span>; i&lt;arguments.<span class="me1">length</span>; i++<span class="br0">&#41;</span> s += arguments<span class="br0">&#91;</span>i<span class="br0">&#93;</span>
+  <span class="kw1">return</span> s
+<span class="br0">&#125;</span></pre><div class="src-edit-container" id="src-edit-4a368e2a33888"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2a33888')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>Несмотря на доступ по индексу и наличие свойства <code>length</code>, <code>arguments</code> не является массивом, т.е не принадлежит типу <a href="Array.html" >Array</a>.</p>
+<p>Поэтому для <code>arguments</code> нельзя напрямую вызвать методы этого класса:</p>
+<div class="source-container" id="sc-4a368e2a353bf" >
+<div class="code-container" id="cc-4a368e2a353bf">
+<pre class="source" id="src-4a368e2a353bf">arguments.<span class="me1">pop</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="co1">// ошибка !</span></pre><div class="src-edit-container" id="src-edit-4a368e2a353bf"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2a353bf')" />			 		</div>
+</div>
+</div>
+<p>Можно, однако, вызвать методы <a href="Array.html" >Array</a> через <a href="Function-apply.html" >apply</a>/<a href="Function-call.html" >call</a>:</p>
+<div class="source-container" id="sc-4a368e2a3598c" >
+<div class="code-container" id="cc-4a368e2a3598c">
+<pre class="source" id="src-4a368e2a3598c"><span class="kw2">var</span> args = Array.<span class="me1">prototype</span>.<span class="me1">slice</span>.<span class="me1">call</span><span class="br0">&#40;</span>arguments<span class="br0">&#41;</span></pre><div class="src-edit-container" id="src-edit-4a368e2a3598c"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2a3598c')" />			 		</div>
+</div>
+</div>
+<h3>Ссылка на функцию <code>arguments.callee</code></h3>
+<p>Кроме аргументов, <code>arguments</code> содержит ссылку на выполняющуюся функцию.</p>
+<p>Ее можно использовать для задания и чтения статических свойств.<br />
+В следующем примере для этого используется статическое свойство <code>called</code>.</p>
+<div class="example">
+<div class="example-title">Пример: подсчет количества выполнений</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2a34824" >
+<div class="source-controls-small">  		<span id="select-4a368e2a34824" onclick="return sourceEditor.select('4a368e2a34824')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e2a34824">
+<pre class="source" id="src-4a368e2a34824"><span class="kw2">function</span> func<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+   arguments.<span class="me1">callee</span>.<span class="me1">called</span>++
+<span class="br0">&#125;</span>
+func.<span class="me1">called</span> = <span class="nu0">0</span>;
+&nbsp;
+func<span class="br0">&#40;</span><span class="br0">&#41;</span>
+func<span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="kw3">alert</span><span class="br0">&#40;</span>func.<span class="me1">called</span><span class="br0">&#41;</span> <span class="co1">// 2</span></pre><div class="src-edit-container" id="src-edit-4a368e2a34824"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2a34824')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

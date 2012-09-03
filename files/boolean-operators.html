@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>Логические операторы</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/boolean-operators">http://javascript.ru/boolean-operators</a></div><h2>Логические операторы</h2>
+
+<div class="field field-type-text field-field-operator-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Логические операторы, как правило, используются с булевыми значениями и возвращают булево значение.</p>
+<p>Однако, в javascript операторы &amp;& и || возвращают не булево значение, а один из операндов, определивший значение выражения. Конечно, результат в таком случае может быть и не булевым.</p>
+<p>Логические операторы описаны следующей таблицей:</p>
+<table class="fullwidth-table">
+<tbody>
+<tr>
+<th>Оператор</th>
+<th>Использование</th>
+<th>Описание</th>
+</tr>
+<tr>
+<td>Логическое И (<code>&amp;&</code>)</td>
+<td><code><i>expr1</i> &amp;& <i>expr2</i></code></td>
+<td>Возвращает <code>expr1</code>, если оно может быть преобразовано к <code>false</code>; в ином случае возвращает <code>expr2</code>. Так что, при вызове с булевыми значениями, <code>&amp;&</code> вернет <code>true</code> только если оба операнда истинны, иначе <code>false</code>.</td>
+</tr>
+<tr>
+<td>Логическое ИЛИ (<code>||</code>)</td>
+<td><code><i>expr1</i> || <i>expr2</i></code></td>
+<td>Возвращает <code>expr1</code>, если оно может быть преобразовано к <code>true</code>; в ином случае возвращает <code>expr2</code>. Так что, при вызове с булевыми значении, <code>||</code> вернет <code>true</code> только хотя бы один операнд истинен, иначе вернет <code>false</code>.</td>
+</tr>
+<tr>
+<td>Логическое НЕ (<code>!</code>)</td>
+<td><code>!<i>expr</i></code></td>
+<td>Возаращает <code>false</code>, если операнд может быть преобразован к <code>true</code>, в ином случае возвращает <code>true</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>К <code>false</code> преобразуются, например: <code>null</code>, <code>0</code>, пустая строка <code>("")</code> и <a href="undefined.html" >undefined</a>.</p>
+<p>Хотя операторы &amp;& и || и могут быть использованы для возвращения небулевых значений, они все же логические, так как возвращаемые значения могут быть приведены к булевому типу.</p>
+<p>Оператор ! также используется для быстрого преобразования выражения к булевому значению:</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2c17bcb" >
+<div class="code-container" id="cc-4a368e2c17bcb">
+<pre class="source" id="src-4a368e2c17bcb">!!<span class="st0">&quot;string&quot;</span> = <span class="kw2">true</span>
+!!<span class="kw2">null</span> = <span class="kw2">false</span></pre><div class="src-edit-container" id="src-edit-4a368e2c17bcb"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2c17bcb')"/>			 		</div>
+</div>
+</div>
+</div>
+</div>
+<h2>Сокращенные вычисления</h2>
+<p>Так как логические выражения вычисляются слева направо, они проверяются на возможность "сокращенных вычислений" по следующим правилам:</p>
+<ul>
+<li><code>false &amp;& что угодно</code> становится <code>false</code>.</li>
+<li><code>true || что угодно</code> становится <code>true</code>.</li>
+</ul>
+<p>Эти правила логики гарантируют, что результат всегда правильный, но лишних вычислений при этом не проводится. Как следствие, невычисленные выражения не дадут побочных эффектов:</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2c183b4" >
+<div class="code-container" id="cc-4a368e2c183b4">
+<pre class="source" id="src-4a368e2c183b4">a =<span class="nu0">1</span>
+check = <span class="nu0">5</span> || <span class="br0">&#40;</span>a=<span class="nu0">3</span><span class="br0">&#41;</span>
+&nbsp;
+<span class="kw3">alert</span><span class="br0">&#40;</span>a<span class="br0">&#41;</span> <span class="co1">// 1</span></pre><div class="src-edit-container" id="src-edit-4a368e2c183b4"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2c183b4')"/>			 		</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+
+<div class="field field-type-nodereference field-field-see-also">
+  <h3 class="field-label">См. также</h3>
+  <ul class="field-items">
+          <li class="field-item"><a class="liexternal" href="http://javascript.ru/ecma/part11">Выражения</a> /Стандарт языка/</li>
+      </ul>
+</div>
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>while</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/while">http://javascript.ru/while</a></div><h2>while</h2><p>Задает цикл, который выполняется до тех пор, пока условие верно. Условие проверяется перед каждой итерацией.</p>
+
+<div class="field field-type-text field-field-syntax-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e2b5d5d3" >  	<div class="code-container" id="cc-4a368e2b5d5d3"> 		<pre class="source" id="src-4a368e2b5d5d3"><span class="kw1">while</span> <span class="br0">&#40;</span>condition<span class="br0">&#41;</span>
+  statement</pre> 		<div class="src-edit-container" id="src-edit-4a368e2b5d5d3"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2b5d5d3')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-syntax-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt>condition</dt>
+<dd>Условие цикла<br />
+<dd>
+<dt>statement</dt>
+<dd>Блок или javascript-вызов для выполнения во время итераций<br />
+<dd>
+</dd></dd></dd></dd></dl>
+</div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-syntax-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Следующий цикл будет повторяться до тех пор, пока <code>n</code> меньше трех.</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2b5618c" >
+<div class="source-controls-full">     		<input type="button" id="show-4a368e2b5618c" onclick="return sourceEditor.run('4a368e2b5618c')" value="Запустить!"/> 		<input type="button" id="show-changed-4a368e2b5618c" onclick="return sourceEditor.run('4a368e2b5618c', true)" value="Запустить измененное!" style="width:180px;display:none"/>  		<input type="button" id="edit-4a368e2b5618c" onclick="return sourceEditor.edit('4a368e2b5618c')" value="Изменить"/> 		<input type="button" id="select-4a368e2b5618c" onclick="return sourceEditor.select('4a368e2b5618c')" value="Выделить все"/>   	</div>
+<div class="code-container" id="cc-4a368e2b5618c">
+<pre class="source" id="src-4a368e2b5618c">n = <span class="nu0">0</span>
+x = <span class="nu0">0</span>
+<span class="kw1">while</span> <span class="br0">&#40;</span>n &lt; <span class="nu0">3</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+  n ++
+  x += n
+  <span class="kw3">alert</span><span class="br0">&#40;</span><span class="st0">&quot;n=&quot;</span>+n+<span class="st0">&quot;, x=&quot;</span>+x<span class="br0">&#41;</span>
+<span class="br0">&#125;</span></pre><div class="src-edit-container" id="src-edit-4a368e2b5618c"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2b5618c')"/>			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>При каждой итерации цикл увеличивает <code>n</code> и прибавляет к <code>x</code>. Переменные <code>x</code> и <code>n</code> последовательно принимают значения:</p>
+<ol>
+<li><code>n = 1</code>, <code>x = 1</code></li>
+<li><code>n = 2</code>, <code>x = 3</code></li>
+<li><code>n = 3</code>, <code>x = 6</code></li>
+</ol>
+<p>После окончания третьего прохода, условие <code>n &lt; 3</code> более не верно, поэтому цикл завершается.</p>
+</div>
+  </div>
+</div>
+
+
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

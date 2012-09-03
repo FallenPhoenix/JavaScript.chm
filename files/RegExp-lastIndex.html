@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>lastIndex</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/RegExp/lastIndex">http://javascript.ru/RegExp/lastIndex</a></div><h2>lastIndex</h2><p>Доступное на запись целочисленное свойство, которое указывает индекс, с которого начинать следующий поиск <code>match</code>.</p>
+
+<div class="field field-type-text field-field-property-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Свойство <code>lastIndex</code> есть у каждого объекта типа RegExp. </p>
+<p>Оно установлено только если в регулярном выражении указан флаг "g", обозначающий глобальный поиск. </p>
+<p>При глобальном поиске lastIndex каждый раз сдвигается, так что последовательные вызовы поиска дают разные результаты.</p>
+<div class="source-container" id="sc-4a368e272cbfa" >
+<div class="source-controls-small">  		<span id="select-4a368e272cbfa" onclick="return sourceEditor.select('4a368e272cbfa')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e272cbfa">
+<pre class="source" id="src-4a368e272cbfa">re = /a+/g;
+re.<span class="me1">exec</span><span class="br0">&#40;</span><span class="st0">&quot;a aa&quot;</span><span class="br0">&#41;</span> <span class="co1">// вернет [&quot;a&quot;]</span>
+re.<span class="me1">lastIndex</span> <span class="co1">// 1</span>
+re.<span class="me1">exec</span><span class="br0">&#40;</span><span class="st0">&quot;a aa&quot;</span><span class="br0">&#41;</span> <span class="co1">// вернет [&quot;aa&quot;]</span>
+re.<span class="me1">lastIndex</span> <span class="co1">// 4</span></pre><div class="src-edit-container" id="src-edit-4a368e272cbfa"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e272cbfa')" />			 		</div>
+</div>
+</div>
+<p>Вы можете ставить это свойство напрямую.</p>
+</div>
+  </div>
+</div>
+
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

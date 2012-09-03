@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>Операторы сравнения</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/comparison-operators">http://javascript.ru/comparison-operators</a></div><h2>Операторы сравнения</h2>
+
+<div class="field field-type-text field-field-operator-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Операндами операторов сравнения могут быть численные и строковые значения. Строки сравниваются, исходя из стандартного лексикографического порядка при использовании Unicode.</p>
+<p>Яваскрипт допускает как строгое сравнение, так и сравнение с приведением типов. Для строгого сравнения оба операнда должны иметь одинаковый тип и:</p>
+<ul>
+<li>Две строки строго равны, если состоят из одинаковой последовательности символов</li>
+<li>Два числа строго равны, если равны в обычном смысле слова. <code>+0</code> строго равен <code>-0</code>.</li>
+<li><code>NaN</code> строго не равно ничему, включая <code>NaN</code></li>
+<li>Два булевых операнда строго равны, если они оба <code>true</code> или <code>false</code></li>
+<li>Два операнда-объекта строго равны, если являются ссылками на один и тот же общий объект</li>
+<li><code>Null</code>  и <code>Undefined</code> равны <code>==</code>, но не строго равны <code>===</code></li>
+</ul>
+<p>Следующая таблица описывает операторы сравнения:</p>
+<table class="fullwidth-table">
+<tbody>
+<tr>
+<th>Оператор</th>
+<th>Описание</th>
+<th>Примеры, возвращающие true при <code>var1=3, var2=4</code></th>
+</tr>
+<tr>
+<td>Равно (<code>==</code>)</td>
+<td>Если два операнда не одного типа, javascript преобразовывает типы и сравнивает строго. Если какой-либо операнд - число или булево значение, то операнды преобразуются в числа; если какой-либо операнд строка - второй преобразуются в строку</td>
+<td>
+<p><code>3 == var1<br /> &quot;3&quot; == var1<br /> 3 == '3'<br /> </code></p>
+</td>
+</tr>
+<tr>
+<td>Не равно (<code>!=</code>)</td>
+<td>Возвращает <code>true</code>, если операнды не равны. Если операнды имеют разный тип, javascript преобразовывает.</td>
+<td>
+<p><code>var1&nbsp;!= 4<br /> var1&nbsp;!= &quot;5&quot;</code></p>
+</td>
+</tr>
+<tr>
+<td>Строго равно (<code>===</code>)</td>
+<td>Возвращает <code>true</code>, если операнды строго равны (см. выше), без преобразования типов.</td>
+<td>
+<p><code>3 === var1</code></p>
+</td>
+</tr>
+<tr>
+<td>Строго не равно (<code>!==</code>)</td>
+<td>Возвращает <code>true</code>, если операнды не являются строго равными (см. выше) или имеют разные типы.</td>
+<td>
+<p><code>var2&nbsp;!== 3<br /> 3&nbsp;!== '3'</code></p>
+</td>
+</tr>
+<tr>
+<td>Больше (<code>&gt;</code>)</td>
+<td>Возвращает <code>true</code>, если левый операнд больше правого.</td>
+<td>
+<p><code>var2 &gt; var1</code></p>
+</td>
+</tr>
+<tr>
+<td>Больше или равно (<code>&gt;=</code>)</td>
+<td>Возвращает <code>true</code>, если левый операнд больше правого или равен ему.</td>
+<td>
+<p><code>var2 &gt;= var1<br /> var1 &gt;= 3</code></p>
+</td>
+</tr>
+<tr>
+<td>Меньше (<code>&lt;</code>)</td>
+<td>Возвращает <code>true</code>, если левый операнд меньше правого.</td>
+<td>
+<p><code>var1 &lt; var2</code></p>
+</td>
+</tr>
+<tr>
+<td>Меньше или равно (<code>&lt;=</code>)</td>
+<td>Возвращает <code>true</code>, если левый операнд меньше правого или равен ему.</td>
+<td>
+<p><code>var1 &lt;= var2<br /> var2 &lt;= 5</code></p>
+</td>
+</tr>
+</tbody>
+</table>
+<h2>Использование операторов сравнения</h2>
+<p>Стандартные операторы равенства  (== и !=) сравнивают два операнда безотносительно их типа. Строгое равенство (=== и !==) производит сравнения операндов одинакового типа. Используйте строгое равенство, если операнды должны иметь одинаковый тип и значение.  В ином случае, используйте обычные операторы равенства, которые позволяют проверить равенство операндов, даже если они разного типа.</p>
+<p>При конвертации типов яваскрипт преобразует <a href="String.html" >String</a>, <a href="Number.html" >Number</a>, <a href="Boolean.html" >Boolean</a> и <a href="Object.html" >Object</a> следующим образом:</p>
+<ul>
+<li>При сравнении числа и строки, строка преобразуется в числовое значение. Яваскрипт при этом получает значение числа из строкового литерала: <code>"123" == 123</code>.</li>
+<li>Если один из операндов - булевый, то он преобразуется к 1, если он <code>true</code> и к +0, если он <code>false</code></li>
+<li>Если объект сравнивается с числом или строкой, яваскрипт пытается получить соответствующее значение для объекта. Он преобразует объект к элементарному значению, строке или числу, используя методы <code>valueOf</code> и <code>toString</code>. Если преобразовать объект не удается - генерируется ошибка выполнения.</li>
+</ul>
+</div>
+  </div>
+</div>
+
+
+<div class="field field-type-nodereference field-field-see-also">
+  <h3 class="field-label">См. также</h3>
+  <ul class="field-items">
+          <li class="field-item"><a class="liexternal" href="http://javascript.ru/ecma/part11">Выражения</a> /Стандарт языка/</li>
+      </ul>
+</div>
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

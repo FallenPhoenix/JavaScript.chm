@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>setDate</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/Date/setDate">http://javascript.ru/Date/setDate</a></div><h2>setDate</h2><div class="field field-type-text field-field-method-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e23f2531" >  	<div class="code-container" id="cc-4a368e23f2531"> 		<pre class="source" id="src-4a368e23f2531">setDate<span class="br0">&#40;</span>dayValue<span class="br0">&#41;</span></pre> 		<div class="src-edit-container" id="src-edit-4a368e23f2531"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e23f2531')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-method-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt>dayValue</dt>
+<dd>Целое от 1 до 31, означающее день месяца.<br />
+<dd>
+</dd></dd></dl>
+</div>
+  </div>
+</div>
+
+
+<div class="field field-type-text field-field-method-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Если переданный параметр имеет значение, лежащее вне предусмотренного диапазона, метод <code>setDate</code> попытается соответствующим образом изменить значение экземпляра объекта Date. Например, если использовать для <code>dayValue</code> значение 40, а значение месяца в объекте соответствует июню, то день и месяц в объекте будут равны 10 июля.</p>
+<div class="example">
+<div class="example-title">Пример: Изменение даты</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e23edafb" >
+<div class="code-container" id="cc-4a368e23edafb">
+<pre class="source" id="src-4a368e23edafb"><span class="co1">// Меняем число на 24-е</span>
+theBigDay = <span class="kw2">new</span> Date<span class="br0">&#40;</span><span class="st0">&quot;July 27, 1962 23:30:00&quot;</span><span class="br0">&#41;</span>
+theBigDay.<span class="me1">setDate</span><span class="br0">&#40;</span><span class="nu0">24</span><span class="br0">&#41;</span></pre><div class="src-edit-container" id="src-edit-4a368e23edafb"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e23edafb')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

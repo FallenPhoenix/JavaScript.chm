@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>eval</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/eval">http://javascript.ru/eval</a></div><h2>eval</h2><div class="field field-type-text field-field-method-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e298190d" >  	<div class="code-container" id="cc-4a368e298190d"> 		<pre class="source" id="src-4a368e298190d"><span class="kw1">eval</span><span class="br0">&#40;</span>codeStr<span class="br0">&#41;</span></pre> 		<div class="src-edit-container" id="src-edit-4a368e298190d"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e298190d')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-method-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt>codeStr</dt>
+<dd>код для выполнения, может использовать переменные и свойства существующих объектов<br />
+<dd>
+</dd></dd></dl>
+</div>
+  </div>
+</div>
+
+
+<div class="field field-type-text field-field-method-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e296ca42" >
+<div class="code-container" id="cc-4a368e296ca42">
+<pre class="source" id="src-4a368e296ca42">a = <span class="st0">&quot;alert(1)&quot;</span>
+<span class="kw1">eval</span><span class="br0">&#40;</span>a<span class="br0">&#41;</span></pre><div class="src-edit-container" id="src-edit-4a368e296ca42"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e296ca42')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>Метод eval возвращает значение последнего вычисленного выражения.</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e296d134" >
+<div class="source-controls-full">     		<input type="button" id="show-4a368e296d134" onclick="return sourceEditor.run('4a368e296d134')" value="Запустить!" /> 		<input type="button" id="show-changed-4a368e296d134" onclick="return sourceEditor.run('4a368e296d134', true)" value="Запустить измененное!" style="width:180px;display:none" />  		<input type="button" id="edit-4a368e296d134" onclick="return sourceEditor.edit('4a368e296d134')" value="Изменить" /> 		<input type="button" id="select-4a368e296d134" onclick="return sourceEditor.select('4a368e296d134')" value="Выделить все" />   	</div>
+<div class="code-container" id="cc-4a368e296d134">
+<pre class="source" id="src-4a368e296d134"><span class="kw2">var</span> str = <span class="st0">&quot;if (a) { 1+1 } else { 1+2 }&quot;</span>
+<span class="kw2">var</span> a = <span class="kw2">true</span>
+<span class="kw2">var</span> b = <span class="kw1">eval</span><span class="br0">&#40;</span>str<span class="br0">&#41;</span>
+<span class="kw3">alert</span><span class="br0">&#40;</span><span class="st0">&quot;b равно : &quot;</span> + b<span class="br0">&#41;</span> <span class="co1">// 2</span>
+&nbsp;
+<span class="co1">// теперь поменяем &quot;a&quot;</span>
+&nbsp;
+a = <span class="kw2">false</span>
+b = <span class="kw1">eval</span><span class="br0">&#40;</span>str<span class="br0">&#41;</span>
+<span class="kw3">alert</span><span class="br0">&#40;</span><span class="st0">&quot;b равно : &quot;</span> + b<span class="br0">&#41;</span> <span class="co1">// 3</span></pre><div class="src-edit-container" id="src-edit-4a368e296d134"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e296d134')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>Если аргумент <code>eval</code> - не строка, то возвращается аргумент без изменения:</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e296e552" >
+<div class="code-container" id="cc-4a368e296e552">
+<pre class="source" id="src-4a368e296e552">r = <span class="kw2">new</span> RegExp<span class="br0">&#40;</span><span class="st0">'a'</span><span class="br0">&#41;</span>
+r == <span class="kw1">eval</span><span class="br0">&#40;</span>r<span class="br0">&#41;</span> <span class="co1">// true</span></pre><div class="src-edit-container" id="src-edit-4a368e296e552"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e296e552')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>Можно обойти это прямым вызовом <code>toString</code>:</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e296edba" >
+<div class="code-container" id="cc-4a368e296edba">
+<pre class="source" id="src-4a368e296edba"><span class="kw2">function</span> forceEval<span class="br0">&#40;</span>obj<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <span class="kw1">return</span> <span class="kw1">eval</span><span class="br0">&#40;</span>obj.<span class="me1">toString</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+<span class="br0">&#125;</span></pre><div class="src-edit-container" id="src-edit-4a368e296edba"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e296edba')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<h3>Не используйте <code>eval</code></h3>
+<p>Выполнение кода в eval может быть небезопасно. При таком выполнении затруднена отладка. В современном javascript, как правило, можно воспользоваться другими языковыми средствами вместо <code>eval</code>.</p>
+<h3>eval для JSON</h3>
+<p>Как правило, <code>eval</code> используют для разбора формата JSON.</p>
+<div class="source-container" id="sc-4a368e2970138" >
+<div class="code-container" id="cc-4a368e2970138">
+<pre class="source" id="src-4a368e2970138"><span class="kw2">var</span> = <span class="kw1">eval</span><span class="br0">&#40;</span><span class="st0">'('</span>+json+<span class="st0">')'</span><span class="br0">&#41;</span></pre><div class="src-edit-container" id="src-edit-4a368e2970138"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2970138')" />			 		</div>
+</div>
+</div>
+<p>Такой способ небезопасен, но наиболее быстр.</p>
+<h3>Второй параметр</h3>
+<p>В старых реализациях javascript у <code>eval</code> мог быть второй параметр - объект <code>obj</code>, в контексте которого выполнялся код.</p>
+<p>В современном javascript для этого используется <code>with</code>:</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e296f6bc" >
+<div class="source-controls-small">  		<span id="select-4a368e296f6bc" onclick="return sourceEditor.select('4a368e296f6bc')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e296f6bc">
+<pre class="source" id="src-4a368e296f6bc"><span class="kw1">eval</span><span class="br0">&#40;</span>code, obj<span class="br0">&#41;</span> <span class="co1">// старый вариант</span>
+&nbsp;
+<span class="kw1">with</span><span class="br0">&#40;</span>obj<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <span class="kw1">eval</span><span class="br0">&#40;</span>code<span class="br0">&#41;</span> <span class="co1">// современный вариант</span>
+<span class="br0">&#125;</span></pre><div class="src-edit-container" id="src-edit-4a368e296f6bc"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e296f6bc')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

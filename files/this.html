@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>this</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/this">http://javascript.ru/this</a></div><h2>this</h2>
+
+<div class="field field-type-text field-field-operator-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Оператор <code>this</code> возвращает ссылку на объект, являющийся текущим контекстом вызова. Это позволяет обращаться к свойствам "текущего" объекта: <code>this.property</code>.</p>
+<p>Текущий объект не является жесткой фиксированным и зависит от контекста вызова функции. Он является, своего рода, скрытым параметром.</p>
+<p>Есть четыре различных варианта его передачи. </p>
+<table class="fullwidth-table">
+<tbody>
+<tr>
+<td class="header">Тип</td>
+<td class="header">Способ</td>
+<td class="header"><code>this</code></td>
+</tr>
+<tr>
+<td>неявно, через вызов метода</td>
+<td><code><i>object</i>.<i>method</i>(...)</code></td>
+<td><code><i>object</i></code></td>
+</tr>
+<tr>
+<td>явно, через <a href="Function-call.html" >call</a></td>
+<td><code><i>function</i>.call(<i>object</i>,...)</code></td>
+<td><code><i>object</i></code></td>
+</tr>
+<tr>
+<td>явно, через <a href="Function-apply.html" >apply</a></td>
+<td><code><i>function</i>.apply(<i>object</i>,...)</code></td>
+<td><code><i>object</i></code></td>
+</tr>
+<tr>
+<td>неявно, через вызов <a href="new.html" >new</a></td>
+<td><code>new <i>constructor</i>(...)</code></td>
+<td>новый, создаваемый объект</td>
+</tr>
+</tbody>
+</table>
+<p>Если ни один из этих способов не задействован, то <code>this</code> указывает на глобальный объект: в браузере это <a href="window.html" >window</a>.</p>
+<p>Это происходит при вызове функции без объекта: <code>myFunc(params)</code>.</p>
+<p>При манипуляциях с DOM при помощи javascript, <code>this</code> обычно используется для работы с событиями. При этом значение <code>this</code> указывает на текущий DOM-элемент, в контексте которого вызван обработчик.</p>
+<h2>Привязка методов</h2>
+<p>Так как <code>this</code> не привязано жестко к объекту, то можно привязывать один и тот же метод к любым классам.</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2bb8df6" >
+<div class="source-controls-small">  		<span id="select-4a368e2bb8df6" onclick="return sourceEditor.select('4a368e2bb8df6')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e2bb8df6">
+<pre class="source" id="src-4a368e2bb8df6">walk = <span class="kw2">function</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> <span class="kw1">this</span>.<span class="me1">isWalking</span> = <span class="kw2">true</span> <span class="br0">&#125;</span>
+&nbsp;
+<span class="kw2">function</span> Bird<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> <span class="coMULTI">/*...*/</span> <span class="br0">&#125;</span>
+<span class="kw2">function</span> Rabbit<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> <span class="coMULTI">/*...*/</span> <span class="br0">&#125;</span>
+&nbsp;
+Bird.<span class="me1">prototype</span>.<span class="me1">walk</span> = Rabbit.<span class="me1">prototype</span>.<span class="me1">walk</span> = walk
+&nbsp;
+<span class="kw2">new</span> Bird<span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">walk</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="co1">// в обоих случаях</span>
+<span class="kw2">new</span> Rabbit<span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">walk</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="co1">// this будет указывать на текущий объект</span></pre><div class="src-edit-container" id="src-edit-4a368e2bb8df6"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2bb8df6')"/>			 		</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+
+<div class="field field-type-nodereference field-field-see-also">
+  <h3 class="field-label">См. также</h3>
+  <ul class="field-items">
+          <li class="field-item"><a class="liexternal" href="http://javascript.ru/tutorial/object/thiskeyword">Ключевое слово &quot;this&quot; в деталях</a> /Статья/</li>
+          <li class="field-item"><a class="liexternal" href="http://javascript.ru/tutorial/events/intro">Введение в события</a> /Статья/</li>
+          <li class="field-item"><a class="liexternal" href="http://javascript.ru/ecma/part11">Выражения</a> /Стандарт языка/</li>
+      </ul>
+</div>
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

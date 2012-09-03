@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>encodeURI</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/encodeURI">http://javascript.ru/encodeURI</a></div><h2>encodeURI</h2><div class="field field-type-text field-field-method-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e2962da3" >  	<div class="code-container" id="cc-4a368e2962da3"> 		<pre class="source" id="src-4a368e2962da3"><span class="kw1">encodeURI</span><span class="br0">&#40;</span>URI<span class="br0">&#41;</span></pre> 		<div class="src-edit-container" id="src-edit-4a368e2962da3"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2962da3')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-method-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt>URI</dt>
+<dd>строка URI<br />
+<dd>
+</dd></dd></dl>
+</div>
+  </div>
+</div>
+
+
+<div class="field field-type-text field-field-method-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Метод предполагает, что переданный параметр является полным URI, поэтоу не кодирует зарезервированные значения, которые имеют специальные значения в URI.</p>
+<p>Метод <code>encodeURI</code> заменяет все символы, исключая следующие, соответствующими им UTF-8 escape-последовательностями.</p>
+<p>Тип<br />
+Включает в себя</p>
+<p>Зарезервированные<br />
+; , / ? : @ &amp; = + $</p>
+<p>Незаменяемые символы<br />
+латинский алфавит, десятичные цифры, - _ . ! ~ * ' ( )</p>
+<p>Значок решетки<br />
+#</p>
+<p>Заметим, что <code>encodeURI</code> не может формировать данные для GET или POST-запросов, например, для XMLHttpRequest, так как "&amp;", "+", и "=" не кодируются - а они являются специальными символами.</p>
+<p>Их кодирует метод <a href="encodeURIComponent.html" >encodeURIComponent</a>.</p>
+</div>
+  </div>
+</div>
+
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>String.fromCharCode</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/String.fromCharCode">http://javascript.ru/String.fromCharCode</a></div><h2>String.fromCharCode</h2><div class="field field-type-text field-field-method-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e27d914c" >  	<div class="code-container" id="cc-4a368e27d914c"> 		<pre class="source" id="src-4a368e27d914c">String.<span class="me1">fromCharCode</span><span class="br0">&#40;</span>num1, ..., numN<span class="br0">&#41;</span></pre> 		<div class="src-edit-container" id="src-edit-4a368e27d914c"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e27d914c')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-method-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt>num1, ..., numN</dt>
+<dd>последовательность чисел, представляющих собой коды Unicode-символов<br />
+<dd>
+</dd></dd></dl>
+</div>
+  </div>
+</div>
+
+
+<div class="field field-type-text field-field-method-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Этот метод возвращает элементарную строку, а не объект типа String.</p>
+<p>Так как <code>fromCharCode</code> - статический метод <code>String</code>, он всегда вызывается как <code>String.fromCharCode()</code>.</p>
+<p>Хотя наиболее частые значения в юникоде могут быть представлены одним числом (как задумано в ранних стандартах яваскрипт), и <code>fromCharCode()</code> можно использовать, чтобы получить один символ для частых значений (т.е значений UCS-2, которые являются подмножеством UTF-16), но для ВСЕХ юникодных значений одного <code>fromCharCode()</code> не хватает.</p>
+<p>Так как более редкие символы кодируются в юникоде с использованием  пары чисел, <code>fromCharCode()</code> можно использовать для возврата этой пары, и, таким образом, получения нужного значения.</p>
+<p>Однако, имейте в виду, что следующая вспомогательная функция, которая получает любой юникодный символ, может вернуть такое значение, которое показывается как один символ, но в строке занимает 2 места. Хотя обычно - это все же будет 1 символ и 1 позиция в строке.</p>
+<div class="source-container" id="sc-4a368e27ced08" >
+<div class="source-controls-small">  		<span id="select-4a368e27ced08" onclick="return sourceEditor.select('4a368e27ced08')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e27ced08">
+<pre class="source" id="src-4a368e27ced08"><span class="kw2">function</span> fixedFromCharCode <span class="br0">&#40;</span>codePt<span class="br0">&#41;</span> <span class="br0">&#123;</span>  
+  <span class="kw1">if</span> <span class="br0">&#40;</span>codePt &gt; 0xFFFF<span class="br0">&#41;</span> <span class="br0">&#123;</span>  
+    codePt -= 0x10000;  
+    <span class="kw1">return</span> String.<span class="me1">fromCharCode</span><span class="br0">&#40;</span>0xD800 + <span class="br0">&#40;</span>codePt &gt;&gt; <span class="nu0">10</span><span class="br0">&#41;</span>, 0xDC00 + <span class="br0">&#40;</span>codePt &amp; 0x3FF<span class="br0">&#41;</span><span class="br0">&#41;</span>;  
+  <span class="br0">&#125;</span> <span class="kw1">else</span> <span class="br0">&#123;</span>  
+    <span class="kw1">return</span> String.<span class="me1">fromCharCode</span><span class="br0">&#40;</span>codePt<span class="br0">&#41;</span>;  
+  <span class="br0">&#125;</span>  
+<span class="br0">&#125;</span></pre><div class="src-edit-container" id="src-edit-4a368e27ced08"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e27ced08')" />			 		</div>
+</div>
+</div>
+<div class="example">
+<div class="example-title">Пример: Использование fromCharCode</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e27ce55b" >
+<div class="code-container" id="cc-4a368e27ce55b">
+<pre class="source" id="src-4a368e27ce55b"><span class="co1">// вернет строку &quot;ABC&quot;.</span>
+String.<span class="me1">fromCharCode</span><span class="br0">&#40;</span><span class="nu0">65</span>,<span class="nu0">66</span>,<span class="nu0">67</span><span class="br0">&#41;</span></pre><div class="src-edit-container" id="src-edit-4a368e27ce55b"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e27ce55b')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

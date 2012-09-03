@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>setInterval</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/setInterval">http://javascript.ru/setInterval</a></div><h2>setInterval</h2><div class="field field-type-text field-field-method-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e2a06b3c" >  	<div class="code-container" id="cc-4a368e2a06b3c"> 		<pre class="source" id="src-4a368e2a06b3c">intervalID = window.<span class="me1">setInterval</span><span class="br0">&#40;</span>func|code, delay<span class="br0">&#41;</span></pre> 		<div class="src-edit-container" id="src-edit-4a368e2a06b3c"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2a06b3c')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-method-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt>func|code</dt>
+<dd>Функция или строка кода для выполнения<br />
+<dd>
+<dt>delay</dt>
+<dd>Интервал в миллисекундах, т.е 1000 это 1 секунда</dd>
+</dd></dd></dl>
+</div>
+  </div>
+</div>
+
+
+<div class="field field-type-text field-field-method-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>В отличие от метода <a href="setTimeout.html" >setTimeout</a>, <code>setInterval</code> выполняет код много раз, через равные промежутки времени, пока не будет остановлен при помощи <a href="clearInterval.html" >clearInterval</a>.</p>
+<p>В каком виде указывать первый параметр - разницы нет.<br />
+При указании строки кода - динамически создается функция <code>func</code> с телом <code>code</code>.</p>
+<p>Следующие два вызова почти одинаковы:</p>
+<div class="source-container" id="sc-4a368e29e214a" >
+<div class="source-controls-small">  		<span id="select-4a368e29e214a" onclick="return sourceEditor.select('4a368e29e214a')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e29e214a">
+<pre class="source" id="src-4a368e29e214a">setInterval<span class="br0">&#40;</span><span class="st0">'alert(&quot;прошла секунда&quot;)'</span>, <span class="nu0">1000</span><span class="br0">&#41;</span>
+&nbsp;
+<span class="kw2">function</span> sec<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+  <span class="kw3">alert</span><span class="br0">&#40;</span><span class="st0">&quot;прошла секунда&quot;</span><span class="br0">&#41;</span>
+<span class="br0">&#125;</span>
+setInterval<span class="br0">&#40;</span>sec, <span class="nu0">1000</span><span class="br0">&#41;</span></pre><div class="src-edit-container" id="src-edit-4a368e29e214a"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e29e214a')" />			 		</div>
+</div>
+</div>
+<p>Но более правильным считается объявление функции в явном виде, например так:</p>
+<div class="source-container" id="sc-4a368e29e3ddb" >
+<div class="code-container" id="cc-4a368e29e3ddb">
+<pre class="source" id="src-4a368e29e3ddb">setInterval<span class="br0">&#40;</span><span class="kw2">function</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> <span class="kw3">alert</span><span class="br0">&#40;</span>...<span class="br0">&#41;</span> <span class="br0">&#125;</span>, <span class="nu0">1000</span><span class="br0">&#41;</span></pre><div class="src-edit-container" id="src-edit-4a368e29e3ddb"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e29e3ddb')" />			 		</div>
+</div>
+</div>
+<p>Вызов со строкой существует для совместимости с прежними версиями javascript.</p>
+<h3><code>this</code></h3>
+<p>Функция выполняется в другом контексте, со значением <code>this = window</code>, поэтому о передаче правильного <code>this</code> надо позаботиться отдельно.</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e29dfc5c" >
+<div class="source-controls-small">  		<span id="select-4a368e29dfc5c" onclick="return sourceEditor.select('4a368e29dfc5c')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e29dfc5c">
+<pre class="source" id="src-4a368e29dfc5c">object = <span class="br0">&#123;</span> 
+   func: <span class="kw2">function</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> <span class="kw3">alert</span><span class="br0">&#40;</span><span class="kw1">this</span><span class="br0">&#41;</span> <span class="br0">&#125;</span>
+<span class="br0">&#125;</span>
+&nbsp;
+setInterval<span class="br0">&#40;</span> object.<span class="me1">func</span> , <span class="nu0">1000</span><span class="br0">&#41;</span> <span class="co1">// this будет равно window</span>
+&nbsp;
+<span class="co1">// правильный вариант с передачей this</span>
+setInterval<span class="br0">&#40;</span> <span class="kw2">function</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> object.<span class="me1">func</span>.<span class="me1">call</span><span class="br0">&#40;</span>object<span class="br0">&#41;</span> <span class="br0">&#125;</span> , <span class="nu0">1000</span><span class="br0">&#41;</span></pre><div class="src-edit-container" id="src-edit-4a368e29dfc5c"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e29dfc5c')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<h3>Отмена выполнения</h3>
+<p>Вы можете отменить выполнение <code>setInterval</code> при помощи <a href="clearInterval.html" >clearInterval</a>, используя для этого идентификатор <code>intervalID</code>.</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e29e105b" >
+<div class="code-container" id="cc-4a368e29e105b">
+<pre class="source" id="src-4a368e29e105b"><span class="kw2">var</span> intervalID = setInterval<span class="br0">&#40;</span>...<span class="br0">&#41;</span>
+clearInterval<span class="br0">&#40;</span>intervalID<span class="br0">&#41;</span></pre><div class="src-edit-container" id="src-edit-4a368e29e105b"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e29e105b')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

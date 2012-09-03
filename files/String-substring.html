@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>substring</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/String/substring">http://javascript.ru/String/substring</a></div><h2>substring</h2><div class="field field-type-text field-field-method-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e2866ce3" >  	<div class="code-container" id="cc-4a368e2866ce3"> 		<pre class="source" id="src-4a368e2866ce3">str.<span class="me1">substring</span><span class="br0">&#40;</span>indexA, <span class="br0">&#91;</span>indexB<span class="br0">&#93;</span><span class="br0">&#41;</span></pre> 		<div class="src-edit-container" id="src-edit-4a368e2866ce3"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2866ce3')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-method-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt>indexA</dt>
+<dd>целое число от 0 до длины строки-1<br />
+<dd>
+<dt>indexB</dt>
+<dd>целое число от 0 до длины строки-1<br />
+<dd>
+</dd></dd></dd></dd></dl>
+</div>
+  </div>
+</div>
+
+
+<div class="field field-type-text field-field-method-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Метод <code>substring</code> возвращает подстроку, начиная с позиции <code>indexA</code> до, но не включая <code>indexB</code>. </p>
+<p>В частности:</p>
+<ul>
+<li>Если <code>indexA = indexB</code>, возвращается пустая строка</li>
+<li>Если <code>indexB</code> не указан, <code>substring</code> возвращает символы до конца строки</li>
+<li>Если какой-то из аргументов меньше 0 или является NaN - он считается равным 0</li>
+<li>Если какой-то из аргументов больше, чем длина строки - он считается равным длине строки</li>
+</ul>
+<p>Если <code>indexA &gt; indexB</code>, тогда <code>substring</code> ведет себя, как будто аргументы поменялись местами.</p>
+<p>Например, <code>str.substring(1, 0) == str.substring(0, 1)</code>.</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e285f4eb" >
+<div class="source-controls-small">  		<span id="select-4a368e285f4eb" onclick="return sourceEditor.select('4a368e285f4eb')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e285f4eb">
+<pre class="source" id="src-4a368e285f4eb"><span class="kw2">var</span> str = <span class="st0">&quot;Моя строка&quot;</span>
+str.<span class="me1">substring</span><span class="br0">&#40;</span><span class="nu0">0</span>,<span class="nu0">3</span><span class="br0">&#41;</span> <span class="co1">// Моя</span>
+str.<span class="me1">substring</span><span class="br0">&#40;</span><span class="nu0">3</span>,<span class="nu0">0</span><span class="br0">&#41;</span> <span class="co1">// Моя</span>
+str.<span class="me1">substring</span><span class="br0">&#40;</span><span class="nu0">1</span>,<span class="nu0">2</span><span class="br0">&#41;</span> <span class="co1">// о</span>
+str.<span class="me1">substring</span><span class="br0">&#40;</span><span class="nu0">3</span><span class="br0">&#41;</span> <span class="co1">// &quot;строка&quot;</span></pre><div class="src-edit-container" id="src-edit-4a368e285f4eb"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e285f4eb')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

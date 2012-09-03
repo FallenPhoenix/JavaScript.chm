@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>parseFloat</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/parseFloat">http://javascript.ru/parseFloat</a></div><h2>parseFloat</h2><div class="field field-type-text field-field-method-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e29a140d" >  	<div class="code-container" id="cc-4a368e29a140d"> 		<pre class="source" id="src-4a368e29a140d">parseFloat<span class="br0">&#40;</span>strVal<span class="br0">&#41;</span></pre> 		<div class="src-edit-container" id="src-edit-4a368e29a140d"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e29a140d')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-method-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt>strVal</dt>
+<dd>строка, представляющая числовое значение<br />
+<dd>
+</dd></dd></dl>
+</div>
+  </div>
+</div>
+
+
+<div class="field field-type-text field-field-method-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Метод <code>parseFloat</code> преобразует строковый аргумент в число с плавающей точкой. Если во время преобразования он обнаруживает неподходящий символ, то заканчивает процесс и возвращает результат.</p>
+<p>Допустимы начальные и конечные пробелы.</p>
+<p>Если аргумент не может быть преобразован в число - возвращает <a href="NaN.html" >NaN</a></p>
+<div class="example">
+<div class="example-title">Пример: все вызовы вернут 3.14</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2995f3d" >
+<div class="source-controls-small">  		<span id="select-4a368e2995f3d" onclick="return sourceEditor.select('4a368e2995f3d')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e2995f3d">
+<pre class="source" id="src-4a368e2995f3d">parseFloat<span class="br0">&#40;</span><span class="st0">&quot;3.14&quot;</span><span class="br0">&#41;</span>;
+parseFloat<span class="br0">&#40;</span><span class="st0">&quot;314e-2&quot;</span><span class="br0">&#41;</span>;
+parseFloat<span class="br0">&#40;</span><span class="st0">&quot;0.0314E+2&quot;</span><span class="br0">&#41;</span>;
+&nbsp;
+<span class="kw2">var</span> x = <span class="st0">&quot;3.14&quot;</span>;
+parseFloat<span class="br0">&#40;</span>x<span class="br0">&#41;</span>;
+&nbsp;
+parseFloat<span class="br0">&#40;</span><span class="st0">&quot;3.14more non-digit characters&quot;</span><span class="br0">&#41;</span>;</pre><div class="src-edit-container" id="src-edit-4a368e2995f3d"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2995f3d')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<div class="example">
+<div class="example-title">Пример: возврат NaN</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e299718c" >
+<div class="code-container" id="cc-4a368e299718c">
+<pre class="source" id="src-4a368e299718c">parseFloat<span class="br0">&#40;</span><span class="st0">&quot;тест&quot;</span><span class="br0">&#41;</span> <span class="co1">// NaN</span></pre><div class="src-edit-container" id="src-edit-4a368e299718c"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e299718c')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>Для более строгого преобразовния строки в число используйте оператор "+". Он возвращает NaN, если строка в точности не является числом.</p>
+<div class="source-container" id="sc-4a368e2997820" >
+<div class="source-controls-small">  		<span id="select-4a368e2997820" onclick="return sourceEditor.select('4a368e2997820')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e2997820">
+<pre class="source" id="src-4a368e2997820">str = <span class="st0">&quot;3.14&quot;</span>
++str == parseFloat<span class="br0">&#40;</span>str<span class="br0">&#41;</span>
+&nbsp;
++<span class="st0">&quot;3.14abc&quot;</span> <span class="co1">// NaN, но</span>
+parseFloat<span class="br0">&#40;</span><span class="st0">&quot;3.14abc&quot;</span><span class="br0">&#41;</span> <span class="co1">// = 3.14</span></pre><div class="src-edit-container" id="src-edit-4a368e2997820"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2997820')" />			 		</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

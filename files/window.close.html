@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>window.close</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/window.close">http://javascript.ru/window.close</a></div><h2>window.close</h2><div class="field field-type-text field-field-method-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e28cd905" >  	<div class="code-container" id="cc-4a368e28cd905"> 		<pre class="source" id="src-4a368e28cd905">window.<span class="kw3">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+newWin.<span class="kw3">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span></pre> 		<div class="src-edit-container" id="src-edit-4a368e28cd905"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e28cd905')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-method-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"></div>
+  </div>
+</div>
+
+
+<div class="field field-type-text field-field-method-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Если закрываемое окно не было открыто при помощи <a href="window.open.html" >window.open</a>, то<br />
+при его закрытии выводится предупреждение. Посетитель может отклонить закрытие.</p>
+<div class="example">
+<div class="example-title">Пример: закрытие окна</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e28c7d32" >
+<div class="source-controls-small">  		<span id="select-4a368e28c7d32" onclick="return sourceEditor.select('4a368e28c7d32')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e28c7d32">
+<pre class="source" id="src-4a368e28c7d32"><span class="kw2">var</span> openedWindow;
+&nbsp;
+<span class="kw2">function</span> openWindow<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+  openedWindow = window.<span class="kw3">open</span><span class="br0">&#40;</span><span class="st0">'moreinfo.html'</span><span class="br0">&#41;</span>
+<span class="br0">&#125;</span>
+&nbsp;
+<span class="kw2">function</span> closeOpenedWindow<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+  openedWindow.<span class="kw3">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#125;</span></pre><div class="src-edit-container" id="src-edit-4a368e28c7d32"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e28c7d32')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

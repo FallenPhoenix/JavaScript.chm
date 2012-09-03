@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>Блок</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/Blok">http://javascript.ru/Blok</a></div><h2>Блок</h2><p>Группировка javascript-вызовов внутри фигурных скобок</p>
+
+<div class="field field-type-text field-field-syntax-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e2b8856d" >  	<div class="source-controls-small">  		<span id="select-4a368e2b8856d" onclick="return sourceEditor.select('4a368e2b8856d')">Выделить все</span>   	</div>  	<div class="code-container" id="cc-4a368e2b8856d"> 		<pre class="source" id="src-4a368e2b8856d"><span class="br0">&#123;</span>
+   statement_1
+   statement_2
+   ...
+   <span class="me1">statement_n</span>
+<span class="br0">&#125;</span></pre> 		<div class="src-edit-container" id="src-edit-4a368e2b8856d"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2b8856d')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-syntax-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt>statement_1, statement_2, ..., statement_n</dt>
+<dd>Вызовы внутри блока</dd>
+</dl>
+</div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-syntax-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Как правило, используется в управляющих операторах (<a href="for.html" >for</a>, <a href="while.html" >while</a> и т.п.).</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2b796a8" >
+<div class="code-container" id="cc-4a368e2b796a8">
+<pre class="source" id="src-4a368e2b796a8"><span class="kw1">while</span> <span class="br0">&#40;</span>x &lt; <span class="nu0">10</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+   x++
+<span class="br0">&#125;</span></pre><div class="src-edit-container" id="src-edit-4a368e2b796a8"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2b796a8')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<h3>Блок не задает область видимости</h3>
+<p>Это важная особенность языка javascript, по сравнению с C, Java и многими другими языками.</p>
+<p>Переменные, объявленные внутри блока, видны в содержащей их функции или во всем скрипте, если такой функции нет.</p>
+<p>Изменение переменной внутри блока также видно за его пределами.</p>
+<p>Поэтому, хотя отдельные блоки и являются корректными с точки зрения языка, но в javascript их никто не использует.</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2b79e68" >
+<div class="source-controls-small">  		<span id="select-4a368e2b79e68" onclick="return sourceEditor.select('4a368e2b79e68')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e2b79e68">
+<pre class="source" id="src-4a368e2b79e68"><span class="kw2">var</span> x = <span class="nu0">1</span>;
+<span class="br0">&#123;</span>
+   <span class="kw2">var</span> x = <span class="nu0">2</span>;
+<span class="br0">&#125;</span>
+<span class="kw3">alert</span><span class="br0">&#40;</span>x<span class="br0">&#41;</span>; <span class="co1">// выведет 2</span></pre><div class="src-edit-container" id="src-edit-4a368e2b79e68"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2b79e68')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>Пример выводит 2, так как вызов <code>var x</code> внутри блока использует переменную <code>x</code>, объявленную до блока.</p>
+<p>В C или Java этот пример вывел бы 1.</p>
+</div>
+  </div>
+</div>
+
+
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

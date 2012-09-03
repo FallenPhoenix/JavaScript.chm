@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>instanceof</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/instanceof">http://javascript.ru/instanceof</a></div><h2>instanceof</h2><div class="field field-type-text field-field-operator-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e2baf717" >  	<div class="code-container" id="cc-4a368e2baf717"> 		<pre class="source" id="src-4a368e2baf717"><span class="kw2">var</span> isInstance = object <span class="kw1">instanceof</span> ObjectType</pre> 		<div class="src-edit-container" id="src-edit-4a368e2baf717"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2baf717')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+</div>
+
+<div class="field field-type-text field-field-operator-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt>object</dt>
+<dd>Объект</dd>
+<dt>ObjectType</dt>
+<dd>Конструктор(тип) для сравнения</dd>
+</dl>
+</div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-operator-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Оператор <code>instanceof</code> используется для проверки, принадлежит ли объект данному типу. Например, при <a href="try..catch.html" >поимке исключения</a> нужно обработать только исключение определенного типа.</p>
+<p>В левой части оператора <code>instanceof</code> указывается проверяемый объект, а с правой - функция-конструктор для проверки. </p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2b9cd97" >
+<div class="source-controls-small">  		<span id="select-4a368e2b9cd97" onclick="return sourceEditor.select('4a368e2b9cd97')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e2b9cd97">
+<pre class="source" id="src-4a368e2b9cd97"><span class="kw2">var</span> theDay = <span class="kw2">new</span> Date<span class="br0">&#40;</span><span class="nu0">2009</span>, <span class="nu0">11</span>, <span class="nu0">17</span><span class="br0">&#41;</span>;
+<span class="kw1">if</span> <span class="br0">&#40;</span>theDay <span class="kw1">instanceof</span> Date<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+  <span class="kw3">alert</span><span class="br0">&#40;</span><span class="st0">&quot;Объект класса Date&quot;</span><span class="br0">&#41;</span>
+  <span class="co1">// ...</span>
+<span class="br0">&#125;</span></pre><div class="src-edit-container" id="src-edit-4a368e2b9cd97"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2b9cd97')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>Оператор instanceof учитывает наследование. </p>
+<p>Следующий пример демонстрирует, что объекты <a href="String.html" >String</a> и <a href="Date.html" >Date</a> принадлежат типу <a href="Object.html" >Object</a>.</p>
+<div class="example">
+<div class="example-title">Пример: проверка унаследованных объектов</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2b9ded9" >
+<div class="source-controls-small">  		<span id="select-4a368e2b9ded9" onclick="return sourceEditor.select('4a368e2b9ded9')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e2b9ded9">
+<pre class="source" id="src-4a368e2b9ded9"><span class="kw2">var</span> myString = <span class="kw2">new</span> String<span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="kw2">var</span> myDate = <span class="kw2">new</span> Date<span class="br0">&#40;</span><span class="br0">&#41;</span>
+&nbsp;
+myString <span class="kw1">instanceof</span> String  <span class="co1">// true</span>
+myString <span class="kw1">instanceof</span> Objec <span class="co1">// true</span>
+myString <span class="kw1">instanceof</span> Date   <span class="co1">// false</span>
+&nbsp;
+myDate <span class="kw1">instanceof</span> Date     <span class="co1">// true</span>
+myDate <span class="kw1">instanceof</span> Object   <span class="co1">// true</span>
+myDate <span class="kw1">instanceof</span> String   <span class="co1">// false</span></pre><div class="src-edit-container" id="src-edit-4a368e2b9ded9"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2b9ded9')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>То же верно и для типов, объявленных пользователем. </p>
+<p>Например, в следующем примере объект типа <code>Honda</code> также принадлежит <code>Car</code> и <code>Object</code>.</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2b9f8b3" >
+<div class="source-controls-small">  		<span id="select-4a368e2b9f8b3" onclick="return sourceEditor.select('4a368e2b9f8b3')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e2b9f8b3">
+<pre class="source" id="src-4a368e2b9f8b3"><span class="kw2">function</span> Car<span class="br0">&#40;</span>model<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+  <span class="kw1">this</span>.<span class="me1">model</span> = model
+<span class="br0">&#125;</span>
+<span class="kw2">function</span> Honda<span class="br0">&#40;</span>model<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+  <span class="kw1">this</span>.<span class="me1">model</span> = model
+  <span class="kw1">this</span>.<span class="me1">isHonda</span> = <span class="kw2">true</span>
+<span class="br0">&#125;</span>
+Honda.<span class="me1">prototype</span> = <span class="kw2">new</span> Car<span class="br0">&#40;</span><span class="br0">&#41;</span>
+&nbsp;
+honda = <span class="kw2">new</span> Honda<span class="br0">&#40;</span><span class="st0">&quot;Accord&quot;</span><span class="br0">&#41;</span>
+&nbsp;
+honda <span class="kw1">instanceof</span> Honda <span class="co1">// true</span>
+honda <span class="kw1">instanceof</span> Car <span class="co1">// <span class="strs">true</span></span>
+honda <span class="kw1">instanceof</span> Object <span class="co1">// true</span>
+&nbsp;
+honda <span class="kw1">instanceof</span> Date <span class="co1">// false</span></pre><div class="src-edit-container" id="src-edit-4a368e2b9f8b3"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2b9f8b3')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+
+<div class="field field-type-nodereference field-field-see-also">
+  <h3 class="field-label">См. также</h3>
+  <ul class="field-items">
+          <li class="field-item"><a class="liexternal" href="http://javascript.ru/ecma/part11">Выражения</a> /Стандарт языка/</li>
+      </ul>
+</div>
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

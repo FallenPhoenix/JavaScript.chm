@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>setTimeout</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/setTimeout">http://javascript.ru/setTimeout</a></div><h2>setTimeout</h2><div class="field field-type-text field-field-method-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e2a29c7b" >  	<div class="code-container" id="cc-4a368e2a29c7b"> 		<pre class="source" id="src-4a368e2a29c7b">timeout_id = window.<span class="me1">setTimeout</span><span class="br0">&#40;</span>func|code, delay<span class="br0">&#41;</span></pre> 		<div class="src-edit-container" id="src-edit-4a368e2a29c7b"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2a29c7b')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-method-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt>func|code</dt>
+<dd>Функция или строка кода для выполнения<br />
+<dd>
+<dt>delay</dt>
+<dd>Задержка в миллисекундах, т.е 1000 это 1 секунда</dd>
+</dd></dd></dl>
+</div>
+  </div>
+</div>
+
+
+<div class="field field-type-text field-field-method-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>В отличие от метода <a href="setInterval.html" >setInterval</a>, <code>setTimeout</code> выполняет код только один раз.</p>
+<p>В каком виде указывать первый параметр - разницы нет.<br />
+При указании строки кода - динамически создается функция <code>func</code> с телом <code>code</code>.</p>
+<p>Следующие два вызова почти одинаковы:</p>
+<div class="source-container" id="sc-4a368e2a178b5" >
+<div class="source-controls-small">  		<span id="select-4a368e2a178b5" onclick="return sourceEditor.select('4a368e2a178b5')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e2a178b5">
+<pre class="source" id="src-4a368e2a178b5">setTimeout<span class="br0">&#40;</span><span class="st0">'alert(&quot;прошла секунда&quot;)'</span>, <span class="nu0">1000</span><span class="br0">&#41;</span>
+&nbsp;
+<span class="kw2">function</span> sec<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+  <span class="kw3">alert</span><span class="br0">&#40;</span><span class="st0">&quot;прошла секунда&quot;</span><span class="br0">&#41;</span>
+<span class="br0">&#125;</span>
+setTimeout<span class="br0">&#40;</span>sec, <span class="nu0">1000</span><span class="br0">&#41;</span></pre><div class="src-edit-container" id="src-edit-4a368e2a178b5"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2a178b5')"/>			 		</div>
+</div>
+</div>
+<p>Но более правильным считается объявление функции в явном виде, например так:</p>
+<div class="source-container" id="sc-4a368e2a18914" >
+<div class="code-container" id="cc-4a368e2a18914">
+<pre class="source" id="src-4a368e2a18914">setTimeout<span class="br0">&#40;</span><span class="kw2">function</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> <span class="kw3">alert</span><span class="br0">&#40;</span>...<span class="br0">&#41;</span> <span class="br0">&#125;</span>, <span class="nu0">1000</span><span class="br0">&#41;</span></pre><div class="src-edit-container" id="src-edit-4a368e2a18914"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2a18914')"/>			 		</div>
+</div>
+</div>
+<p>Вызов со строкой существует для совместимости с прежними версиями javascript.</p>
+<h3><code>this</code></h3>
+<p>Функция выполняется в другом контексте, отличном от контекста, в котором задается <code>setTimeout</code>. </p>
+<p>При этом значение <code>this = window</code>, поэтому о передаче правильного <a href="this.html" >this</a> надо позаботиться отдельно.</p>
+<div class="example">
+<div class="example-title">Пример: Без передачи this</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2a0fffb" >
+<div class="source-controls-full">     		<input type="button" id="show-4a368e2a0fffb" onclick="return sourceEditor.run('4a368e2a0fffb')" value="Запустить!"/> 		<input type="button" id="show-changed-4a368e2a0fffb" onclick="return sourceEditor.run('4a368e2a0fffb', true)" value="Запустить измененное!" style="width:180px;display:none"/>  		<input type="button" id="edit-4a368e2a0fffb" onclick="return sourceEditor.edit('4a368e2a0fffb')" value="Изменить"/> 		<input type="button" id="select-4a368e2a0fffb" onclick="return sourceEditor.select('4a368e2a0fffb')" value="Выделить все"/>   	</div>
+<div class="code-container" id="cc-4a368e2a0fffb">
+<pre class="source" id="src-4a368e2a0fffb">object = <span class="br0">&#123;</span> 
+   func: <span class="kw2">function</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> <span class="kw3">alert</span><span class="br0">&#40;</span><span class="kw1">this</span><span class="br0">&#41;</span> <span class="br0">&#125;</span>
+<span class="br0">&#125;</span>
+&nbsp;
+setTimeout<span class="br0">&#40;</span> object.<span class="me1">func</span> , <span class="nu0">1000</span><span class="br0">&#41;</span> <span class="co1">// this будет равно window</span></pre><div class="src-edit-container" id="src-edit-4a368e2a0fffb"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2a0fffb')"/>			 		</div>
+</div>
+</div>
+</div>
+</div>
+<div class="example">
+<div class="example-title">Пример: Передача this через call</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2a10c3a" >
+<div class="source-controls-full">     		<input type="button" id="show-4a368e2a10c3a" onclick="return sourceEditor.run('4a368e2a10c3a')" value="Запустить!"/> 		<input type="button" id="show-changed-4a368e2a10c3a" onclick="return sourceEditor.run('4a368e2a10c3a', true)" value="Запустить измененное!" style="width:180px;display:none"/>  		<input type="button" id="edit-4a368e2a10c3a" onclick="return sourceEditor.edit('4a368e2a10c3a')" value="Изменить"/> 		<input type="button" id="select-4a368e2a10c3a" onclick="return sourceEditor.select('4a368e2a10c3a')" value="Выделить все"/>   	</div>
+<div class="code-container" id="cc-4a368e2a10c3a">
+<pre class="source" id="src-4a368e2a10c3a">object = <span class="br0">&#123;</span> 
+   func: <span class="kw2">function</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> <span class="kw3">alert</span><span class="br0">&#40;</span><span class="kw1">this</span><span class="br0">&#41;</span> <span class="br0">&#125;</span>
+<span class="br0">&#125;</span>
+&nbsp;
+<span class="co1">// правильный вариант с передачей this</span>
+setTimeout<span class="br0">&#40;</span> <span class="kw2">function</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> object.<span class="me1">func</span>.<span class="me1">call</span><span class="br0">&#40;</span>object<span class="br0">&#41;</span> <span class="br0">&#125;</span> , <span class="nu0">1000</span><span class="br0">&#41;</span></pre><div class="src-edit-container" id="src-edit-4a368e2a10c3a"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2a10c3a')"/>			 		</div>
+</div>
+</div>
+</div>
+</div>
+<h3>Отмена выполнения</h3>
+<p>Вы можете отменить выполнение <code>setTimeout</code> при помощи <a href="clearTimeout.html" >clearTimeout</a>, используя для этого идентификатор таймаута.</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2a12402" >
+<div class="code-container" id="cc-4a368e2a12402">
+<pre class="source" id="src-4a368e2a12402"><span class="kw2">var</span> timeout_id = setTimeout<span class="br0">&#40;</span>...<span class="br0">&#41;</span>
+clearTimeout<span class="br0">&#40;</span>timeout_id<span class="br0">&#41;</span></pre><div class="src-edit-container" id="src-edit-4a368e2a12402"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2a12402')"/>			 		</div>
+</div>
+</div>
+</div>
+</div>
+<div class="example">
+<div class="example-title">Пример: Рабочий пример</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2a12cad" >
+<div class="source-controls-full">   		<input type="button" id="show-4a368e2a12cad" onclick="return sourceEditor.show('4a368e2a12cad', true)" value="Посмотреть!" style="width:100px"/> 		<input type="button" id="show-changed-4a368e2a12cad" onclick="return sourceEditor.show('4a368e2a12cad', true)" value="Посмотреть измененное!" style="width:180px;display:none"/>    		<input type="button" id="edit-4a368e2a12cad" onclick="return sourceEditor.edit('4a368e2a12cad')" value="Изменить"/> 		<input type="button" id="select-4a368e2a12cad" onclick="return sourceEditor.select('4a368e2a12cad')" value="Выделить все"/>   	</div>
+<div class="code-container" id="cc-4a368e2a12cad">
+<pre class="source" id="src-4a368e2a12cad"><span class="sc2"><span class="kw2">&lt;input</span> <span class="kw3">type</span>=<span class="st0">&quot;button&quot;</span> <span class="kw3">onclick</span>=<span class="st0">&quot;on()&quot;</span> <span class="kw3">value</span>=<span class="st0">&quot;Запустить таймаут&quot;</span>/<span class="kw2">&gt;</span></span>
+<span class="sc2"><span class="kw2">&lt;input</span> <span class="kw3">type</span>=<span class="st0">&quot;button&quot;</span> <span class="kw3">onclick</span>=<span class="st0">&quot;off()&quot;</span> <span class="kw3">value</span>=<span class="st0">&quot;Остановить отсчет&quot;</span>/<span class="kw2">&gt;</span></span>
+<span class="sc2"><span class="kw2">&lt;script&gt;</span></span>
+function go() { alert('Я сработало') }
+&nbsp;
+function on() {
+    timeoutId = setTimeout(go, 3000)
+}
+&nbsp;
+function off() {
+    clearTimeout(timeoutId)
+}
+<span class="sc2"><span class="kw2">&lt;/script&gt;</span></span></pre><div class="src-edit-container" id="src-edit-4a368e2a12cad"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2a12cad')"/>			 		</div>
+<div class="show-container" id="src-show-4a368e2a12cad"> 			<img style="position:absolute;right:20px;top:0px;z-index:1000" src="modules-codeviewer-img-refresh.gif" onclick="return sourceEditor.refresh('4a368e2a12cad')"/> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.removeShow('4a368e2a12cad')"/> 		</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+<div class="field field-type-nodereference field-field-see-also">
+  <h3 class="field-label">См. также</h3>
+  <ul class="field-items">
+          <li class="field-item"><a href="this.html">this</a> /Оператор/</li>
+          <li class="field-item"><a class="liexternal" href="http://javascript.ru/tutorial/basic/closure">Замыкания </a> /Статья/</li>
+          <li class="field-item"><a href="setInterval.html">setInterval</a> /Метод/</li>
+      </ul>
+</div>
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

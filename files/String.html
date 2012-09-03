@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>String</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/String">http://javascript.ru/String</a></div><h2>String</h2><h3 class="field-label">Создание</h3>
+
+<div class="field field-type-text field-object-syntax">
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e274b465" >  	<div class="code-container" id="cc-4a368e274b465"> 		<pre class="source" id="src-4a368e274b465">a = <span class="st0">'my string'</span>
+b = <span class="kw2">new</span> String<span class="br0">&#40;</span>object<span class="br0">&#41;</span> <span class="co1">// синтаксис устарел и не используется</span>
+c = String<span class="br0">&#40;</span>object<span class="br0">&#41;</span></pre> 		<div class="src-edit-container" id="src-edit-4a368e274b465"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e274b465')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-object-arguments">  
+<h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><p>string - Необязательный. Любая группа знаков Юникода.</p>
+</div>
+  </div>
+</div>
+
+
+
+<hr/>
+<div class="field field-type-text field-object-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Объекты <code>String</code>, как правило, создаются неявно с помощью строковых литералов.</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e27391c0" >
+<div class="code-container" id="cc-4a368e27391c0">
+<pre class="source" id="src-4a368e27391c0"><span class="co1">// кавычки любые - без разницы</span>
+<span class="kw2">var</span> str = <span class="st0">&quot;string literal&quot;</span></pre><div class="src-edit-container" id="src-edit-4a368e27391c0"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e27391c0')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>В строковых литералах можно использовать escape-последовательности для представления особых знаков, которые нельзя напрямую использовать в строках, например символа перевода строки или знаков Юникода. При компиляции сценария каждая escape-последовательность в строковом литерале преобразуется в знаки, которые она представляет.</p>
+<p>Можно указать юникодный символ явным образом, через его код.</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e27399bc" >
+<div class="code-container" id="cc-4a368e27399bc">
+<pre class="source" id="src-4a368e27399bc"><span class="kw2">var</span> str = <span class="st0">&quot;<span class="es0">\u</span>1234&quot;</span></pre><div class="src-edit-container" id="src-edit-4a368e27399bc"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e27399bc')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>Объекты <code>String</code>, заданные через кавычки (и называемые "примитивными" строками), немного отличаются от объектов <code>String</code>, созданных с помощью оператора <a href="new.html" >new</a>. Так, например, типом (<a href="typeof.html" >typeof</a>) данных объекта, созданного при помощи <code>new</code>, является <code>'object'</code>, а не <code>'string'</code>. И такому объекту можно напрямую назначать дополнительные свойства и методы. В остальном - интерпретатор автоматически превращает примитивные строки в объекты.</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e273a221" >
+<div class="code-container" id="cc-4a368e273a221">
+<pre class="source" id="src-4a368e273a221"><span class="st0">&quot;12345&quot;</span>.<span class="me1">length</span> <span class="co1">// 5</span></pre><div class="src-edit-container" id="src-edit-4a368e273a221"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e273a221')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<h3>Доступ к символам</h3>
+<p>Доступ к символам осуществляется при помощи метода <a href="String-charAt.html" >String#charAt</a></p>
+<div class="source-container" id="sc-4a368e273aa7d" >
+<div class="code-container" id="cc-4a368e273aa7d">
+<pre class="source" id="src-4a368e273aa7d"><span class="kw1">return</span> <span class="st0">'cat'</span>.<span class="me1">charAt</span><span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span>; <span class="co1">// возвратит &quot;a&quot;</span></pre><div class="src-edit-container" id="src-edit-4a368e273aa7d"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e273aa7d')" />			 		</div>
+</div>
+</div>
+<p>Также существует отсутствующий в стандарте <a class="liexternal" href="http://javascript.ru/ecma" >ECMA-262</a> способ - обращение к строке как к массиву:</p>
+<div class="source-container" id="sc-4a368e273b2b9" >
+<div class="code-container" id="cc-4a368e273b2b9">
+<pre class="source" id="src-4a368e273b2b9"><span class="kw2">var</span> str = <span class="st0">'cat'</span>
+<span class="kw1">return</span> str<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="co1">// &quot;a&quot;</span></pre><div class="src-edit-container" id="src-edit-4a368e273b2b9"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e273b2b9')" />			 		</div>
+</div>
+</div>
+<p>В отличие от языков C/PHP/и т.п., однажды созданную строку нельзя изменить: символы можно только считывать, но не менять.</p>
+<p>Для изменения строковой переменной применяется присваивание измененной строки:</p>
+<div class="source-container" id="sc-4a368e273bb43" >
+<div class="code-container" id="cc-4a368e273bb43">
+<pre class="source" id="src-4a368e273bb43">str = <span class="st0">&quot;строка&quot;</span>
+str = str.<span class="me1">charAt</span><span class="br0">&#40;</span><span class="nu0">4</span><span class="br0">&#41;</span> + str.<span class="me1">charAt</span><span class="br0">&#40;</span><span class="nu0">5</span><span class="br0">&#41;</span> + str.<span class="me1">charAt</span><span class="br0">&#40;</span><span class="nu0">6</span><span class="br0">&#41;</span> <span class="co1">// &quot;ока&quot;</span></pre><div class="src-edit-container" id="src-edit-4a368e273bb43"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e273bb43')" />			 		</div>
+</div>
+</div>
+<h3>Сравнение строк</h3>
+<p>Для сравнения строк используются обычные операторы &lt; &gt;.</p>
+</div>
+  </div>
+</div>
+
+
+
+<hr/>
+  <h3 class="field-label">Методы</h3>
+<dl>
+
+<dt><a href="String-split.html">split</a></dt>
+<dd>Делит строку на массив, разбивая ее по указанной подстроке</dd>
+
+
+<dt><a href="String-substr.html">substr</a></dt>
+<dd>Возвращает подстроку по начальной позиции и длине. Не описан в стандарте языка</dd>
+
+
+<dt><a href="String-charCodeAt.html">charCodeAt</a></dt>
+<dd>Возвращает число, обозначающее значение символа в кодировке Unicode по указанной позиции</dd>
+
+
+<dt><a href="String.fromCharCode.html">String.fromCharCode</a></dt>
+<dd>Создает строку из указанных юникодных значений.</dd>
+
+
+<dt><a href="String-charAt.html">charAt</a></dt>
+<dd>Возвращает символ на указанной позиции в строке</dd>
+
+
+<dt><a href="String-concat.html">concat</a></dt>
+<dd>Возвращает объединение двух или более строк</dd>
+
+
+<dt><a href="String--indexOf.html"> indexOf</a></dt>
+<dd>Возвращает позицию, на которой внутри вызывающей строки находится первое искомое значение, начиная от fromIndex. Возвращает -1, если значение не найдено.</dd>
+
+
+<dt><a href="String-lastIndexOf.html">lastIndexOf</a></dt>
+<dd>Возвращает последнюю позицию, на которой в вызывающей строке находится указанная подстрока, или -1, если такой позиции нет. Поиск идет назад, начиная от fromIndex</dd>
+
+
+<dt><a href="String-search.html">search</a></dt>
+<dd>Возвращает позицию, на которой регулярное выражение совпадает с вызывающей строкой, и -1, если совпадений нет </dd>
+
+
+<dt><a href="String-match.html">match</a></dt>
+<dd>Получить все совпадения с регулярным выражением</dd>
+
+
+<dt><a href="String-replace.html">replace</a></dt>
+<dd>Замещает совпадения с регулярным выражением на новую подстроку</dd>
+
+
+<dt><a href="String-slice.html">slice</a></dt>
+<dd>Возвращает участок строки</dd>
+
+
+<dt><a href="String-substring.html">substring</a></dt>
+<dd>Возвращает подстроку строки. Стандартный метод.</dd>
+
+
+<dt><a href="String-toLowerCase.html">toLowerCase</a></dt>
+<dd>Возвращает вызывающую строку, приведенную к нижнему регистру по правилам Unicode</dd>
+
+
+<dt><a href="String-toUpperCase.html">toUpperCase</a></dt>
+<dd>Возвращает вызывающую строку, приведенную к верхнему регистру по правилам Unicode</dd>
+
+
+<dt><a href="String-toLocaleLowerCase.html">toLocaleLowerCase</a></dt>
+<dd>Возвращает вызывающую строку, приведенную к нижнему регистру по правилам текущего окружения</dd>
+
+
+<dt><a href="String-toLocaleUpperCase.html">toLocaleUpperCase</a></dt>
+<dd>Возвращает вызывающую строку, приведенную к верхнему регистру по правилам текущего окружения</dd>
+
+
+<dt><a href="String-toString.html">toString</a></dt>
+<dd>Возвращает строку</dd>
+
+
+<dt><a href="String-valueOf.html">valueOf</a></dt>
+<dd>Возвращает элементарную строку для вызывающего объекта строки</dd>
+
+</dl>
+
+
+<hr/>
+  <h3 class="field-label">Свойства</h3>
+<dl>
+
+<dt><a href="String-length.html">length</a></dt>
+<dd>Длина строки</dd>
+
+</dl>
+
+
+<div class="field field-type-nodereference field-field-see-also">
+  <h3 class="field-label">См. также</h3>
+  <ul class="field-items">
+          <li class="field-item"><a class="liexternal" href="http://javascript.ru/tutorial/basic/types">Базовые типы: Строки, Числа, Boolean</a> /Статья/</li>
+          <li class="field-item"><a class="liexternal" href="http://javascript.ru/ecma/part15">Встроенные объекты ECMAScript</a> /Стандарт языка/</li>
+      </ul>
+</div>
+
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

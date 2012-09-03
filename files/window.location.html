@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>window.location</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/window.location">http://javascript.ru/window.location</a></div><h2>window.location</h2><p>Получает/устанавливает URL окна и его компоненты</p>
+
+<div class="field field-type-text field-field-property-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Значением этого свойства является объект типа <code>Location</code>.</p>
+<h3>Объект <code>Location</code></h3>
+<p>Метод <code>toString</code> этого объекта возвращает URL, а различные свойства позволяют получить/установить отдельные компоненты адреса.</p>
+<p>Для некоторых  строковых операций необходимо явно преобразовать <code>Location</code> к строке:</p>
+<div class="source-container" id="sc-4a368e28ec7ed" >
+<div class="code-container" id="cc-4a368e28ec7ed">
+<pre class="source" id="src-4a368e28ec7ed">window.<span class="me1">location</span>.<span class="me1">toString</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">charAt</span><span class="br0">&#40;</span><span class="nu0">17</span><span class="br0">&#41;</span></pre><div class="src-edit-container" id="src-edit-4a368e28ec7ed"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e28ec7ed')"/>			 		</div>
+</div>
+</div>
+<h4>Свойства объекта <code>Location</code></h4>
+<p>Все следующие свойства являются строками.<br />
+Колонка "Пример" содержит их значения для URL:</p>
+<ul>
+<li>http://www.google.com:80/search?q=javascript#test</li>
+</ul>
+<table border="1">
+<tr>
+<td>Свойство</td>
+<td>Описание</td>
+<td>Пример</td>
+</tr>
+<tr>
+<td><code>hash</code></td>
+<td>часть URL, которая идет после символа решетки '#', включая символ '#'</td>
+<td>#test</td>
+</tr>
+<tr>
+<td><code>host</code></td>
+<td>хост и порт</td>
+<td>www.google.com:80</td>
+</tr>
+<tr>
+<td><code>href</code></td>
+<td>весь URL</td>
+<td>http://www.google.com:80/search?q=javascript#test</td>
+</tr>
+<tr>
+<td><code>hostname</code></td>
+<td>хост (без порта)</td>
+<td>www.google.com</td>
+</tr>
+<tr>
+<td><code>pathname</code></p>
+<td>строка пути (относительно хоста)</td>
+<td>/search</td>
+</tr>
+<tr>
+<td><code>port</code></td>
+<td>номер порта</td>
+<td>80</td>
+</tr>
+<tr>
+<td><code>protocol</code></td>
+<td>протокол</td>
+<td>http:</td>
+</tr>
+<tr>
+<td><code>search</code></td>
+<td>часть адреса после символа ?, включая символ ?</td>
+<td>?q=javascript</td>
+</tr>
+</table>
+<p>В Firefox есть баг: если <code>hash</code>-компонент адреса содержит закодированные (см. <a href="encodeURIComponent.html" >encodeURIComponent</a>) символы, свойство <code>hash</code> возвращает раскодированный компонент. Например, вместо %20 будет пробел и т.п. Другие браузеры ведут себя корректно и не раскодируют <code>hash</code>.</p>
+<h4>Методы объекта <code>Location</code></h4>
+<dl>
+<dt>assign(url)</dt>
+<dd>загрузить документ по данному <code>url</code></dd>
+<dt>reload([forceget])</dt>
+<dd>перезагрузить документ по текущему URL. Аргумент <code>forceget</code> - булево значение, если оно <code>true</code>, то документ перезагружается всегда с сервера, если <code>false</code> или не указано, то браузер может взять страницу из своего кэша.</dd>
+<dt>replace(url)</dt>
+<dd>заменить текущий документ на документ по указанному <code>url</code>. Разница, по сравнению с <code>assign()</code> заключается в том, что после использования <code>replace()</code> страница не записывается в истории посещений. В частности, это значит, что посетитель не сможет использовать для возврата кнопку браузера "Назад".</dd>
+<dt>toString()</dt>
+<dd>возвращает строковое представление URL для объекта <code>Location</code></dd>
+<p></cl></p>
+<p>При изменении любых свойств <code>window.location</code>, документ будет перезагружен, как если бы для модифицированного url был вызван метод  <code>window.location.assign()</code>.</p>
+<div class="example">
+<div class="example-title">Пример: перейти на документ по адресу</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e28e97d0" >
+<div class="code-container" id="cc-4a368e28e97d0">
+<pre class="source" id="src-4a368e28e97d0"><span class="kw2">function</span> goJs<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> 
+   window.<span class="me1">location</span> = <span class="st0">&quot;http://javascript.ru&quot;</span>
+<span class="br0">&#125;</span></pre><div class="src-edit-container" id="src-edit-4a368e28e97d0"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e28e97d0')"/>			 		</div>
+</div>
+</div>
+</div>
+</div>
+<div class="example">
+<div class="example-title">Пример: вывести свойства текущего location</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e28ea14d" >
+<div class="source-controls-small">  		<span id="select-4a368e28ea14d" onclick="return sourceEditor.select('4a368e28ea14d')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e28ea14d">
+<pre class="source" id="src-4a368e28ea14d"><span class="kw2">function</span> showLoc<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+   <span class="kw2">var</span> x = window.<span class="me1">location</span>;
+   <span class="kw2">var</span> t = <span class="br0">&#91;</span><span class="st0">'Property - Typeof - Value'</span>,
+            <span class="st0">'window.location - '</span> + <span class="br0">&#40;</span><span class="kw1">typeof</span> x<span class="br0">&#41;</span> + <span class="st0">' - '</span> + x <span class="br0">&#93;</span>;
+   <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw2">var</span> prop <span class="kw1">in</span> x<span class="br0">&#41;</span><span class="br0">&#123;</span>
+     t.<span class="me1">push</span><span class="br0">&#40;</span>prop + <span class="st0">' - '</span> + <span class="br0">&#40;</span><span class="kw1">typeof</span> x<span class="br0">&#91;</span>prop<span class="br0">&#93;</span><span class="br0">&#41;</span> + <span class="st0">' - '</span> +  <span class="br0">&#40;</span>x<span class="br0">&#91;</span>prop<span class="br0">&#93;</span> || <span class="st0">'n/a'</span><span class="br0">&#41;</span><span class="br0">&#41;</span>;
+   <span class="br0">&#125;</span>
+   <span class="kw3">alert</span><span class="br0">&#40;</span>t.<span class="me1">join</span><span class="br0">&#40;</span><span class="st0">'<span class="es0">\n</span>'</span><span class="br0">&#41;</span><span class="br0">&#41;</span>;
+<span class="br0">&#125;</span></pre><div class="src-edit-container" id="src-edit-4a368e28ea14d"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e28ea14d')"/>			 		</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+function showLoc() {
+   var x = window.location;
+   var t = ['Property - Typeof - Value',
+            'window.location - ' + (typeof x) + ' - ' + x ];
+   for (var prop in x){
+     t.push(prop + ' - ' + (typeof x[prop]) + ' - ' +  (x[prop] || 'n/a'));
+   }
+   alert(t.join('\n'));
+}
+</script><p>
+<input type="button" value="showLoc()" onclick="showLoc();"></p>
+<div class="example">
+<div class="example-title">Пример: сделать запрос с новыми параметрами</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e28ebf0a" >
+<div class="code-container" id="cc-4a368e28ebf0a">
+<pre class="source" id="src-4a368e28ebf0a"><span class="kw2">function</span> sendData<span class="br0">&#40;</span>dat<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+  window.<span class="me1">location</span>.<span class="me1">search</span> = dat;
+<span class="br0">&#125;</span></pre><div class="src-edit-container" id="src-edit-4a368e28ebf0a"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e28ebf0a')"/>			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>При вызове <code>sendData('My Data')</code> на сервер оправится строка<br />
+с параметрами "?My%20Data".</p>
+</div>
+  </div>
+</div>
+
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

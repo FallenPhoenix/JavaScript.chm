@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>with</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/with">http://javascript.ru/with</a></div><h2>with</h2><p>Добавить новую область видимости</p>
+
+<div class="field field-type-text field-field-syntax-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e2b6edc9" >  	<div class="code-container" id="cc-4a368e2b6edc9"> 		<pre class="source" id="src-4a368e2b6edc9"><span class="kw1">with</span> <span class="br0">&#40;</span>object<span class="br0">&#41;</span>
+  statement</pre> 		<div class="src-edit-container" id="src-edit-4a368e2b6edc9"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2b6edc9')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-syntax-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt>object</dt>
+<dd>Добавить указанный объект в цепочку областей видимости. Может быть любое выражение, скобки вокруг обязательны.</dd>
+<dt>statement</dt>
+<dd>Блок или javascript-вызов для выполнения внутри дополненной области видимости</dd>
+</dl>
+</div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-syntax-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>В следующем примере вычисления выполняются с областью видимости, расширенной объектом <a href="Math.html" >Math</a>.</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2b62516" >
+<div class="source-controls-small">  		<span id="select-4a368e2b62516" onclick="return sourceEditor.select('4a368e2b62516')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e2b62516">
+<pre class="source" id="src-4a368e2b62516"><span class="kw2">var</span> a, x, y;
+<span class="kw2">var</span> r = <span class="nu0">10</span>;
+<span class="kw1">with</span> <span class="br0">&#40;</span>Math<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+  a = PI * r * r;
+  x = r * cos<span class="br0">&#40;</span>PI<span class="br0">&#41;</span>;
+  y = r * sin<span class="br0">&#40;</span>PI / <span class="nu0">2</span><span class="br0">&#41;</span>;
+<span class="br0">&#125;</span></pre><div class="src-edit-container" id="src-edit-4a368e2b62516"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2b62516')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>Более частый пример:</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2b63c02" >
+<div class="code-container" id="cc-4a368e2b63c02">
+<pre class="source" id="src-4a368e2b63c02"><span class="kw1">with</span><span class="br0">&#40;</span>element.<span class="me1">style</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    position = <span class="st0">'relative'</span>
+    top = left = <span class="st0">'5px'</span>
+<span class="br0">&#125;</span></pre><div class="src-edit-container" id="src-edit-4a368e2b63c02"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2b63c02')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>При поиске переменной внутри <code>with</code>, интерпретатор сначала проверяет свойства <code>object</code>. Если свойства с таким именем нет - он идет дальше вверх по областям видимости. </p>
+<p>Использование <code>with</code> с одной стороны наглядно, с другой - может скрывать ошибки программирования и соответствующий код плохо сжимается компрессорами. </p>
+<p>По этим причинам использовать <code>with</code> не рекомендуется.</p>
+<p>Вместо этого можно использовать чуть менее наглядный, но надежный доступ через временную переменную:</p>
+<div class="example">
+<div class="example-title">Пример: переменная вместо with</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2b64707" >
+<div class="code-container" id="cc-4a368e2b64707">
+<pre class="source" id="src-4a368e2b64707">s = element.<span class="me1">style</span>
+s.<span class="me1">position</span> = <span class="st0">'relative'</span>
+s.<span class="me1">top</span> = s.<span class="me1">left</span> = <span class="st0">'5px'</span></pre><div class="src-edit-container" id="src-edit-4a368e2b64707"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2b64707')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+
+<div class="field field-type-nodereference field-field-see-also">
+  <h3 class="field-label">См. также</h3>
+  <ul class="field-items">
+          <li class="field-item"><a class="liexternal" href="http://javascript.ru/tutorial/basic/syntax-switch">Конструкции языка. Обработка ошибок.</a> /Статья/</li>
+          <li class="field-item"><a class="liexternal" href="http://javascript.ru/optimize/javascript-compression">Сжатие Javascript и CSS</a> /Статья/</li>
+      </ul>
+</div>
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

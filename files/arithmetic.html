@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>Арифметические операторы</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/arithmetic">http://javascript.ru/arithmetic</a></div><h2>Арифметические операторы</h2>
+
+<div class="field field-type-text field-field-operator-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Арифметические операторы принимают численные значения и возвращают число.</p>
+<p>Стандартные операторы - это прибавление (+), вычитание (-), умножение (*) и деление (/). Они работают как обычно, причем все операции осуществляются с плавающей точкой.</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2bf107c" >
+<div class="code-container" id="cc-4a368e2bf107c">
+<pre class="source" id="src-4a368e2bf107c"><span class="nu0">1</span> / <span class="nu0">2</span>   <span class="co1">// = 0.5 в javascript</span>
+<span class="nu0">1</span> / <span class="nu0">2</span>   <span class="co1">// = 0 в Java, так как вычисление идет в целых числах</span></pre><div class="src-edit-container" id="src-edit-4a368e2bf107c"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2bf107c')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>Особенность заключается в наличии в javascript бесконечности <a href="Infinity.html" >Infinity</a>, которая может участвовать в вычислениях.</p>
+<div class="example">
+<div class="example-title">Пример: бесконечность</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2bf18dc" >
+<div class="code-container" id="cc-4a368e2bf18dc">
+<pre class="source" id="src-4a368e2bf18dc"><span class="nu0">2.0</span> / <span class="nu0">0</span>    <span class="co1">// = Infinity </span>
+<span class="nu0">2.0</span> / <span class="nu0">0.0</span>  <span class="co1">// = Infinity </span>
+<span class="nu0">2.0</span> / <span class="nu0">-0.0</span> <span class="co1">// = -Infinity</span></pre><div class="src-edit-container" id="src-edit-4a368e2bf18dc"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2bf18dc')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<h2 id="modulo">% (Модуль числа) </h2>
+<p>Этот оператор возвращает значение остатка при делении первого операнда на второй. Результат будет иметь тот же знак, что и первый операнд.</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2bf21ed" >
+<div class="code-container" id="cc-4a368e2bf21ed">
+<pre class="source" id="src-4a368e2bf21ed"><span class="nu0">7</span> % <span class="nu0">2</span>  <span class="co1">// = 1</span>
+<span class="nu0">-1</span> % <span class="nu0">2</span> <span class="co1">// -1</span></pre><div class="src-edit-container" id="src-edit-4a368e2bf21ed"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2bf21ed')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<h2 id="increment">++ (Инкремент) </h2>
+<p>Увеличивает переменную, к которой применен, на единицу.</p>
+<p>Если использован в постфиксной форме <code>x++</code>, то возвращает исходное значение <code>x</code>, в префиксной форме  <code>++x</code> возвращает увеличенное значение. </p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2bf289c" >
+<div class="source-controls-small">  		<span id="select-4a368e2bf289c" onclick="return sourceEditor.select('4a368e2bf289c')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e2bf289c">
+<pre class="source" id="src-4a368e2bf289c">x=<span class="nu0">3</span>
+y = x++ <span class="co1">// увеличивает x до 4, устанавливает y=3</span>
+&nbsp;
+x=<span class="nu0">3</span>
+y = ++x <span class="co1">// увеличивает x до 4, устанавливает y=4</span></pre><div class="src-edit-container" id="src-edit-4a368e2bf289c"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2bf289c')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<h2 id="decrement">-- (Декремент) </h2>
+<p>Аналогично инкременту, но уменьшает на единицу.</p>
+<h2 id="minus">- (Унарный минус) </h2>
+<p>Возвращает число, противоположное по знаку данному.</p>
+<h2 id="minus">+ (Унарный плюс) </h2>
+<p>Возвращает операнд. </p>
+<p>Как и любые арифметические операторы, делает неявное преобразование операнда в число, поэтому используется просто для перевода переменной из числовой в строковую.</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2bf3032" >
+<div class="code-container" id="cc-4a368e2bf3032">
+<pre class="source" id="src-4a368e2bf3032"><span class="kw2">var</span> value = input.<span class="me1">value</span>
+value = +value
+<span class="kw1">if</span> <span class="br0">&#40;</span>isNaN<span class="br0">&#40;</span>value<span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="kw3">alert</span><span class="br0">&#40;</span><span class="st0">'не число'</span><span class="br0">&#41;</span></pre><div class="src-edit-container" id="src-edit-4a368e2bf3032"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2bf3032')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

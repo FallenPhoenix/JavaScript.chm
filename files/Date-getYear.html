@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>getYear</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/Date/getYear">http://javascript.ru/Date/getYear</a></div><h2>getYear</h2><div class="field field-type-text field-field-method-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e23c15c5" >  	<div class="code-container" id="cc-4a368e23c15c5"> 		<pre class="source" id="src-4a368e23c15c5">getYear<span class="br0">&#40;</span><span class="br0">&#41;</span></pre> 		<div class="src-edit-container" id="src-edit-4a368e23c15c5"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e23c15c5')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-method-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt></dt>
+<dd>
+<dd>
+</dd></dd></dl>
+</div>
+  </div>
+</div>
+
+
+<div class="field field-type-text field-field-method-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>getYear более не рекомендуется к использованию и был заменён методом <code>getFullYear </code>.</p>
+<p>Метод <code>getYear</code> возвращает значение года минус 1900.</p>
+<p>В ранних реализациях языка JavaScript (1.2 и ранее), этот метод возвращал две последние цифры года для 1900-1999 годов, и полное значение года (четырёхзначное) для всех остальных лет.</p>
+<p>Для корректной обработки года рекомендуется использовать <code>getFullYear</code>, возвращающий полное значение года.</p>
+<div class="example">
+<div class="example-title">Пример: XX век и не только</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e23b9077" >
+<div class="source-controls-small">  		<span id="select-4a368e23b9077" onclick="return sourceEditor.select('4a368e23b9077')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e23b9077">
+<pre class="source" id="src-4a368e23b9077">Xmas = <span class="kw2">new</span> Date<span class="br0">&#40;</span><span class="st0">&quot;December 25, 1995 23:15:00&quot;</span><span class="br0">&#41;</span>
+year = Xmas.<span class="me1">getYear</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="co1">// возвращает 95</span>
+Xmas = <span class="kw2">new</span> Date<span class="br0">&#40;</span><span class="st0">&quot;December 25, 2000 23:15:00&quot;</span><span class="br0">&#41;</span>
+year = Xmas.<span class="me1">getYear</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="co1">// возвращает 100</span>
+Xmas = <span class="kw2">new</span> Date<span class="br0">&#40;</span><span class="st0">&quot;December 25, 1800 23:15:00&quot;</span><span class="br0">&#41;</span>
+year = Xmas.<span class="me1">getYear</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="co1">// возвращает -100</span></pre><div class="src-edit-container" id="src-edit-4a368e23b9077"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e23b9077')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

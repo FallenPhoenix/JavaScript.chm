@@ -1,0 +1,146 @@
+/***************************************
+* This file shall be put into the directory
+* wp-content/plugins/code-viewer
+* Created by H&aring;kan Carlstr&ouml;m
+* www.familjencarlstrom.se
+***************************************/
+
+
+.code-error {
+    color: red;
+}
+
+.code-important {
+	background-color: #faebd7;
+	border: 1px dashed red;
+}
+
+.code-select-handle {
+    text-align: right;
+    color: #2e5b82;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.code-shower {
+	color: #2e5b82;
+        text-decoration: underline;
+	cursor: pointer;
+	font-size: 110%;
+	font-style: italic;
+}
+
+
+.code-runner, .code-popup {
+	color: #2e5b82;
+    text-decoration: underline;
+	cursor: pointer;
+	font-size: 110%;
+	font-style: italic;
+}
+.code-popup {
+	background: url(/themes/defaultangy/images/new_window_icon.gif) no-repeat right;
+	padding-right: 22px;
+}
+
+
+.source-wrapper {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.source li.sourcelink {
+ color: #000;
+ font: 115% Georgia, "Times New Roman", Times, serif;
+ list-style: none;
+ margin-left: -32px;
+ padding-top: .85em;
+ text-align: center;
+}
+
+
+.source-small {
+	font-size:11px;
+}
+
+
+
+.source {
+	font-size: 90%;
+    margin: 0;
+	background-color:#F0F0F0;
+    padding: 5px;
+
+	overflow-x: auto;
+	overflow-y: hidden; /* should never happen, IE shows it sometimes */
+	/* for IE which is hiding last line under horiz scroll bar => provide additional padding */
+	padding-bottom: expression( this.scrollWidth > this.offsetWidth ? '20px' : '5px'); 
+}
+
+* html .source {
+	/* skip all IE6 overflow bugs by wrapping */
+	word-wrap: break-word;
+}
+
+
+
+
+.source .strs { text-decoration: underline }
+
+
+.source .de1, .source .de2 {font-family: 'Courier New', Courier, monospace; font-weight: normal;}
+.source .imp {font-weight: bold; color: red;}
+.source .ln-xtra {color: #cc0; background-color: #ffc;}
+.source li {font-family: 'Courier New', Courier, monospace; color: black; font-weight: normal; font-style: normal;}
+.source li.li2 {font-weight: bold;}
+.source .kw1 {color: #000066; font-weight: bold;}
+.source .kw2 {color: #003366; font-weight: bold;}
+.source .kw3 {color: #000066;}
+.source .co1 {color: #009900; font-style: italic;}
+.source .coMULTI {color: #009900; font-style: italic;}
+.source .es0 {color: #000099; font-weight: bold;}
+.source .br0 {color: #006600;}
+.source .st0 {color: #3366CC;}
+.source .nu0 {color: #CC0000;}
+.source .me1 {color: #006600;}
+.source .re0 {color: #0066FF;}
+
+.source-controls-full input {
+	background-color: #f0fff0;
+	border: 1px solid #bc8f8f;
+	border-bottom: none;
+	margin-right: -1px;
+	width: 110px;
+	display:block;
+	float: left;
+	cursor: pointer;
+	white-space: nowrap;
+	text-align: center;
+}
+
+.source-controls-full .src-cancel, .source-controls-full .src-refresh {
+	display: none;
+}
+
+.source-controls-small span {
+	display:block;
+	float: right;
+	text-decoration: underline;
+	color: #2e5b82;
+	cursor: pointer;
+}
+
+.src-frame, .src-area {
+	border: 1px solid black;
+	padding: 5px;
+	margin: 0;
+}
+
+.show-container, .src-edit-container {
+	display:none;
+	position:relative;
+}
+
+.code-container {
+	clear: both;
+}

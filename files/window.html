@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>window</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/window">http://javascript.ru/window</a></div><h2>window</h2>
+<div class="field field-type-text field-object-intro">
+  <div class="field-items">
+      <div class="field-item"><p>Объект <code>window</code> сочетает два в одном: глобальный объект javascript и окно браузера.</p>
+<p>Для обращения к функциям и методам <code>window</code> не нужно указывать объект:</p>
+<div class="source-container" id="sc-4a368e28a4e7c" >
+<div class="code-container" id="cc-4a368e28a4e7c">
+<pre class="source" id="src-4a368e28a4e7c">window.<span class="kw1">decodeURI</span><span class="br0">&#40;</span>..<span class="br0">&#41;</span>
+<span class="co1">// то же что и</span>
+<span class="kw1">decodeURI</span><span class="br0">&#40;</span>..<span class="br0">&#41;</span></pre><div class="src-edit-container" id="src-edit-4a368e28a4e7c"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e28a4e7c')" />			 		</div>
+</div>
+</div>
+<p>Вообще, любая переменная в конечном счете(если не найдена локально) ищется в глобальном объекте.</p>
+<div class="source-container" id="sc-4a368e28a5831" >
+<div class="code-container" id="cc-4a368e28a5831">
+<pre class="source" id="src-4a368e28a5831"><span class="co1">// можно указать window явно - будет работать:</span>
+a = <span class="kw2">new</span> window.<span class="me1">String</span><span class="br0">&#40;</span><span class="st0">&quot;test&quot;</span><span class="br0">&#41;</span></pre><div class="src-edit-container" id="src-edit-4a368e28a5831"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e28a5831')" />			 		</div>
+</div>
+</div>
+<p>Да, и кстати <code>window</code> является свойством <code>window</code>:</p>
+<div class="source-container" id="sc-4a368e28a5fc0" >
+<div class="code-container" id="cc-4a368e28a5fc0">
+<pre class="source" id="src-4a368e28a5fc0">xhr = <span class="kw2">new</span> window.<span class="me1">window</span>.<span class="me1">window</span>.<span class="me1">XMLHttpRequest</span><span class="br0">&#40;</span><span class="br0">&#41;</span></pre><div class="src-edit-container" id="src-edit-4a368e28a5fc0"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e28a5fc0')" />			 		</div>
+</div>
+</div>
+<p>Кроме роли "глобального объекта", <code>window</code> также предоставляет интерфейс для работы с окном браузера.</p>
+</div>
+  </div>
+</div>
+
+
+
+
+
+<hr/>
+  <h3 class="field-label">Методы</h3>
+<dl>
+
+<dt><a href="window.close.html">window.close</a></dt>
+<dd>Закрыть окно браузера</dd>
+
+
+<dt><a href="window.open.html">window.open</a></dt>
+<dd>Открыть новое окно браузера и загрузить в него указанный ресурс</dd>
+
+
+<dt><a href="window.focus.html">window.focus</a></dt>
+<dd>Сделать вызвавшее окно активным</dd>
+
+</dl>
+
+
+<hr/>
+  <h3 class="field-label">Свойства</h3>
+<dl>
+
+<dt><a href="window.location.html">window.location</a></dt>
+<dd>Получает/устанавливает URL окна и его компоненты</dd>
+
+
+<dt><a href="window.parent.html">window.parent</a></dt>
+<dd>Родительское окно в иерархии фреймов</dd>
+
+
+<dt><a href="window.top.html">window.top</a></dt>
+<dd>Ссылка на верхнее окно в иерархии фреймов</dd>
+
+
+<dt><a href="window.name.html">window.name</a></dt>
+<dd>имя окна</dd>
+
+
+<dt><a href="window.frames.html">window.frames</a></dt>
+<dd>список фреймов текущего окна, включая <code>iframe</code></dd>
+
+
+<dt><a href="window.opener.html">window.opener</a></dt>
+<dd>окно, открывшее текущее вызовом <a href="window.open.html" >window.open</a></dd>
+
+
+<dt><a href="window.closed.html">window.closed</a></dt>
+<dd>Закрыто ли данное окно, используется с <a href="window.open.html" >window.open</a></dd>
+
+
+<dt><a href="window.status.html">window.status</a></dt>
+<dd>Позволяет устанавливать и получать статусную строку окна</dd>
+
+</dl>
+
+
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

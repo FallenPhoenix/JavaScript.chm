@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>match</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/String/match">http://javascript.ru/String/match</a></div><h2>match</h2><div class="field field-type-text field-field-method-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e283d05e" >  	<div class="code-container" id="cc-4a368e283d05e"> 		<pre class="source" id="src-4a368e283d05e">str.<span class="me1">match</span><span class="br0">&#40;</span>regexp<span class="br0">&#41;</span></pre> 		<div class="src-edit-container" id="src-edit-4a368e283d05e"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e283d05e')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-method-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt>regexp</dt>
+<dd>регулярное выражение в виде объекта <a href="RegExp.html" >RegExp</a> или строка<br />
+<dd>
+</dd></dd></dl>
+</div>
+  </div>
+</div>
+
+
+<div class="field field-type-text field-field-method-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Если регулярное выражение без флага "g", то возвращает такое же результат, как <a href="RegExp-exec.html" >regexp.exec(str)</a>.</p>
+<p>Если же для регулярного выражения указан флаг "g", то метод возвращает массив, содержащий все совпадения.</p>
+<blockquote><p>
+Если совпадений нет, то метод возвращает не пустой массив, а <code>null</code>.
+</p></blockquote>
+<h3>Замечания</h3>
+<ul>
+<li>Если вы хотите только проверить, совпадает ли строка с регулярным выражением - используйсте <a href="RegExp-test.html" >regexp.test(string)</a>.</li>
+<li>Если вам нужно только первое совпадение - вам может лучше подойти <a href="RegExp-exec.html" >regexp.exec(string)</a></li>
+</ul>
+<h3>Пример без глобального поиска</h3>
+<p>В следующем примере <code>match</code> используется для поиска строки "Глава", за которой идет 1 или групп из цифр с последующей точкой.</p>
+<div class="source-container" id="sc-4a368e282ed2f" >
+<div class="code-container" id="cc-4a368e282ed2f">
+<pre class="source" id="src-4a368e282ed2f">str = <span class="st0">&quot;За информацией обратитесь: Глава 3.4.5.1&quot;</span>;
+re = /глава <span class="br0">&#40;</span>\d+<span class="br0">&#40;</span>\.\d<span class="br0">&#41;</span>*<span class="br0">&#41;</span>/i
+found = str.<span class="me1">match</span><span class="br0">&#40;</span>re<span class="br0">&#41;</span>
+document.<span class="kw1">write</span><span class="br0">&#40;</span>found<span class="br0">&#41;</span></pre><div class="src-edit-container" id="src-edit-4a368e282ed2f"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e282ed2f')" />			 		</div>
+</div>
+</div>
+<p>Возвратит массив из трех элементов: </p>
+<div class="source-container" id="sc-4a368e282fd18" >
+<div class="code-container" id="cc-4a368e282fd18">
+<pre class="source" id="src-4a368e282fd18"><span class="br0">&#91;</span><span class="st0">&quot;Глава 3.4.5.1&quot;</span>, <span class="st0">&quot;3.4.5.1&quot;</span>, <span class="st0">&quot;.1&quot;</span><span class="br0">&#93;</span></pre><div class="src-edit-container" id="src-edit-4a368e282fd18"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e282fd18')" />			 		</div>
+</div>
+</div>
+<ol>
+<li>
+<code>"Глава 3.4.5.1"</code> - полное совпадение с регулярным выражением <code>/глава (\d+(\.\d)*)/i</code>,</li>
+<li><code>"3.4.5.1"</code> - первая скобка в совпадении,</li>
+<li><code>".1"</code> - вторая скобка в совпадении</li>
+</ol>
+<h3>Пример с глобальным поиском</h3>
+<p>При глобальном поиске регультат <code>match</code> - просто массив всех совпадений (и <code>null</code>, если их нет).</p>
+<div class="source-container" id="sc-4a368e2830456" >
+<div class="code-container" id="cc-4a368e2830456">
+<pre class="source" id="src-4a368e2830456">str = <span class="st0">&quot;За информацией обратитесь: Глава 3.4.5.1, Глава 7.5&quot;</span>;
+re = /глава <span class="br0">&#40;</span>\d+<span class="br0">&#40;</span>\.\d<span class="br0">&#41;</span>*<span class="br0">&#41;</span>/ig
+found = str.<span class="me1">match</span><span class="br0">&#40;</span>re<span class="br0">&#41;</span>
+<span class="kw3">alert</span><span class="br0">&#40;</span>found<span class="br0">&#41;</span></pre><div class="src-edit-container" id="src-edit-4a368e2830456"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2830456')" />			 		</div>
+</div>
+</div>
+<p>Выведет массив из двух элементов:</p>
+<div class="source-container" id="sc-4a368e28313a7" >
+<div class="code-container" id="cc-4a368e28313a7">
+<pre class="source" id="src-4a368e28313a7"><span class="br0">&#91;</span> <span class="st0">&quot;Глава 3.4.5.1&quot;</span>, <span class="st0">&quot;Глава 7.5&quot;</span> <span class="br0">&#93;</span></pre><div class="src-edit-container" id="src-edit-4a368e28313a7"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e28313a7')" />			 		</div>
+</div>
+</div>
+<p>Скобки при таком поиске не учитываются.</p>
+<blockquote><p>Если вам нужен глобальный поиск с учетом скобок - используйте многократный вызов <a href="RegExp-exec.html" >exec</a>.</p></blockquote>
+</div>
+  </div>
+</div>
+
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>break</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/break">http://javascript.ru/break</a></div><h2>break</h2><p>Завершает текущий цикл или конструкции <a href="switch.html" >switch</a> и <a href="label.html" >label</a> и передает управление на следующий вызов</p>
+
+<div class="field field-type-text field-field-syntax-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e2a73cfa" >  	<div class="code-container" id="cc-4a368e2a73cfa"> 		<pre class="source" id="src-4a368e2a73cfa"><span class="kw1">break</span> <span class="br0">&#91;</span>label<span class="br0">&#93;</span></pre> 		<div class="src-edit-container" id="src-edit-4a368e2a73cfa"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2a73cfa')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-syntax-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt>label</dt>
+<dd>Идентификатор метки, которой помечен прерываемый оператор/конструкция. Не обязательно для циклов и <code>switch</code><br />
+<dd>
+</dd></dd></dl>
+</div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-syntax-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="example">
+<div class="example-title">Пример: простой пример</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2a6748f" >
+<div class="source-controls-small">  		<span id="select-4a368e2a6748f" onclick="return sourceEditor.select('4a368e2a6748f')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e2a6748f">
+<pre class="source" id="src-4a368e2a6748f"><span class="kw1">for</span><span class="br0">&#40;</span>i=<span class="nu0">0</span>; i&lt;<span class="nu0">10</span>; i++<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+&nbsp;
+    <span class="kw1">if</span> <span class="br0">&#40;</span>i==<span class="nu0">5</span><span class="br0">&#41;</span> <span class="kw1">break</span>;
+&nbsp;
+<span class="br0">&#125;</span>
+<span class="kw3">alert</span><span class="br0">&#40;</span>i<span class="br0">&#41;</span> <span class="co1">// 5</span></pre><div class="src-edit-container" id="src-edit-4a368e2a6748f"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2a6748f')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>В языке javascript оператор <code>break</code> дает возможность прерывать выполнение сразу на несколько уровней. Для этого используется метка <a href="label.html" >label</a>:</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e2a67ff4" >
+<div class="source-controls-small">  		<span id="select-4a368e2a67ff4" onclick="return sourceEditor.select('4a368e2a67ff4')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e2a67ff4">
+<pre class="source" id="src-4a368e2a67ff4"><span class="strs">top:</span>
+<span class="kw1">for</span><span class="br0">&#40;</span>i=<span class="nu0">0</span>; i&lt;<span class="nu0">10</span>; i++<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+  <span class="kw1">for</span><span class="br0">&#40;</span>j=<span class="nu0">0</span>; j&lt;<span class="nu0">15</span>; j++<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>i==<span class="nu0">5</span> &amp;&amp; j==<span class="nu0">5</span><span class="br0">&#41;</span> <span class="strs"><span class="kw1">break</span> top</span>
+  <span class="br0">&#125;</span>
+<span class="br0">&#125;</span>
+<span class="kw3">alert</span><span class="br0">&#40;</span>j+i<span class="br0">&#41;</span> <span class="co1">// 10</span></pre><div class="src-edit-container" id="src-edit-4a368e2a67ff4"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2a67ff4')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>Помеченным может быть не только цикл/switch, но и блок:</p>
+<div class="source-container" id="sc-4a368e2a68df1" >
+<div class="source-controls-small">  		<span id="select-4a368e2a68df1" onclick="return sourceEditor.select('4a368e2a68df1')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e2a68df1">
+<pre class="source" id="src-4a368e2a68df1">top: 
+<span class="br0">&#123;</span>
+  a=<span class="nu0">5</span>
+  <span class="kw1">break</span> top
+  a=<span class="nu0">10</span>
+<span class="br0">&#125;</span>
+<span class="kw3">alert</span><span class="br0">&#40;</span>a<span class="br0">&#41;</span> <span class="co1">// 5</span></pre><div class="src-edit-container" id="src-edit-4a368e2a68df1"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2a68df1')" />			 		</div>
+</div>
+</div>
+<p>Единственное ограничение и отличие <code>break</code> от не существующего в javascript <code>goto</code>: вызов <code>break</code> должен находится внутри помеченного оператора, чтобы прервать его управление.</p>
+</div>
+  </div>
+</div>
+
+
+<div class="field field-type-nodereference field-field-see-also">
+  <h3 class="field-label">См. также</h3>
+  <ul class="field-items">
+          <li class="field-item"><a class="liexternal" href="http://javascript.ru/ecma/part11">Выражения</a> /Стандарт языка/</li>
+      </ul>
+</div>
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

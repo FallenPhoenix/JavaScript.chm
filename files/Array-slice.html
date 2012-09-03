@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>slice</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/Array/slice">http://javascript.ru/Array/slice</a></div><h2>slice</h2><div class="field field-type-text field-field-method-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e2138042" >  	<div class="code-container" id="cc-4a368e2138042"> 		<pre class="source" id="src-4a368e2138042">arrayObj.<span class="me1">slice</span><span class="br0">&#40;</span> start<span class="br0">&#91;</span>, end<span class="br0">&#93;</span> <span class="br0">&#41;</span></pre> 		<div class="src-edit-container" id="src-edit-4a368e2138042"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e2138042')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-method-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt>
+start<br />
+</dt>
+<dd>
+Индекс элемента в массиве, с которого будет начинаться новый массив.<br />
+</dd>
+<dt>
+end<br />
+</dt>
+<dd>
+Необязательный параметр. Индекс элемента в массиве, на котором новый массив завершится. При этом последним в новом массиве будет элемент с индексом <code>end</code>-1<br />
+</dd>
+</dl>
+<ul>
+<li>Если start отрицателен, то он будет трактоваться как <code>arrayObj.length</code>+<code>start</code> (т.е. <code>start</code>'ый элемент с конца массива). </li>
+<li>Если end отрицателен, то он будет трактоваться как <code>arrayObj.length</code>+<code>end</code> (т.е. <code>end</code>'ый элемент с конца массива).</li>
+<li>Если второй параметр не указан, то экстракция продолжится до конца массива. Если <code>end</code> &lt; <code>start</code>, то будет создан пустой массив.</li>
+</ul>
+</div>
+  </div>
+</div>
+
+
+<div class="field field-type-text field-field-method-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Данный метод не изменяет исходный массив, а просто возвращает его часть.</p>
+<div class="example">
+<div class="example-title">Пример: Элементы из середины</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e212e0fd" >
+<div class="source-controls-small">  		<span id="select-4a368e212e0fd" onclick="return sourceEditor.select('4a368e212e0fd')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e212e0fd">
+<pre class="source" id="src-4a368e212e0fd"><span class="kw2">var</span> arr = <span class="br0">&#91;</span> <span class="nu0">1</span>, <span class="nu0">2</span>, <span class="nu0">3</span>, <span class="nu0">4</span>, <span class="nu0">5</span> <span class="br0">&#93;</span> 
+&nbsp;
+arr.<span class="me1">slice</span><span class="br0">&#40;</span><span class="nu0">2</span><span class="br0">&#41;</span> <span class="co1">// =&gt; [3, 4, 5]</span>
+&nbsp;
+arr.<span class="me1">slice</span><span class="br0">&#40;</span><span class="nu0">1</span>,<span class="nu0">4</span><span class="br0">&#41;</span> <span class="co1">// =&gt; [2,3,4]</span>
+&nbsp;
+arr.<span class="me1">slice</span><span class="br0">&#40;</span><span class="nu0">2</span>,<span class="nu0">3</span><span class="br0">&#41;</span> <span class="co1">// =&gt; [3]</span></pre><div class="src-edit-container" id="src-edit-4a368e212e0fd"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e212e0fd')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<div class="example">
+<div class="example-title">Пример: Отсчет с конца</div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e212ec68" >
+<div class="source-controls-small">  		<span id="select-4a368e212ec68" onclick="return sourceEditor.select('4a368e212ec68')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e212ec68">
+<pre class="source" id="src-4a368e212ec68">arr = <span class="br0">&#91;</span><span class="nu0">1</span>,<span class="nu0">2</span>,<span class="nu0">3</span>,<span class="nu0">4</span>,<span class="nu0">5</span><span class="br0">&#93;</span>
+&nbsp;
+arr.<span class="me1">slice</span><span class="br0">&#40;</span><span class="nu0">-2</span><span class="br0">&#41;</span> <span class="co1">// =&gt; [4,5]</span>
+arr.<span class="me1">slice</span><span class="br0">&#40;</span>arr.<span class="me1">length</span> - <span class="nu0">2</span><span class="br0">&#41;</span> <span class="co1">// то же самое</span>
+&nbsp;
+arr.<span class="me1">slice</span><span class="br0">&#40;</span><span class="nu0">-3</span>,<span class="nu0">-1</span><span class="br0">&#41;</span> <span class="co1">// [3,4]</span>
+arr.<span class="me1">slice</span><span class="br0">&#40;</span>arr.<span class="me1">length</span><span class="nu0">-3</span>, arr.<span class="me1">length</span><span class="nu0">-1</span><span class="br0">&#41;</span> <span class="co1">// то же самое</span></pre><div class="src-edit-container" id="src-edit-4a368e212ec68"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e212ec68')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>

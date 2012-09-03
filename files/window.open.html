@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<title>window.open</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /><link rel="stylesheet" type="text/css" href="common.css"/><link rel="stylesheet" type="text/css" href="codeviewer.css"/><link rel="stylesheet" type="text/css" href="jsman.css"/><link rel="stylesheet" type="text/css" href="linkify.css"/><style>
+    .source-controls-small span { margin-right: 20%; }
+  </style><script src="pack.2.js"></script><script src="jsman.js"></script></head>
+<body>
+<div style="float:right;margin-right:20%"><a class="liexternal" href="http://javascript.ru/window.open">http://javascript.ru/window.open</a></div><h2>window.open</h2><div class="field field-type-text field-field-method-syntax">
+  <h3 class="field-label">Синтаксис</h3>
+  <div class="field-items">
+      <div class="field-item"><div class="source-container" id="sc-4a368e28e4444" >  	<div class="code-container" id="cc-4a368e28e4444"> 		<pre class="source" id="src-4a368e28e4444"><span class="kw2">var</span> newWin = window.<span class="kw3">open</span><span class="br0">&#40;</span>strUrl, winName <span class="br0">&#91;</span>, winParams<span class="br0">&#93;</span><span class="br0">&#41;</span></pre> 		<div class="src-edit-container" id="src-edit-4a368e28e4444"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e28e4444')"/>			 		</div>  	</div> </div> </div>
+  </div>
+</div>
+
+<div class="field field-type-text field-field-method-arguments">
+  <h3 class="field-label">Аргументы</h3>
+  <div class="field-items">
+      <div class="field-item"><dl>
+<dt>strUrl</dt>
+<dd>Адрес для загрузки в новое окно, любая адресная строка, которую поддерживает браузер<br />
+<dd>
+<dt>winName</dt>
+<dd>Имя нового окна для использования в параметре <code>target</code> форм и ссылок<br />
+<dd>
+<dt>winParams</dt>
+<dd>Необязательный список настроек, с которыми открывать новое окно<br />
+<dd>
+</dd></dd></dd></dd></dd></dd></dl>
+</div>
+  </div>
+</div>
+
+
+<div class="field field-type-text field-field-method-description">
+  <h3 class="field-label">Описание, примеры</h3>
+  <div class="field-items">
+      <div class="field-item"><p>Метод <code>open</code> создает новое окно браузера , аналогично команде "Новое окно" в меню браузера. Обычно это не вкладка, а именно новое окно, но в некоторых браузерах можно настроить то или иное поведение явным образом.</p>
+<p>Если параметр <code>strUrl</code> - пустая строка, то в окно будет загружен пустой ресурс about:blank. </p>
+<p>В любом случае, загрузка осуществляется асинхронно. Создается пустое окно, загрузка ресурса в которое начнется уже после завершения исполнения текущего блока кода.</p>
+<h3>Связь между окнами</h3>
+<p>Метод <code>open</code> возвращает ссылку на новое окно, которая служит для обращения к нему и вызову его методов, если это соответствует ограничениям безопасности Same Origin.</p>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e28d0561" >
+<div class="code-container" id="cc-4a368e28d0561">
+<pre class="source" id="src-4a368e28d0561"><span class="kw2">var</span> params = <span class="st0">&quot;menubar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes&quot;</span>
+window.<span class="kw3">open</span><span class="br0">&#40;</span><span class="st0">&quot;http://ya.ru/&quot;</span>, <span class="st0">&quot;Yandex&quot;</span>, params<span class="br0">&#41;</span></pre><div class="src-edit-container" id="src-edit-4a368e28d0561"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e28d0561')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<p>Если окно с именем <code>winName</code> уже существует, то вместо открытия нового окна, <code>strUrl</code> загружается в существующее, ссылка на которое возвращается. При этом строка параметров не применяется.</p>
+<p>В случае, когда окно удалить не удалось, например, оно заблокировано штатными Popup-blocker'ами Firefox/IE - вызов <code>open</code> вернет null.<br />
+Проверяйте его, если не хотите лишних ошибок в своих скритах.</p>
+<p>Указание пустого <code>strUrl</code> для существующего имени окна - удобный способ получить ссылку на это окно без его перезагрузки.</p>
+<p>Если вы хотите открывать новое окно при каждом вызове <code>open()</code> - используйте для <code>winName</code> специальное значение '_blank'.</p>
+<h3>Строка параметров</h3>
+<p>Необязательная строка параметров состоит из списка разделенных запятой настроек нового окна. После открытия окна их уже нельзя будет изменить.</p>
+<p>Если строки параметров нет или она пустая, то для нового окна будут взяты параметры по умолчанию. </p>
+<p>Если строка параметров указана, то не перечисленные в ней параметры будут отключены(кроме titlebar/close). Поэтому включите в ней свойства, которые нужны.</p>
+<p>Если в параметрах не указаны размеры, то новое окно будет по размеру такое же, как последнее открытое.</p>
+<p>Если не указана позиция нового окна, то оно откроется со сдвигом в 20-30 пикселей (зависит от браузера) от последнего открытого окна.<br />
+Такой сдвиг позволяет посетителю заметить, что открылось новое окно.<br />
+Если текущее окно максимизировано, то сдвига не будет: новое тоже будет максимизировано.</p>
+<h3>Основные кроссбраузерные параметры</h3>
+<p>Параметры, касающиеся элементов управления окна, могут быть жестко установлены в конфигурации браузера. В этом случае их указание в параметрах <code>open()</code> не даст нужного эффекта.</p>
+<dl>
+<dt>left/top</dt>
+<dd>Расстояние от левой/верхней границы окна операционной системы до границы нового окна. Новое окно не может быть создано за границами экрана</dd>
+<dt>height/width</dt>
+<dd>Высота/ширина в пикселях внутренности нового окна, включая полосы прокрутки, если они есть. Минимальное значение: 100</dd>
+<dt>menubar</dt>
+<dd>Если этот параметр установлен в yes, то в новом окне будет меню.</dd>
+<dt>toolbar</dt>
+<dd>Если этот параметр установлен в yes, то в новом окне будет навигация (кнопки назад, вперед и т.п.) и панель вкладок</dd>
+<dt>location</dt>
+<dd>Если этот параметр установлен в yes, то в новом окне будет адресная строка</dd>
+<dt>directories</dt>
+<dd>Если этот параметр установлен в yes, то в новом окне будут закладки/избранное</dd>
+<dt>status</dt>
+<dd>Если этот параметр установлен в yes, то в новом окне будет строка состояния</dd>
+<dt>resizable</dt>
+<dd>Если этот параметр установлен в yes, то пользователь сможет изменить размеры нового окна. Рекомендуется всегда устанавливать этот параметр.</dd>
+<dt>scrollbars</dt>
+<dd>Если этот параметр установлен в yes, то новое окно при необходимости сможет показывать полосы прокрутки</dd>
+</dl>
+<div class="example">
+<div class="example-title">Пример: </div>
+<div class="example-body">
+<div class="source-container" id="sc-4a368e28d1497" >
+<div class="source-controls-small">  		<span id="select-4a368e28d1497" onclick="return sourceEditor.select('4a368e28d1497')">Выделить все</span>   	</div>
+<div class="code-container" id="cc-4a368e28d1497">
+<pre class="source" id="src-4a368e28d1497"><span class="kw2">var</span> newWin = window.<span class="kw3">open</span><span class="br0">&#40;</span><span class="st0">&quot;http://javascript.ru&quot;</span>,
+   <span class="st0">&quot;JSSite&quot;</span>,
+   <span class="st0">&quot;width=420,height=230,resizable=yes,scrollbars=yes,status=yes&quot;</span>
+<span class="br0">&#41;</span>
+&nbsp;
+newWin.<span class="kw3">focus</span><span class="br0">&#40;</span><span class="br0">&#41;</span></pre><div class="src-edit-container" id="src-edit-4a368e28d1497"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e28d1497')" />			 		</div>
+</div>
+</div>
+</div>
+</div>
+<h3>Заметки</h3>
+<p>Чтобы закрыть окно - используйте вызов <a href="window.close.html" >window.close</a>:</p>
+<div class="source-container" id="sc-4a368e28d26d0" >
+<div class="code-container" id="cc-4a368e28d26d0">
+<pre class="source" id="src-4a368e28d26d0">newWin.<span class="kw3">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span></pre><div class="src-edit-container" id="src-edit-4a368e28d26d0"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e28d26d0')" />			 		</div>
+</div>
+</div>
+<p>Чтобы показать новое окно посетителю - используйте вызов <a href="window.focus.html" >window.focus</a>:</p>
+<div class="source-container" id="sc-4a368e28d2ca1" >
+<div class="code-container" id="cc-4a368e28d2ca1">
+<pre class="source" id="src-4a368e28d2ca1">newWin.<span class="kw3">focus</span><span class="br0">&#40;</span><span class="br0">&#41;</span></pre><div class="src-edit-container" id="src-edit-4a368e28d2ca1"> 			<img style="position:absolute;right:0px;top:0px;z-index:1000" src="modules-codeviewer-img-icon-close.gif" onclick="return sourceEditor.cancel('4a368e28d2ca1')" />			 		</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+
+<script>
+    document.write("<script defer=\"defer\" src=\"http://javascript.ru/check_update.php?do=manual&loc="+encodeURIComponent(location.href)+"&version=1.0\"></sc"+"ript>")
+        </script></body>
+</html>
